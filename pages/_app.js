@@ -6,8 +6,13 @@ function MyApp({Component, pageProps}) {
 
 
     return (
-        <MantineProvider withGlobalStyles withNormalizeCSS theme={{colorScheme: "dark"}}>
-            <RouterTransition />
+        <MantineProvider withGlobalStyles withNormalizeCSS theme={{
+            colorScheme: "dark", headings: {
+                fontFamily: "Lexend Deca",
+            }
+
+        }}>
+            <RouterTransition/>
             <Component {...pageProps} />
         </MantineProvider>
     )
