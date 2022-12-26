@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Burger, createStyles, MediaQuery} from "@mantine/core";
+import {Box, Burger, createStyles, MediaQuery, Title} from "@mantine/core";
 import {useDisclosure, useWindowScroll} from "@mantine/hooks";
 import Image from "next/image";
 import {AnimatePresence, motion} from "framer-motion";
@@ -80,6 +80,7 @@ const Navbar = () => {
                     className={classes.navbarBox} style={{height: (scroll.y >= 150) ? "80px" : "100px"}}
         >
             <Image src={"/logo.gif"} width={50} height={50} alt={"logo"}/>
+            <Title order={3} ml={"md"}>BTE Germany</Title>
             <Box style={{marginLeft: "auto", display: "flex", alignItems: "center"}}>
                 <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
                     <Burger
