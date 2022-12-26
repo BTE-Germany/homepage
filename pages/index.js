@@ -13,11 +13,9 @@ export default function Home() {
 
 
     return (
-        <div style={{overflowY: "hidden"}}>
+        <div style={{overflowX: "hidden"}}>
 
             <Navbar/>
-
-
             <Hero/>
             <div style={{height: "100vh"}}>
 

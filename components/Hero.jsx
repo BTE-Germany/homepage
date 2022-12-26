@@ -1,6 +1,7 @@
 import React from 'react';
-import {Box, Button, createStyles, Title} from "@mantine/core";
+import {Box, Button, createStyles, Text, Title} from "@mantine/core";
 import {motion} from "framer-motion";
+import ArrowDownAnimation from "./ArrowDownAnimation";
 
 
 const useStyle = createStyles((theme) => ({
@@ -9,7 +10,7 @@ const useStyle = createStyles((theme) => ({
         position: "absolute",
         backgroundImage: "url(/heroOverlay.svg)",
         height: "100%",
-        width: "100vw",
+        width: "calc(100vw - (100vw - 100%))",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -23,7 +24,11 @@ const useStyle = createStyles((theme) => ({
             fontWeight: 900,
             color: "white",
             fontSize: "80px",
-            lineHeight: 1
+            [`@media (max-width: ${theme.breakpoints.xl}px)`]: {
+                fontSize: "40px",
+            },
+            lineHeight: 1,
+            textAlign: "center",
         }
 
     },
@@ -38,7 +43,7 @@ const useStyle = createStyles((theme) => ({
     heroVideo: {
         position: "absolute",
         height: "100%",
-        width: "100vw",
+        width: "calc(100vw - (100vw - 100%))",
         zIndex: 20,
         objectFit: "cover"
 
@@ -50,16 +55,19 @@ const Hero = props => {
 
     const {classes} = useStyle();
 
+    let textArray = "Wir bauen Deutschland in Minecraft".split(" ");
+    textArray.push(".")
+
     return (
         <div>
             <Box className={classes.background}>
                 <video src="/hero.mp4" className={classes.heroVideo} autoPlay muted></video>
                 <Box className={classes.overlay}>
 
-                        <Title size={100}>
+                        <Title>
                             {
-                                "We’re building Germany in Minecraft.".split(" ").map((word, index) => {
-                                    return <motion.span style={{display: "inline-block", marginRight: "1.3rem"}} key={index} initial={{opacity: 0, y: 30}}
+                                textArray.map((word, index) => {
+                                    return <motion.span style={{display: "inline-block", marginRight: (textArray.length-(index+1) !== 1) ? "1.3rem" : "0"}} key={index} initial={{opacity: 0, y: 30}}
                                                         animate={{opacity: 1, y: 0}} transition={{
                                         delay: index * 0.15,
                                         default: {
@@ -70,6 +78,17 @@ const Hero = props => {
                                 })
                             }
                         </Title>
+                    <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{
+                        delay: textArray.length * 0.15,
+                        default: {
+                            duration: 1,
+                            ease: "easeOut"
+                        }
+                    }}>
+                        <ArrowDownAnimation />
+                    </motion.div>
+
+
 
 
                 </Box>

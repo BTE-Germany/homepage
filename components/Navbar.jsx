@@ -1,6 +1,6 @@
 import React from 'react';
-import {Box, createStyles} from "@mantine/core";
-import {useWindowScroll} from "@mantine/hooks";
+import {Box, Burger, createStyles, MediaQuery} from "@mantine/core";
+import {useDisclosure, useWindowScroll} from "@mantine/hooks";
 import Image from "next/image";
 import {AnimatePresence, motion} from "framer-motion";
 import Link from "next/link";
@@ -26,6 +26,11 @@ const useStyle = createStyles((theme) => ({
             paddingLeft: "3%",
             paddingRight: "3%",
         },
+    },
+    navbarLink: {
+        '&:hover': {
+            color: "rgba(255,255,255,0.5)"
+        }
     }
 }));
 
@@ -34,6 +39,8 @@ const Navbar = () => {
     const {classes} = useStyle();
     const [scroll] = useWindowScroll();
     const [showNavLinks, setShowNavLinks] = React.useState(false);
+
+    const [mobileMenuOpen, handlers] = useDisclosure(false);
 
     const linkList = [
         {
@@ -53,7 +60,7 @@ const Navbar = () => {
             link: "/services"
         },
         {
-            name: "Doc",
+            name: "Docs",
             link: "/services"
         }
     ]
@@ -65,7 +72,7 @@ const Navbar = () => {
                     transition={{
                         default: {
                             duration: 1,
-                            delay: 2,
+                            delay: 0.25,
                             ease: "easeOut"
                         }
                     }}
@@ -74,33 +81,46 @@ const Navbar = () => {
         >
             <Image src={"/logo.gif"} width={50} height={50} alt={"logo"}/>
             <Box style={{marginLeft: "auto", display: "flex", alignItems: "center"}}>
-                <AnimatePresence>
-                    {showNavLinks && <>
-                        {
-                            linkList.map((link, index) => {
-                                return (
-                                    <Box key={index} style={{marginLeft: "1.5rem", cursor: "pointer"}}>
-                                        <motion.a
-                                            initial={{opacity: 0, y: 30}}
-                                            animate={{opacity: 1, y: 0}} transition={{
-                                            delay: index * 0.15,
-                                            default: {
-                                                duration: 1,
-                                                ease: "easeOut"
-                                            }
-                                        }}
-                                        >
-                                            <Link href={link.link}>
-                                                {link.name}
-                                            </Link>
-                                        </motion.a>
-                                    </Box>
-                                )
-                            })
-                        }
-                    </>}
+                <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
+                    <Burger
+                        opened={mobileMenuOpen}
+                        onClick={() => handlers.toggle()}
+                    />
+                </MediaQuery>
 
-                </AnimatePresence>
+                <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
+                    <AnimatePresence>
+                        {showNavLinks && <>
+                            {
+                                linkList.map((link, index) => {
+                                    return (
+                                        <Box key={index} style={{marginLeft: "1.5rem", cursor: "pointer"}}>
+                                            <motion.a
+                                                initial={{opacity: 0, y: 10}}
+                                                animate={{opacity: 1, y: 0}} transition={{
+                                                delay: index * 0.1,
+                                                default: {
+                                                    duration: 0.3,
+                                                    ease: "easeOut"
+                                                }
+                                            }}
+                                                style={{display: "inline-block"}}
+                                                className={classes.navbarLink}
+                                            >
+                                                <Link href={link.link}>
+                                                    {link.name}
+                                                </Link>
+                                            </motion.a>
+                                        </Box>
+                                    )
+                                })
+                            }
+                        </>}
+
+                    </AnimatePresence>
+                </MediaQuery>
+
+
 
             </Box>
         </motion.div>
