@@ -2,6 +2,7 @@ import React from 'react';
 import {Box, Button, createStyles, Text, Title} from "@mantine/core";
 import {motion} from "framer-motion";
 import ArrowDownAnimation from "./ArrowDownAnimation";
+import {useTranslation} from "next-i18next";
 
 
 const useStyle = createStyles((theme) => ({
@@ -54,8 +55,9 @@ const useStyle = createStyles((theme) => ({
 const Hero = props => {
 
     const {classes} = useStyle();
+    const {t} = useTranslation("home")
 
-    let textArray = "Wir bauen Deutschland in Minecraft".split(" ");
+    let textArray = t("home:hero.title").split(" ");
     textArray.push(".")
 
     return (

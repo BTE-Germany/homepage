@@ -1,9 +1,10 @@
 import React from 'react';
-import {Box, Burger, createStyles, MediaQuery, Title} from "@mantine/core";
+import {Box, Burger, Button, createStyles, MediaQuery, Menu, Title, UnstyledButton} from "@mantine/core";
 import {useDisclosure, useWindowScroll} from "@mantine/hooks";
 import Image from "next/image";
 import {AnimatePresence, motion} from "framer-motion";
 import Link from "next/link";
+import {useTranslation} from "next-i18next";
 
 const useStyle = createStyles((theme) => ({
     navbarBox: {
@@ -35,6 +36,8 @@ const useStyle = createStyles((theme) => ({
 }));
 
 const Navbar = () => {
+
+    const { t, i18n } = useTranslation();
 
     const {classes} = useStyle();
     const [scroll] = useWindowScroll();
@@ -116,9 +119,31 @@ const Navbar = () => {
                                     )
                                 })
                             }
+                            <motion.div initial={{opacity: 0, y: 10}}
+                                        animate={{opacity: 1, y: 0}} transition={{
+                                delay: (linkList.length+1) * 0.1,
+                                default: {
+                                    duration: 0.3,
+                                    ease: "easeOut"
+                                }
+                            }}>
+                                <Menu shadow="md" width={200} >
+                                    <Menu.Target>
+                                        <img src="/flags/en.svg" alt="" width={23} style={{borderRadius: "50%", marginLeft: "1.5rem"}}/>
+                                    </Menu.Target>
+
+                                    <Menu.Dropdown>
+                                        <Menu.Label>Sprache</Menu.Label>
+                                        <Menu.Item closeMenuOnClick={true} component={UnstyledButton} onClick={() => i18n.changeLanguage("de")}>Deutsch</Menu.Item>
+                                        <Menu.Item closeMenuOnClick={true} component={UnstyledButton} onClick={() => i18n.changeLanguage("en")}>Englisch</Menu.Item>
+                                    </Menu.Dropdown>
+                                </Menu>
+                            </motion.div>
                         </>}
 
+
                     </AnimatePresence>
+
                 </MediaQuery>
 
 

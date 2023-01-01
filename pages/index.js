@@ -3,8 +3,12 @@ import Navbar from "../components/Navbar";
 import {useEffect, useState} from "react";
 import {Container, Grid, Text, Title} from "@mantine/core";
 import FloatingImages, {FloatingImage} from "../components/FloatingImages";
+import {useTranslation} from "next-i18next";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 
 export default function Home() {
+
+
 
     const [navVisible, setNavVisible] = useState(false);
     useEffect(() => {
@@ -75,4 +79,15 @@ export default function Home() {
 
         </div>
     )
+}
+
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, [
+                'common',
+                'home',
+            ])),
+        },
+    }
 }

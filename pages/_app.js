@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import {MantineProvider} from "@mantine/core";
 import {RouterTransition} from "../components/RouterTransition";
+import {appWithTranslation} from "next-i18next";
 
 function MyApp({Component, pageProps}) {
 
@@ -18,4 +19,4 @@ function MyApp({Component, pageProps}) {
     )
 }
 
-export default MyApp
+export default appWithTranslation(MyApp)
