@@ -6,8 +6,7 @@ import Lottie from "lottie-react";
 
 const useStyle = createStyles((theme) => ({
     arrowAnimatation: {
-        position: "absolute",
-        bottom: 100,
+
     }
 }));
 

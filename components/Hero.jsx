@@ -86,6 +86,9 @@ const Hero = props => {
                             duration: 1,
                             ease: "easeOut"
                         }
+                    }} style={{
+                        position: "absolute",
+                        bottom: 100,
                     }}>
                         <ArrowDownAnimation />
                     </motion.div>
