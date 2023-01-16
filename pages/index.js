@@ -1,9 +1,10 @@
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import {useEffect, useState} from "react";
-import {Container, Grid, MediaQuery, Space, Text, Title} from "@mantine/core";
+import {Anchor, Container, Grid, MediaQuery, Space, Text, Title} from "@mantine/core";
 import FloatingImages, {FloatingImage} from "../components/FloatingImages";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import {Trans, useTranslation} from "next-i18next";
 
 export default function Home() {
 
@@ -14,6 +15,10 @@ export default function Home() {
             setNavVisible(true);
         }, 1500)
     }, []);
+
+    const {t} = useTranslation()
+
+    const builderCount = 2000;
 
 
     return (
@@ -42,24 +47,19 @@ export default function Home() {
                         <Text tt="uppercase" variant="gradient"
                               gradient={{from: 'blue', to: 'cyan', deg: 45}} fw={700}
                               sx={{fontFamily: '"Lexend Deca", sans-serif'}}>
-                            Über uns
+                            {t('home:about.subtitle')}
                         </Text>
                         <Title mb={"md"}>
-                            Das ist BTE Germany.
+                            {t('home:about.title')}
 
                         </Title>
                         <Text color={"dimmed"}>
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                            et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-                            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                            diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                            amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-                            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-                            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-                            amet.
+                            <Trans i18nKey="about.text" builderCount={builderCount}>
+                                Die Mission Build the Earth Germany ist es, das gesamte deutsche Bundesgebiet im Maßstab 1:1 im Computerspiel <Anchor href={"https://minecraft.net"}>Minecraft</Anchor> nachzubauen.
+                                Minecraft ist mit über 200 Milliarden Verkäufen das meistverkaufte Videospiel der Welt und funktioniert ähnlich wie ein Legokasten – allerdings
+                                mit unendlich vielen Steinen und unendlich viel Platz. Build the Earth Germany ist Teil des <Anchor href={"https://buildtheearth.net"}>Build the Earth</Anchor> Projektes,
+                                welches weltweit aktiv ist. Mit über {{builderCount}} aktiv beteiligten Personen ist BTE Germany das international zweitgrößte Bauteam.
+                            </Trans>
                         </Text>
                     </Grid.Col>
                 </Grid>

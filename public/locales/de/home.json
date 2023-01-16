@@ -1,5 +1,10 @@
 {
   "hero": {
     "title": "Wir bauen Deutschland in Minecraft"
+  },
+  "about": {
+    "subtitle": "Über uns",
+    "title": "Wir sind BTE Germany.",
+    "text": "Die Mission Build the Earth Germany ist es, das gesamte deutsche Bundesgebiet im Maßstab 1:1 im Computerspiel Minecraft nachzubauen. Minecraft ist mit über 200 Milliarden Verkäufen das meistverkaufte Videospiel der Welt und funktioniert ähnlich wie ein Legokasten – allerdings mit unendlich vielen Steinen und unendlich viel Platz. Build the Earth Germany ist Teil des Build the Earth Projektes, welches weltweit aktiv ist. Mit über 1000 aktiv beteiligten Personen ist BTE Germany das international zweitgrößte Bauteam."
   }
 }
