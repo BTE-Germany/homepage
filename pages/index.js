@@ -54,7 +54,7 @@ export default function Home() {
 
                         </Title>
                         <Text color={"dimmed"}>
-                            <Trans i18nKey="about.text" builderCount={builderCount}>
+                            <Trans i18nKey="home:about.text" builderCount={builderCount}>
                                 Die Mission Build the Earth Germany ist es, das gesamte deutsche Bundesgebiet im Maßstab 1:1 im Computerspiel <Anchor href={"https://minecraft.net"}>Minecraft</Anchor> nachzubauen.
                                 Minecraft ist mit über 200 Milliarden Verkäufen das meistverkaufte Videospiel der Welt und funktioniert ähnlich wie ein Legokasten – allerdings
                                 mit unendlich vielen Steinen und unendlich viel Platz. Build the Earth Germany ist Teil des <Anchor href={"https://buildtheearth.net"}>Build the Earth</Anchor> Projektes,
@@ -63,7 +63,7 @@ export default function Home() {
                         </Text>
                     </Grid.Col>
                 </Grid>
-                <Space h={{sm: 300, base: 150}}/>
+                <Space h={{sm: 450, base: 150}}/>
                 <Grid>
                     <Grid.Col sm={12} lg={6}>
                         <Text tt="uppercase" variant="gradient"
