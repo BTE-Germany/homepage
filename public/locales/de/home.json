@@ -11,6 +11,16 @@
         "subtitle": "Wer wir sind",
         "title": "Unser Antrieb: die Community.",
         "text": "Ohne unsere Community könnte das Projekt niemals bestehen. Jeder und jede bringt das Projekt Stück für Stück voran, egal ob man sich aktiv am Bauen beteiligt oder das Projekt nur von außen verfolgt. Die gesamte Organisation unseres Buildteams erfolgt ausschließlich über unseren <1>Discord Server</1>. Tritt ihm noch heute bei und tausche dich mit über {{discordMembers}} über das Projekt aus. Dabei ist es egal, ob du erst mit dem Bauen in Minecraft angefangen hast oder schon langjähriger Baumeister bist, wir helfen dir gerne weiter und machen dich startklar zum Bauen. Wir freuen uns auf dich!"
-    }
+    },
+    "numbers": {
+        "title": "BTE Germany in Zahlen.",
+        "builder": "Builder",
+        "mapSize": "Größe der Karte",
+        "finishedBuildings": "Fertige Gebäude"
+    },
+    "gallery": {
+        "title": "Wir bauen in",
+        "seeMore": "Schau dir mehr in der Galerie an"
+    },
+    "joinUs": "Mitmachen"
 }
-
