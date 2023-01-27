@@ -104,8 +104,8 @@ const Navbar = () => {
                                 {
                                     linkList.map((link, index) => {
                                         return (
-                                            <MediaQuery smallerThan="sm" styles={{display: 'none'}}>
-                                                <Box key={index} style={{marginLeft: "1.5rem", cursor: "pointer"}}>
+                                            <MediaQuery key={index} smallerThan="sm" styles={{display: 'none'}}>
+                                                <Box style={{marginLeft: "1.5rem", cursor: "pointer"}}>
                                                     <motion.a
                                                         initial={{opacity: 0, y: 10}}
                                                         animate={{opacity: 1, y: 0}} transition={{

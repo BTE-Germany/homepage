@@ -90,7 +90,7 @@ export default function Home() {
                                 no matter if you are actively involved in the build or just follow the project from the outside.
                                 The entire organization of our build team is done exclusively through our <Anchor href={"https://buildthe.earth/website-de"}>Discord server</Anchor>.
                                 Join it today and share ideas about the project with over {{discordMembers}} others.
-                                It doesn't matter if you've just started building in Minecraft or are a long-time builder,
+                                It doesn&apos;t matter if you&apos;ve just started building in Minecraft or are a long-time builder,
                                 we will be happy to help you and get you ready to build. We look forward to seeing you!
                             </Trans>
                             <br/>
