@@ -57,7 +57,7 @@ const Hero = props => {
     const {classes} = useStyle();
     const {t} = useTranslation("home")
 
-    let textArray = t("home:hero.title").split(" ");
+    let textArray = t("home:hero.title").replace(".", "").split(" ");
     textArray.push(".")
 
     return (
