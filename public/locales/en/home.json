@@ -1,4 +1,5 @@
 {
+    "joinUs": "Join us",
     "hero": {
         "title": "We're building Germany in Minecraft."
     },
@@ -6,5 +7,20 @@
         "subtitle": "About us",
         "title": "We are BTE Germany.",
         "text": "Build the Earth Germany's mission is to recreate the entire German territory on a scale of 1:1 in the computer game <1>Minecraft</1>. Minecraft is the world's best-selling video game, with over 200 billion sales, and works much like a Lego box - but with an infinite number of bricks and an infinite amount of space. Build the Earth Germany is part of the <3>Build the Earth</3> project, which is active worldwide. With over {{builderCount}} people actively involved, BTE Germany is the second largest building team internationally."
+    },
+    "community": {
+        "subtitle": "Who we are",
+        "title": "Our motivation: the community.",
+        "text": "Without our community, the project could never exist. Each and everyone brings the project forward piece by piece, no matter if you are actively involved in the build or just follow the project from the outside. The entire organization of our build team is done exclusively through our <1>Discord server</1>. Join it today and share ideas about the project with over {{discordMembers}} others. It doesn't matter if you've just started building in Minecraft or are a long-time builder, we will be happy to help you and get you ready to build. We look forward to seeing you!"
+    },
+    "numbers": {
+        "title": "BTE Germany in numbers.",
+        "builder": "Builder",
+        "mapSize": "Size of the map",
+        "finishedBuildings": "Finished buildings"
+    },
+    "gallery": {
+        "title": "We're building in",
+        "seeMore": "See more in the gallery"
     }
 }
