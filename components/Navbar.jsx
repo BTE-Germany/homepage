@@ -37,7 +37,7 @@ const useStyle = createStyles((theme) => ({
     }
 }));
 
-const Navbar = () => {
+const Navbar = ({disableAnimation}) => {
 
     const {t, i18n} = useTranslation();
 
@@ -58,7 +58,7 @@ const Navbar = () => {
         },
         {
             name: "Tritt uns bei",
-            link: "/services"
+            link: "/join"
         },
         {
             name: "FAQ",
@@ -71,12 +71,12 @@ const Navbar = () => {
     ]
 
     return (
-        <motion.div initial={{y: -100}}
+        <motion.div initial={{y: !disableAnimation ? -100 : 0}}
                     animate={{y: 0}}
                     exit={{y: -100}}
                     transition={{
                         default: {
-                            duration: 1,
+                            duration: !disableAnimation ? 1 : 0,
                             delay: 0.25,
                             ease: "easeOut"
                         }
@@ -107,7 +107,7 @@ const Navbar = () => {
                                             <MediaQuery smallerThan="sm" styles={{display: 'none'}}>
                                                 <Box key={index} style={{marginLeft: "1.5rem", cursor: "pointer"}}>
                                                     <motion.a
-                                                        initial={{opacity: 0, y: 10}}
+                                                        initial={{opacity: !disableAnimation ? 0 : 1, y: !disableAnimation ? 10: 0}}
                                                         animate={{opacity: 1, y: 0}} transition={{
                                                         delay: index * 0.1,
                                                         default: {
@@ -128,7 +128,7 @@ const Navbar = () => {
                                     })
                                 }
                                 <MediaQuery smallerThan="sm" styles={{display: 'none'}}>
-                                    <motion.div initial={{opacity: 0, y: 10}}
+                                    <motion.div initial={{opacity: !disableAnimation ? 0 : 1, y: !disableAnimation ? 10: 0}}
                                                 animate={{opacity: 1, y: 0}} transition={{
                                         delay: (linkList.length + 1) * 0.1,
                                         default: {
