@@ -8,8 +8,9 @@ import {Trans, useTranslation} from "next-i18next";
 import CountUp from "react-countup";
 import {IconArrowRight, IconBuilding, IconDeviceFloppy, IconUsers} from "@tabler/icons";
 import HomeGallery from "../components/HomeGallery";
+import axios from "axios";
 
-export default function Home() {
+export default function Home({cities, mapStats}) {
 
 
     const [navVisible, setNavVisible] = useState(false);
@@ -193,7 +194,7 @@ export default function Home() {
                                 </Box>
                                 <CountUp
                                     start={0}
-                                    end={23442}
+                                    end={mapStats.totalBuildings}
                                     duration={2}
                                     separator="."
                                     decimals={0}
@@ -212,7 +213,7 @@ export default function Home() {
             </Box>
 
             <Space h={{sm: 200, base: 150}}/>
-            <HomeGallery />
+            <HomeGallery cities={cities}/>
 
             <Space h={{sm: 600, base: 150}}/><Space h={{sm: 600, base: 150}}/>
 
@@ -223,13 +224,19 @@ export default function Home() {
     )
 }
 
-export async function getStaticProps({locale}) {
+
+export async function getServerSideProps({locale}) {
+
+    let {data: citiesData} = await axios.get(process.env.CMS_URL + "/items/cities?fields=*,images.directus_files_id")
+    let {data: mapStatsData} = await axios.get(process.env.MAP_URL + "/api/v1/stats/general")
     return {
         props: {
+            cities: citiesData.data,
+            mapStats: mapStatsData,
             ...(await serverSideTranslations(locale, [
                 'common',
                 'home',
             ])),
-        },
+        }
     }
 }

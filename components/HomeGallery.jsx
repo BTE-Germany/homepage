@@ -8,52 +8,26 @@ const useStyles = createStyles((theme, _params, getRef) => ({}));
 
 const PRIMARY_COL_HEIGHT = 500;
 
-const images = [
-    [
-        "https://cms.bte-germany.de/assets/fcfdf894-491a-4249-a293-e06f0d51a413?format=webp",
-        "https://cms.bte-germany.de/assets/fcfdf894-491a-4249-a293-e06f0d51a413?format=webp",
-        "https://cms.bte-germany.de/assets/fcfdf894-491a-4249-a293-e06f0d51a413?format=webp",
-        "https://cms.bte-germany.de/assets/fcfdf894-491a-4249-a293-e06f0d51a413?format=webp",
-        "https://cms.bte-germany.de/assets/fcfdf894-491a-4249-a293-e06f0d51a413?format=webp",
-    ],
-    [
-        "https://cms.bte-germany.de/assets/38ea4cf1-d2d0-416c-bdad-5eddfebe62a5?format=webp",
-        "https://cms.bte-germany.de/assets/38ea4cf1-d2d0-416c-bdad-5eddfebe62a5?format=webp",
-        "https://cms.bte-germany.de/assets/38ea4cf1-d2d0-416c-bdad-5eddfebe62a5?format=webp",
-        "https://cms.bte-germany.de/assets/38ea4cf1-d2d0-416c-bdad-5eddfebe62a5?format=webp",
-        "https://cms.bte-germany.de/assets/38ea4cf1-d2d0-416c-bdad-5eddfebe62a5?format=webp",
-    ],
-    [
-        "https://cms.bte-germany.de/assets/4868a449-820f-4a13-a7b6-0fb837b2c3c1?format=webp",
-        "https://cms.bte-germany.de/assets/4868a449-820f-4a13-a7b6-0fb837b2c3c1?format=webp",
-        "https://cms.bte-germany.de/assets/4868a449-820f-4a13-a7b6-0fb837b2c3c1?format=webp",
-        "https://cms.bte-germany.de/assets/4868a449-820f-4a13-a7b6-0fb837b2c3c1?format=webp",
-        "https://cms.bte-germany.de/assets/4868a449-820f-4a13-a7b6-0fb837b2c3c1?format=webp",
-    ],
-    [
-        "https://cms.bte-germany.de/assets/0460d0cd-de39-4172-8fa3-b227e9eec111?format=webp",
-        "https://cms.bte-germany.de/assets/0460d0cd-de39-4172-8fa3-b227e9eec111?format=webp",
-        "https://cms.bte-germany.de/assets/0460d0cd-de39-4172-8fa3-b227e9eec111?format=webp",
-        "https://cms.bte-germany.de/assets/0460d0cd-de39-4172-8fa3-b227e9eec111?format=webp",
-        "https://cms.bte-germany.de/assets/0460d0cd-de39-4172-8fa3-b227e9eec111?format=webp",
-    ],
-    [
-        "https://cms.bte-germany.de/assets/13c7bff1-0c62-403c-836d-a82277d6915b?format=webp",
-        "https://cms.bte-germany.de/assets/13c7bff1-0c62-403c-836d-a82277d6915b?format=webp",
-        "https://cms.bte-germany.de/assets/13c7bff1-0c62-403c-836d-a82277d6915b?format=webp",
-        "https://cms.bte-germany.de/assets/13c7bff1-0c62-403c-836d-a82277d6915b?format=webp",
-        "https://cms.bte-germany.de/assets/13c7bff1-0c62-403c-836d-a82277d6915b?format=webp",
-    ]
-]
 
-const HomeGallery = () => {
+
+const HomeGallery = ({cities}) => {
 
     const {classes} = useStyles();
 
 
+    let images = cities.map((city) => {
+        return city.images.map((image) => {
+            return process.env.NEXT_PUBLIC_CMS_ASSETS_URL + image.directus_files_id + "?format=webp"
+        })
+    })
+
+
+
     const [index, setIndex] = useState(0);
 
-    const words = ['Berlin', 'Hamburg', 'München', 'Köln', 'Frankfurt']
+    const words = cities.map((city) => {
+        return city.name
+    })
 
     const {t} = useTranslation();
 
@@ -114,7 +88,7 @@ const HomeGallery = () => {
                 </Box>
 
 
-                <ImageGallery index={index}/>
+                <ImageGallery index={index} images={images}/>
 
 
             </SimpleGrid>
@@ -129,7 +103,7 @@ const HomeGallery = () => {
         ;
 }
 
-const ImageGallery = ({index}) => {
+const ImageGallery = ({index, images}) => {
 
 
     return (
@@ -149,7 +123,7 @@ const ImageGallery = ({index}) => {
                         delayChildren: 0.2,
                         staggerChildren: 0.1,
                     }}>
-                    <ImagesGrid index={index}/>
+                    <ImagesGrid index={index} images={images}/>
                 </motion.div>
 
 
@@ -161,7 +135,7 @@ const ImageGallery = ({index}) => {
     )
 }
 
-const ImagesGrid = ({index}) => {
+const ImagesGrid = ({index, images}) => {
     const theme = useMantineTheme();
     const SECONDARY_COL_HEIGHT = PRIMARY_COL_HEIGHT / 2 - theme.spacing.md / 2;
     const child = {
@@ -193,7 +167,7 @@ const ImagesGrid = ({index}) => {
                         opacity: {duration: 0.5},
                     }} layout>
                         <Image radius={"md"} height={SECONDARY_COL_HEIGHT}
-                               src={images[index][0]}/>
+                               src={images[index][1]}/>
                     </motion.div>
                 </Grid.Col>
                 <Grid.Col span={6}>
@@ -202,7 +176,7 @@ const ImagesGrid = ({index}) => {
                         opacity: {duration: 0.5},
                     }} layout>
                         <Image radius={"md"} height={SECONDARY_COL_HEIGHT}
-                               src={images[index][0]}/>
+                               src={images[index][2]}/>
                     </motion.div>
                 </Grid.Col>
                 <Grid.Col>
@@ -211,7 +185,7 @@ const ImagesGrid = ({index}) => {
                         opacity: {duration: 0.5},
                     }} layout>
                         <Image radius={"md"} height={SECONDARY_COL_HEIGHT}
-                               src={images[index][0]} />
+                               src={images[index][3]} />
                     </motion.div>
 
                 </Grid.Col>

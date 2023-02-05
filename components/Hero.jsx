@@ -34,7 +34,6 @@ const useStyle = createStyles((theme) => ({
 
     },
     background: {
-        backgroundImage: "url(/hero.png)",
         height: "100vh",
         position: "relative",
         backgroundRepeat: "no-repeat",
@@ -63,7 +62,7 @@ const Hero = props => {
     return (
         <div>
             <Box className={classes.background}>
-                <video src="/hero.mp4" className={classes.heroVideo} autoPlay muted></video>
+                <video src="/hero2small.mp4" className={classes.heroVideo} autoPlay muted></video>
                 <Box className={classes.overlay}>
 
                         <Title>
