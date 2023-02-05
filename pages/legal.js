@@ -54,7 +54,7 @@ export default function Legal() {
                             Europäischen Kommission unter <a className="adsimple-322398707"
                                                              href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=DE"
                                                              target="_blank"
-                                                             rel="follow noopener">https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&amp;lng=DE</a> zu
+                                                             rel="noreferrer">https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&amp;lng=DE</a> zu
                             richten. Die dafür notwendigen Kontaktdaten finden Sie oberhalb in unserem Impressum.</p>
                         <p>Wir möchten Sie jedoch darauf hinweisen, dass wir nicht bereit oder verpflichtet sind, an
                             Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
