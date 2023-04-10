@@ -1,10 +1,11 @@
 import React from 'react';
-import {Box, Burger, createStyles, MediaQuery, Menu, Title, UnstyledButton} from "@mantine/core";
+import {Box, Burger, createStyles, MediaQuery, Menu, Title, UnstyledButton, Image, Text, Group} from "@mantine/core";
 import {useDisclosure, useWindowScroll} from "@mantine/hooks";
-import Image from "next/image";
 import {AnimatePresence, motion} from "framer-motion";
 import Link from "next/link";
 import {useTranslation} from "next-i18next";
+import {IconChevronDown, IconCircles, IconMail, IconNews, IconUsers} from "@tabler/icons";
+import {useRouter} from "next/router";
 
 const useStyle = createStyles((theme) => ({
     navbarBox: {
@@ -47,26 +48,55 @@ const Navbar = ({disableAnimation}) => {
 
     const [mobileMenuOpen, handlers] = useDisclosure(false);
 
+    const router = useRouter()
+    const { pathname, asPath, query } = router
+
+
     const linkList = [
         {
-            name: "Startseite",
+            name: t("common:navigation.home"),
             link: "/"
         },
         {
-            name: "Karte",
+            name: t("common:navigation.map"),
             link: "/about"
         },
         {
-            name: "Tritt uns bei",
+            name: t("common:navigation.join"),
             link: "/join"
         },
         {
-            name: "FAQ",
+            name: t("common:navigation.faq"),
             link: "/services"
         },
         {
-            name: "Docs",
+            name: t("common:navigation.docs"),
             link: "/services"
+        },
+        {
+            name: t("common:navigation.about"),
+            links: [
+                {
+                    name: t("common:navigation.ourTeam"),
+                    link: "/team",
+                    icon: <IconUsers size={18} />
+                },
+                {
+                    name: t("common:navigation.association"),
+                    link: "https://bte-germany.org",
+                    icon: <IconCircles size={18} />
+                },
+                {
+                    name: t("common:navigation.contact"),
+                    link: "/contact",
+                    icon: <IconMail size={18} />
+                },
+                {
+                    name: t("common:navigation.press"),
+                    link: "/press",
+                    icon: <IconNews size={18} />
+                }
+            ]
         }
     ]
 
@@ -118,9 +148,33 @@ const Navbar = ({disableAnimation}) => {
                                                         style={{display: "inline-block"}}
                                                         className={classes.navbarLink}
                                                     >
-                                                        <Link href={link.link}>
-                                                            {link.name}
-                                                        </Link>
+                                                        {
+                                                            link.links ?
+                                                                <Menu shadow="md" width={200} trigger="hover" openDelay={100} closeDelay={400}>
+                                                                    <Menu.Target>
+                                                                        <Group spacing={5}>
+                                                                            {link.name} <IconChevronDown size={18}/>
+                                                                        </Group>
+                                                                    </Menu.Target>
+
+                                                                    <Menu.Dropdown>
+                                                                        {
+                                                                            link.links.map((link, index) => {
+                                                                                return (
+                                                                                    <Link href={link.link} key={index}>
+                                                                                        <Menu.Item
+                                                                                            icon={link.icon} href={link.link}>{link.name}</Menu.Item>
+                                                                                    </Link>
+
+                                                                                )
+                                                                            })
+                                                                        }
+                                                                    </Menu.Dropdown>
+                                                                </Menu>
+                                                                : <Link href={link.link}>
+                                                                    {link.name}
+                                                                </Link>
+                                                        }
                                                     </motion.a>
                                                 </Box>
                                             </MediaQuery>
@@ -145,9 +199,11 @@ const Navbar = ({disableAnimation}) => {
                                             <Menu.Dropdown>
                                                 <Menu.Label>Sprache</Menu.Label>
                                                 <Menu.Item closeMenuOnClick={true} component={UnstyledButton}
-                                                           onClick={() => i18n.changeLanguage("de")}>Deutsch</Menu.Item>
+                                                           icon={<Image src={`/flags/de.svg`} width={18} height={18} radius={"50px"}/>}
+                                                           onClick={() =>  router.push({ pathname, query }, asPath, { locale: "de" })}>Deutsch</Menu.Item>
                                                 <Menu.Item closeMenuOnClick={true} component={UnstyledButton}
-                                                           onClick={() => i18n.changeLanguage("en")}>Englisch</Menu.Item>
+                                                           icon={<Image src={`/flags/en.svg`} width={18} height={18} radius={"50px"}/>}
+                                                           onClick={() =>  router.push({ pathname, query }, asPath, { locale: "en" })}>Englisch</Menu.Item>
                                             </Menu.Dropdown>
                                         </Menu>
                                     </motion.div>
@@ -225,9 +281,13 @@ const Navbar = ({disableAnimation}) => {
                                     <Menu.Dropdown>
                                         <Menu.Label>Sprache</Menu.Label>
                                         <Menu.Item closeMenuOnClick={true} component={UnstyledButton}
-                                                   onClick={() => i18n.changeLanguage("de")}>Deutsch</Menu.Item>
+                                                   onClick={() => {
+                                                       router.push({ pathname, query }, asPath, { locale: "de" })
+                                                   }}>Deutsch</Menu.Item>
                                         <Menu.Item closeMenuOnClick={true} component={UnstyledButton}
-                                                   onClick={() => i18n.changeLanguage("en")}>Englisch</Menu.Item>
+                                                   onClick={() => {
+                                                       router.push({ pathname, query }, asPath, { locale: "en" })
+                                                   }}>Englisch</Menu.Item>
                                     </Menu.Dropdown>
                                 </Menu>
                             </motion.div>

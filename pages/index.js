@@ -31,6 +31,12 @@ export default function Home({cities, mapStats}) {
 
             <Navbar/>
             <Hero/>
+
+            {/*
+            // TODO: Add this back in when asked media outlets for logo usage permission
+            <Text mt={"xl"} align={"center"} tt="uppercase" fz="md" c="dimmed">
+                {t('home:asSeenIn')}
+            </Text>*/}
             <Space h={{sm: 300, base: 50}}/>
 
             <Container size="xl">
@@ -215,7 +221,7 @@ export default function Home({cities, mapStats}) {
             <Space h={{sm: 200, base: 150}}/>
             <HomeGallery cities={cities}/>
 
-            <Space h={{sm: 600, base: 150}}/><Space h={{sm: 600, base: 150}}/>
+
 
 
 

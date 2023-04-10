@@ -1,5 +1,14 @@
 {
   "navigation": {
-    "home": "Home" 
+    "home": "Home",
+    "map": "Map",
+    "join": "Join us",
+    "faq": "FAQ",
+    "docs": "Docs",
+    "about": "About us",
+    "ourTeam": "Our team",
+    "association": "Association",
+    "press": "Press",
+    "contact": "Contact"
   }
 }

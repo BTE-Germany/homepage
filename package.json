@@ -29,7 +29,9 @@
     "react-countup": "^6.4.0",
     "react-dom": "18.2.0",
     "react-i18next": "^12.1.1",
-    "stripe": "^11.8.0"
+    "stripe": "^11.8.0",
+    "@react-buddy/ide-toolbox-next": "^2.4.0",
+    "@react-buddy/palette-mantine": "^5.7.1"
   },
   "devDependencies": {
     "eslint": "8.23.0",
