@@ -1,5 +1,14 @@
 {
     "navigation": {
-        "home": "Startseite"
+        "home": "Startseite",
+        "map": "Karte",
+        "join": "Mitmachen",
+        "ourTeam": "Unser Team",
+        "association": "Verein",
+        "press": "Presse",
+        "faq": "FAQ",
+        "docs": "Dokumente",
+        "about": "Über uns",
+        "contact": "Kontakt"
     }
 }
