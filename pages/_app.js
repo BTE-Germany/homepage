@@ -3,8 +3,6 @@ import {MantineProvider} from "@mantine/core";
 import {RouterTransition} from "../components/RouterTransition";
 import {appWithTranslation} from "next-i18next";
 import Footer from "../components/Footer";
-import {DevSupport} from "@react-buddy/ide-toolbox-next";
-import {ComponentPreviews, useInitial} from "../components/dev";
 
 function MyApp({Component, pageProps}) {
 
@@ -20,11 +18,9 @@ function MyApp({Component, pageProps}) {
             <div style={{display: "flex", minHeight: "100vh", flexDirection: "column"}}>
                 <div style={{flex: 1}}>
 
-                    <DevSupport ComponentPreviews={ComponentPreviews}
-                                useInitialHook={useInitial}
-                    >
+
                         <Component {...pageProps} />
-                    </DevSupport>
+
                 </div>
                 <Footer/>
             </div>
