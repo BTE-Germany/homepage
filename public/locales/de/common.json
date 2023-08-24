@@ -9,6 +9,19 @@
         "faq": "FAQ",
         "docs": "Docs",
         "about": "Über uns",
-        "contact": "Kontakt"
-    }
+        "contact": "Kontakt",
+        "getStarted": "Los geht's"
+    },
+    "footer": {
+        "notAssociated": "Kein offizieller Minecraft-Dienst. Wir sind weder mit Mojang noch mit Microsoft verbunden oder von ihnen genehmigt."
+    },
+    "notAvailable": "Derzeit nicht verfügbar",
+    "signIn": "Eintragen",
+    "signOut": "Abmelden",
+    "myProfile": "Mein Profil",
+    "attention": "Achtung",
+    "confirm": "Bestätigen Sie",
+    "cancel": "Abbrechen",
+    "success": "Erfolg",
+    "error": "Fehler"
 }
