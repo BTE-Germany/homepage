@@ -1,52 +1,52 @@
 {
     "profilePage": {
-        "title": "",
+        "title": "profilSeite.titel",
         "navigation": {
-            "general": "",
-            "generalDescription": "",
-            "security": "",
-            "securityDescription": "",
-            "sessions": "",
-            "sessionsDescription": "",
-            "links": "",
-            "linksDescription": ""
+            "general": "profilePage.navigation.general",
+            "generalDescription": "profilePage.navigation.generalDescription",
+            "security": "profilePage.navigation.security",
+            "securityDescription": "profilePage.navigation.securityDescription",
+            "sessions": "profilePage.navigation.sessions",
+            "sessionsDescription": "profilePage.navigation.sessionsDescription",
+            "links": "profilePage.navigation.links",
+            "linksDescription": "profilePage.navigation.linksDescription"
         }
     },
     "general": {
-        "changeNotPossible": ""
+        "changeNotPossible": "general.changeNotPossible"
     },
     "sessions": {
-        "thisSession": "",
-        "sureInvalidation": "",
-        "invalidationSuccess": "",
-        "logoutSession": "",
-        "sessionStart": "",
-        "sessionLastActive": "",
-        "sessionExpires": ""
+        "thisSession": "sessions.thisSession",
+        "sureInvalidation": "sessions.sureInvalidation",
+        "invalidationSuccess": "sessions.invalidationSuccess",
+        "logoutSession": "sessions.logoutSession",
+        "sessionStart": "sessions.sessionStart",
+        "sessionLastActive": "sessions.sessionLastActive",
+        "sessionExpires": "sessions.sessionExpires"
     },
     "security": {
-        "password": "",
-        "lastChange": "",
-        "changePassword": ""
+        "password": "sicherheit.passwort",
+        "lastChange": "security.lastChange",
+        "changePassword": "security.changePassword"
     },
     "links": {
-        "notLinked": "",
-        "link": "",
-        "unlink": ""
+        "notLinked": "links.notLinked",
+        "link": "links.link",
+        "unlink": "links.unlink"
     },
     "link": {
         "minecraft": {
-            "title": "",
-            "howTo": "",
-            "next": "",
-            "previous": "",
-            "finish": "",
-            "backToProfile": "",
-            "enterCode": "",
-            "successTitle": "",
-            "successText": "",
-            "error": "",
-            "unlinkError": ""
+            "title": "link.minecraft.title",
+            "howTo": "link.minecraft.howTo",
+            "next": "link.minecraft.next",
+            "previous": "link.minecraft.previous",
+            "finish": "link.minecraft.finish",
+            "backToProfile": "link.minecraft.backToProfile",
+            "enterCode": "link.minecraft.enterCode",
+            "successTitle": "link.minecraft.successTitle",
+            "successText": "link.minecraft.successText",
+            "error": "link.minecraft.error",
+            "unlinkError": "link.minecraft.unlinkError"
         }
     }
 }
