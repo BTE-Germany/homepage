@@ -1,0 +1,52 @@
+{
+    "profilePage": {
+        "title": "",
+        "navigation": {
+            "general": "",
+            "generalDescription": "",
+            "security": "",
+            "securityDescription": "",
+            "sessions": "",
+            "sessionsDescription": "",
+            "links": "",
+            "linksDescription": ""
+        }
+    },
+    "general": {
+        "changeNotPossible": ""
+    },
+    "sessions": {
+        "thisSession": "",
+        "sureInvalidation": "",
+        "invalidationSuccess": "",
+        "logoutSession": "",
+        "sessionStart": "",
+        "sessionLastActive": "",
+        "sessionExpires": ""
+    },
+    "security": {
+        "password": "",
+        "lastChange": "",
+        "changePassword": ""
+    },
+    "links": {
+        "notLinked": "",
+        "link": "",
+        "unlink": ""
+    },
+    "link": {
+        "minecraft": {
+            "title": "",
+            "howTo": "",
+            "next": "",
+            "previous": "",
+            "finish": "",
+            "backToProfile": "",
+            "enterCode": "",
+            "successTitle": "",
+            "successText": "",
+            "error": "",
+            "unlinkError": ""
+        }
+    }
+}
