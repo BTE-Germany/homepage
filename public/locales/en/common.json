@@ -2,7 +2,7 @@
   "navigation": {
     "home": "Home",
     "map": "Map",
-    "join": "Join us",
+    "getStarted": "Get started",
     "faq": "FAQ",
     "docs": "Docs",
     "about": "About us",
@@ -10,5 +10,17 @@
     "association": "Association",
     "press": "Press",
     "contact": "Contact"
-  }
+  },
+  "footer": {
+    "notAssociated": "No official Minecraft service. We are not associated or approved by Mojang nor Microsoft."
+  },
+  "notAvailable": "Currently not available",
+  "signIn": "Sign in",
+  "signOut": "Sign out",
+  "myProfile": "My profile",
+  "attention": "Attention",
+  "confirm": "Confirm",
+  "cancel": "Cancel",
+  "success": "Success",
+  "error": "Error"
 }

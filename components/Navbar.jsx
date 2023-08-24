@@ -6,6 +6,7 @@ import Link from "next/link";
 import {useTranslation} from "next-i18next";
 import {IconChevronDown, IconCircles, IconMail, IconNews, IconUsers} from "@tabler/icons";
 import {useRouter} from "next/router";
+import UserButton from "./UserButton";
 
 const useStyle = createStyles((theme) => ({
     navbarBox: {
@@ -58,12 +59,12 @@ const Navbar = ({disableAnimation}) => {
             link: "/"
         },
         {
-            name: t("common:navigation.map"),
-            link: "/about"
+            name: t("common:navigation.getStarted"),
+            link: "/join"
         },
         {
-            name: t("common:navigation.join"),
-            link: "/join"
+            name: t("common:navigation.map"),
+            link: "https://map.bte-germany.de"
         },
         {
             name: t("common:navigation.faq"),
@@ -139,7 +140,7 @@ const Navbar = ({disableAnimation}) => {
                                                     <motion.a
                                                         initial={{opacity: !disableAnimation ? 0 : 1, y: !disableAnimation ? 10: 0}}
                                                         animate={{opacity: 1, y: 0}} transition={{
-                                                        delay: index * 0.1,
+                                                        delay: index * 0.05,
                                                         default: {
                                                             duration: 0.3,
                                                             ease: "easeOut"
@@ -184,28 +185,13 @@ const Navbar = ({disableAnimation}) => {
                                 <MediaQuery smallerThan="sm" styles={{display: 'none'}}>
                                     <motion.div initial={{opacity: !disableAnimation ? 0 : 1, y: !disableAnimation ? 10: 0}}
                                                 animate={{opacity: 1, y: 0}} transition={{
-                                        delay: (linkList.length + 1) * 0.1,
+                                        delay: (linkList.length + 1) * 0.05,
                                         default: {
                                             duration: 0.3,
                                             ease: "easeOut"
                                         }
                                     }}>
-                                        <Menu shadow="md" width={200}>
-                                            <Menu.Target>
-                                                <img src={`/flags/${i18n.language}.svg`} alt="" width={23}
-                                                     style={{borderRadius: "50%", marginLeft: "1.5rem"}}/>
-                                            </Menu.Target>
-
-                                            <Menu.Dropdown>
-                                                <Menu.Label>Sprache</Menu.Label>
-                                                <Menu.Item closeMenuOnClick={true} component={UnstyledButton}
-                                                           icon={<Image src={`/flags/de.svg`} width={18} height={18} radius={"50px"}/>}
-                                                           onClick={() =>  router.push({ pathname, query }, asPath, { locale: "de" })}>Deutsch</Menu.Item>
-                                                <Menu.Item closeMenuOnClick={true} component={UnstyledButton}
-                                                           icon={<Image src={`/flags/en.svg`} width={18} height={18} radius={"50px"}/>}
-                                                           onClick={() =>  router.push({ pathname, query }, asPath, { locale: "en" })}>Englisch</Menu.Item>
-                                            </Menu.Dropdown>
-                                        </Menu>
+                                        <UserButton />
                                     </motion.div>
                                 </MediaQuery>
                             </>}
@@ -272,24 +258,7 @@ const Navbar = ({disableAnimation}) => {
                                     ease: "easeOut"
                                 }
                             }}>
-                                <Menu shadow="md" width={200}>
-                                    <Menu.Target>
-                                        <img src={`/flags/${i18n.language}.svg`} alt="" width={23}
-                                             style={{borderRadius: "50%", marginLeft: "1.5rem"}}/>
-                                    </Menu.Target>
-
-                                    <Menu.Dropdown>
-                                        <Menu.Label>Sprache</Menu.Label>
-                                        <Menu.Item closeMenuOnClick={true} component={UnstyledButton}
-                                                   onClick={() => {
-                                                       router.push({ pathname, query }, asPath, { locale: "de" })
-                                                   }}>Deutsch</Menu.Item>
-                                        <Menu.Item closeMenuOnClick={true} component={UnstyledButton}
-                                                   onClick={() => {
-                                                       router.push({ pathname, query }, asPath, { locale: "en" })
-                                                   }}>Englisch</Menu.Item>
-                                    </Menu.Dropdown>
-                                </Menu>
+                                <UserButton />
                             </motion.div>
                         </motion.div>
                     )

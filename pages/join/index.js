@@ -1,48 +1,64 @@
 import Navbar from "../../components/Navbar";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
-import {Badge, Button, Card, Group, SimpleGrid, Title, Image, Text, Container, Stack} from "@mantine/core";
+import {Box, Button, Card, Container, Grid, Text, Title} from "@mantine/core";
 import {useTranslation} from "next-i18next";
-import { Radio } from '@mantine/core';
-import {IconArrowRight, IconDeviceDesktop, IconDeviceMobile} from "@tabler/icons";
+import Image from "next/image";
+import ImgBuild from "../../public/build.png";
+import ImgVisit from "../../public/visit.png";
+import {IconArrowRight} from "@tabler/icons";
+import Link from "next/link";
 
 
 export default function Index() {
 
-    const {t} = useTranslation();
+    const {t} = useTranslation("join");
+
 
     return (
         <div>
-            <Navbar disableAnimation />
+            <Navbar disableAnimation/>
 
             <div style={{height: "150px"}}></div>
 
 
-
             <Container size={"xl"}>
                 <Title>{t('join:title')}</Title>
-                <Text mb={"xl"} color={"dimmed"}>
-                    {t('join:subtitle')}
-                </Text>
 
-                <Card withBorder>
-                    <Title order={4}>On which platform do you play?</Title>
+                <Grid grow justify="center"  mt={"xl"}>
+                    <Grid.Col md={12} lg={6}>
+                        <Card style={{padding: 0, width: "100%"}}>
+                            <Box h={200} w={"100%"} style={{overflow: "hidden", position: "relative"}}>
+                                <Image src={ImgVisit} alt={"Visit"} fill={true} style={{objectFit: "cover"}} placeholder={"blur"} quality={100}/>
 
-                    <Radio.Group mt={"md"}>
+                            </Box>
+                            <Box p={"md"}>
+                                <Title size={"h3"}>{t('visit')}</Title>
+                                <Text color={"dimmed"}>{t('visitDescription')}</Text>
+                                <Button mt={"xl"} rightIcon={<IconArrowRight size={18} />} component={Link} href={"/join/visit"}>{t('joinServer')}</Button>
+                            </Box>
+                        </Card>
+                    </Grid.Col>
+                    <Grid.Col md={12} lg={6}>
+                        <Card style={{padding: 0, width: "100%"}}>
+                            <Box h={200} w={"100%"} style={{overflow: "hidden", position: "relative"}}>
+                                <Image src={ImgBuild} alt={"Build"} fill={true} style={{objectFit: "cover"}} placeholder={"blur"} quality={100}/>
 
-                            <Stack>
-                                <Radio value="java" label={<Group><IconDeviceDesktop size={20}/><Text>Windows, Mac, Linux</Text> </Group>} size="lg" />
-                                <Radio value="bedrock" label={<Group><IconDeviceMobile size={20}/><Text>Mobile or game console</Text> </Group>} size="lg" />
-                            </Stack>
+                            </Box>
+                            <Box p={"md"}>
+                                <Title size={"h3"}>{t('build')}</Title>
+                                <Text color={"dimmed"}>{t('buildDescription')}</Text>
+                                <Button mt={"xl"} rightIcon={<IconArrowRight size={18} />}>{t('startApplication')}</Button>
+                            </Box>
+                        </Card>
+                    </Grid.Col>
 
-                    </Radio.Group>
-
-                    <Button mt={"xl"} rightIcon={<IconArrowRight size={18}/>}>Next</Button>
-                </Card>
+                </Grid>
             </Container>
 
         </div>
     )
 }
+
 
 export async function getServerSideProps({locale}) {
     return {

@@ -1,0 +1,52 @@
+{
+  "profilePage": {
+    "title": "How's it going, {{username}}.",
+    "navigation": {
+      "general": "General",
+      "generalDescription": "Manage your general user properties",
+      "security": "Security",
+      "securityDescription": "Change security related settings",
+      "sessions": "Sessions",
+      "sessionsDescription": "Manage your login sessions",
+      "links": "Links",
+      "linksDescription": "Manage services linked with your account"
+    }
+  },
+  "general": {
+    "changeNotPossible": "Currently, it is not possible to change your email address and your username. If you wish to change those, please contact us on Discord."
+  },
+  "sessions": {
+    "thisSession": "This session",
+    "sureInvalidation": "Are you really sure, that you want to invalidate this session?",
+    "invalidationSuccess": "The session was invalidated successfully",
+    "logoutSession": "Log out this session",
+    "sessionStart": "Session started:",
+    "sessionLastActive": "Session last active:",
+    "sessionExpires": "Session expires:"
+  },
+  "security": {
+    "password": "Password",
+    "lastChange": "Last change:",
+    "changePassword": "Change password"
+  },
+  "links": {
+    "notLinked": "Not linked",
+    "link": "Link",
+    "unlink": "Unlink"
+  },
+  "link": {
+    "minecraft": {
+      "title": "Link your Minecraft account",
+      "howTo": "To link your account, join our Minecraft server using the ip <1>bte-germany.de</1>. Then type in the command to link your Minecraft account <3>/link</3>. Now you will get a code, which you can use on the next page.",
+      "next": "Next step",
+      "previous": "Previous step",
+      "finish": "Finish",
+      "backToProfile": "Back to the profile page",
+      "enterCode": "Enter the code which you got from the previous step here.",
+      "successTitle": "Nice one!",
+      "successText": "Your Minecraft account {{username}} was successfully linked to your BTE Germany account.",
+      "error": "There was an error linking your account. If this error persists, please contact us on Discord.",
+      "unlinkError": "There was an error unlinking your account. If this error persists, please contact us on Discord."
+    }
+  }
+}

@@ -1,4 +1,12 @@
 {
-  "title": "Here's how you can join us.",
-  "subtitle": "Answer these questions and we'll tell you the best starting point."
+  "title": "😎 Nice, that you're interested in our project.",
+  "visit": "Visit us",
+  "visitDescription": "Visit all the cities and villages we build so far on our server. Click the button below to learn more.",
+  "build": "Start building",
+  "buildDescription": "Your want to help us build Germany 1:1 in Minecraft? Perfect! Simply click the button below and start our simple and fast application process. No prior knowledge needed!",
+  "joinServer": "Join our server",
+  "startApplication": "Start application",
+  "visitPage": {
+    "title": "Visit our server"
+  }
 }

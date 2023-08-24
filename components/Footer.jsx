@@ -1,7 +1,9 @@
-import React from 'react';
-import {ActionIcon, Anchor, createStyles, Group, Image} from "@mantine/core";
-import {IconBrandInstagram, IconBrandTwitter, IconBrandYoutube} from "@tabler/icons";
+import React, {useState} from 'react';
+import {ActionIcon, Anchor, createStyles, Group, Image, Stack, Stepper, Text} from "@mantine/core";
+import {IconBrandInstagram, IconBrandTwitter, IconBrandYoutube, IconCheck, IconCode, IconCommand} from "@tabler/icons";
 import Link from "next/link";
+import LanguageSwitcher from "./LanguageSwitcher";
+import {useTranslation} from "next-i18next";
 
 
 const links = [
@@ -21,13 +23,21 @@ const useStyles = createStyles((theme) => ({
         borderTop: `1px solid ${
             theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2]
         }`,
+        paddingTop: `${theme.spacing.md}`,
+        paddingBottom: `${theme.spacing.md}`,
+        paddingLeft: "8%",
+        paddingRight: "8%",
+        [`@media (max-width: ${theme.breakpoints.xl}px)`]: {
+            paddingLeft: "3%",
+            paddingRight: "3%",
+        },
     },
 
     inner: {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: `${theme.spacing.md}px ${theme.spacing.md}px`,
+
 
         [theme.fn.smallerThan('sm')]: {
             flexDirection: 'column',
@@ -44,6 +54,8 @@ const useStyles = createStyles((theme) => ({
 
 const Footer = props => {
     const {classes} = useStyles();
+    const {t} = useTranslation("common");
+
     const items = links.map((link) => (
         <Anchor
             component={Link}
@@ -61,13 +73,24 @@ const Footer = props => {
         <div className={classes.footer}>
             <div className={classes.inner}>
 
-                <Image src={"/logo.gif"} width={50} height={50} alt={"logo"}/>
-                <Group className={classes.links}>{items}</Group>
+
+                <Stack>
+                    <Group className={classes.links}>
+                        {items}
+                    </Group>
+                    <Text size={"xs"} color="dimmed">
+                        {t('common:footer.notAssociated')}
+                    </Text>
+
+
+
+                </Stack>
 
                 <Group spacing="xs" position="right" noWrap>
                     <ActionIcon size="lg" variant="default" radius="xl">
                         <IconBrandYoutube size={18} stroke={1.5}/>
                     </ActionIcon>
+                    <LanguageSwitcher />
                 </Group>
             </div>
         </div>
