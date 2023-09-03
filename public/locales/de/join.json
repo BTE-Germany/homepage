@@ -1,13 +1,13 @@
 {
-    "title": "Titel",
+    "title": "😎 Schön, dass du dich für unser Projekt interessierst.",
     "subtitle": "Untertitel",
-    "visit": "Besuchen Sie uns",
-    "visitDescription": "Besuchen Sie alle Städte und Dörfer, die wir bisher auf unserem Server gebaut haben. Klicken Sie auf die Schaltfläche unten, um mehr zu erfahren.",
-    "build": "Mit dem Bau beginnen",
+    "visit": "Besuche uns",
+    "visitDescription": "Besuche alle Städte und Dörfer, die wir bisher auf unserem Server gebaut haben. Klicke auf die Schaltfläche unten, um mehr zu erfahren.",
+    "build": "Mit dem Bauen beginnen",
     "buildDescription": "Du willst uns helfen, Deutschland 1:1 in Minecraft aufzubauen? Perfekt! Klicke einfach auf den Button unten und starte unseren einfachen und schnellen Bewerbungsprozess. Keine Vorkenntnisse erforderlich!",
     "joinServer": "Unserem Server beitreten",
-    "startApplication": "Anwendung starten",
+    "startApplication": "Bewerbung starten",
     "visitPage": {
-        "title": "Besuchen Sie unseren Server"
+        "title": "Besuche unseren Server"
     }
 }
