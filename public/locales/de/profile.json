@@ -1,52 +1,52 @@
 {
     "profilePage": {
-        "title": "profilSeite.titel",
+        "title": "Wie geht's, {{username}}.",
         "navigation": {
-            "general": "profilePage.navigation.general",
-            "generalDescription": "profilePage.navigation.generalDescription",
-            "security": "profilePage.navigation.security",
-            "securityDescription": "profilePage.navigation.securityDescription",
-            "sessions": "profilePage.navigation.sessions",
-            "sessionsDescription": "profilePage.navigation.sessionsDescription",
-            "links": "profilePage.navigation.links",
-            "linksDescription": "profilePage.navigation.linksDescription"
+            "general": "Allgemein",
+            "generalDescription": "Verwalte deine allgemeinen Benutzereigenschaften",
+            "security": "Sicherheit",
+            "securityDescription": "Sicherheitsrelevante Einstellungen ändern",
+            "sessions": "Sitzungen",
+            "sessionsDescription": "Verwalte dein Anmeldesitzungen",
+            "links": "Links",
+            "linksDescription": "Verwalten der mit deinem Konto verbundenen Dienste"
         }
     },
     "general": {
-        "changeNotPossible": "general.changeNotPossible"
+        "changeNotPossible": "Derzeit ist es nicht möglich, deine E-Mail-Adresse und deinen Benutzernamen zu ändern. Wenn du diese ändern möchtest, kontaktiere uns bitte auf Discord."
     },
     "sessions": {
-        "thisSession": "sessions.thisSession",
-        "sureInvalidation": "sessions.sureInvalidation",
-        "invalidationSuccess": "sessions.invalidationSuccess",
-        "logoutSession": "sessions.logoutSession",
-        "sessionStart": "sessions.sessionStart",
-        "sessionLastActive": "sessions.sessionLastActive",
-        "sessionExpires": "sessions.sessionExpires"
+        "thisSession": "Diese Sitzung",
+        "sureInvalidation": "Bist du wirklich sicher, dass du diese Sitzung für ungültig erklären willst?",
+        "invalidationSuccess": "Die Sitzung wurde erfolgreich für ungültig erklärt",
+        "logoutSession": "Diese Sitzung abmelden",
+        "sessionStart": "Sitzung begonnen:",
+        "sessionLastActive": "Zuletzt aktiv:",
+        "sessionExpires": "Sitzung läuft ab:"
     },
     "security": {
-        "password": "sicherheit.passwort",
-        "lastChange": "security.lastChange",
-        "changePassword": "security.changePassword"
+        "password": "Passwort",
+        "lastChange": "Letzte Änderung:",
+        "changePassword": "Passwort ändern"
     },
     "links": {
-        "notLinked": "links.notLinked",
-        "link": "links.link",
-        "unlink": "links.unlink"
+        "notLinked": "Nicht verknüpft",
+        "link": "Link",
+        "unlink": "Unlink"
     },
     "link": {
         "minecraft": {
-            "title": "link.minecraft.title",
-            "howTo": "link.minecraft.howTo",
-            "next": "link.minecraft.next",
-            "previous": "link.minecraft.previous",
-            "finish": "link.minecraft.finish",
-            "backToProfile": "link.minecraft.backToProfile",
-            "enterCode": "link.minecraft.enterCode",
-            "successTitle": "link.minecraft.successTitle",
-            "successText": "link.minecraft.successText",
-            "error": "link.minecraft.error",
-            "unlinkError": "link.minecraft.unlinkError"
+            "title": "Verbinde dein Minecraft-Konto",
+            "howTo": "Um deinen Account zu verknüpfen, verbinde dich mit unserem Minecraft-Server mit der IP <1>bte-germany.de</1>. Gib dann den Befehl zum Verlinken deines Minecraft-Accounts <3>/link</3> ein. Nun bekommst du einen Code, den du auf der nächsten Seite verwenden kannst.",
+            "next": "Nächster Schritt",
+            "previous": "Vorheriger Schritt",
+            "finish": "Fertig",
+            "backToProfile": "Zurück zur Profilseite",
+            "enterCode": "Gebe hier den Code ein, den du im vorherigen Schritt erhalten hast.",
+            "successTitle": "Gut gemacht!",
+            "successText": "Dein Minecraft-Account {{username}} wurde erfolgreich mit deinem BTE-Germany-Account verknüpft.",
+            "error": "Es ist ein Fehler bei der Verknüpfung deines Kontos aufgetreten. Wenn dieser Fehler weiterhin besteht, kontaktiere uns bitte auf Discord.",
+            "unlinkError": "Es ist ein Fehler beim Entkoppeln deines Kontos aufgetreten. Wenn dieser Fehler weiterhin besteht, kontaktiere uns bitte auf Discord."
         }
     }
 }
