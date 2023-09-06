@@ -20,4 +20,4 @@ jobs:
       - name: Deploy Project Artifacts to Vercel
         run: DEPLOYMENT_URL=$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} --scope=${{ secrets.VERCEL_PROJECT_ID }})
       - name: Set deployment alias
-        run: vercel alias set ${{ DEPLOYMENT_URL }} new.bte-germany.de --token=${{ secrets.VERCEL_TOKEN }} --scope=${{ secrets.VERCEL_PROJECT_ID }}
+        run: vercel alias set $DEPLOYMENT_URL new.bte-germany.de --token=${{ secrets.VERCEL_TOKEN }} --scope=${{ secrets.VERCEL_PROJECT_ID }}
