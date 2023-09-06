@@ -47,7 +47,7 @@ export default function Index() {
                             <Box p={"md"}>
                                 <Title size={"h3"}>{t('build')}</Title>
                                 <Text color={"dimmed"}>{t('buildDescription')}</Text>
-                                <Button mt={"xl"} rightIcon={<IconArrowRight size={18} />}>{t('startApplication')}</Button>
+                                <Button mt={"xl"} rightIcon={<IconArrowRight size={18} />} component={Link} href={"/join/apply/"}>{t('startApplication')}</Button>
                             </Box>
                         </Card>
                     </Grid.Col>

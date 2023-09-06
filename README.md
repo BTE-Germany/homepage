@@ -11,10 +11,17 @@
     <br/>
     <br/>
     <a href="https://github.com/bte-germany/homepage/issues">Report Bug</a>
-  </p>
+  
+</p>
 </p>
 
-![Issues](https://img.shields.io/github/issues/bte-germany/homepage) ![License](https://img.shields.io/github/license/bte-germany/homepage)
+![Issues](https://img.shields.io/github/issues/bte-germany/homepage) ![License](https://img.shields.io/github/license/bte-germany/homepage) <a href="https://weblate.bte-germany.de/engage/bte-germany/">
+<img src="https://weblate.bte-germany.de/widgets/bte-germany/-/svg-badge.svg" alt="Translation status" />
+</a>
+
+<a href="https://weblate.bte-germany.de/engage/bte-germany/">
+<img src="https://weblate.bte-germany.de/widgets/bte-germany/-/287x66-grey.png" alt="Translation status" />
+</a>
 
 ## Getting Started
 

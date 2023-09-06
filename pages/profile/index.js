@@ -29,7 +29,6 @@ import {
     IconBrandSafari,
     IconBrandWindows,
     IconDevices,
-    IconExternalLink,
     IconFingerprint,
     IconForms,
     IconKey,
@@ -323,9 +322,9 @@ const SessionPage = ({data: sessionData, t}) => {
             <Box w={"100%"}>
                 <Skeleton animate visible={loading} height={100}>
                     {
-                        data.map((session) => {
+                        data.map((session, idx) => {
                             return (
-                                <DeviceCard session={session} removeSession={removeSession}/>
+                                <DeviceCard session={session} removeSession={removeSession} key={idx}/>
                             )
                         })
                     }
@@ -417,9 +416,9 @@ const DeviceCard = ({session, removeSession}) => {
 
     return (
         <>
-            {session.sessions.map((s) => {
+            {session.sessions.map((s, idx) => {
                 return (
-                    <Card mb={"md"}>
+                    <Card mb={"md"} key={idx}>
                         <Flex align={"center"} gap={"md"}>
                             {getBrowserIcon((s.browser).split("/")[0])}
 
@@ -469,12 +468,12 @@ const DeviceCard = ({session, removeSession}) => {
     )
 }
 
-const PasswordCard = ({data, session}) => {
+const PasswordCard = ({data}) => {
 
     const {t} = useTranslation("profile");
 
     const changePassword = () => {
-        getPkce(50, (error, {verifier, challenge}) => {
+        getPkce(50, (error, { challenge}) => {
             window.location = `${process.env.NEXT_PUBLIC_KEYCLOAK_URL}
                     /protocol/openid-connect/auth?client_id=website&redirect_uri=${window.location.href}&response_type=code&scope=openid&kc_action=UPDATE_PASSWORD&code_challenge=${challenge}&code_challenge_method=S256`
         });
@@ -538,7 +537,7 @@ const DiscordCard = ({isLinked, data, sessionData, reload}) => {
     return (
         <Card mb={"md"}>
             <Flex align={"center"} gap={"md"}>
-                <img src={"/discord.svg"} width={50}/>
+                <img src={"/discord.svg"} width={50} alt={"Discord"}/>
 
                 <Flex gap={5} direction={"column"} style={{flex: 1}}>
                     <Flex align={"center"} gap={"xs"}>
@@ -572,7 +571,7 @@ const MinecraftCard = ({isLinked, data, reload}) => {
     const unlink = async () => {
         setLoading(true)
         try {
-            let {data: responseData} = await axios.delete(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/links/minecraft`, {headers: {authorization: "Bearer " + sessionData.accessToken}})
+            await axios.delete(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/links/minecraft`, {headers: {authorization: "Bearer " + sessionData.accessToken}})
 
         } catch (e) {
             console.error(e)
@@ -591,7 +590,7 @@ const MinecraftCard = ({isLinked, data, reload}) => {
     return (
         <Card mb={"md"}>
             <Flex align={"center"} gap={"md"}>
-                <img src={"/minecraft.svg"} width={50}/>
+                <img src={"/minecraft.svg"} width={50} alt={"Minecraft"}/>
 
                 <Flex gap={5} direction={"column"} style={{flex: 1}}>
                     <Flex align={"center"} gap={"xs"}>

@@ -45,10 +45,10 @@ export default function CardRadio({options, option, setOption, icon}) {
     return (
         <Group spacing={8}>
             {
-                options.map((o) => {
+                options.map((o, idx) => {
                     if (o.unavailable) {
                         return (
-                            <Tooltip label={t("common:notAvailable")} color="blue" withArrow>
+                            <Tooltip label={t("common:notAvailable")} color="blue" withArrow key={idx}>
                             <span>
                                 <button disabled={o.unavailable} key={o.value} className={cx(classes.card, { [classes.active]: (option === o.value) })} onClick={() => setOption(o.value)}>
                                     {o.icon}

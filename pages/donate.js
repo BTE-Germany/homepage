@@ -6,18 +6,42 @@ import {IconCreditCard} from "@tabler/icons";
 import {loadStripe} from "@stripe/stripe-js";
 import {Elements, PaymentElement} from "@stripe/react-stripe-js";
 import axios from "axios";
-import {useState} from "react";
+import {useRef, useState} from "react";
+import AdyenCheckout from '@adyen/adyen-web';
+import '@adyen/adyen-web/dist/adyen.css';
 
 export default function Donate() {
 
     const {t} = useTranslation();
-    const stripePromise = loadStripe('pk_test_51IFgRhJRXWbnO82B7oszSNxINneyoZvqqc228pSS9IOW2AE38TRbVw3NCa14B36WK3hx63lQoPskLolPU2uErTn500DHou0Ocd');
+
+    const [sessionData, setSessionData] = useState("");
+    const [paymentId, setPaymentId] = useState("");
+    const checkoutRef = useRef();
+
+    const createSession = async () => {
+        const {data} = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/payments/donation`, {amount: 100})
+        setSessionData(data.sessionData)
+        setPaymentId(data.paymentId)
+
+        const checkout = await AdyenCheckout({
+            session: {
+                sessionData: data.sessionData,
+                id: data.paymentId
+            },
+            clientKey: "test_OPULT4YY7JBK5IPANFHYC72DSM6Y6KZR",
+            environment: "test",
+            onPaymentCompleted: (response, _component) =>
+                alert(JSON.stringify(response, null, 2)),
+            onError: (error, _component) => {
+                alert(JSON.stringify(error, null, 2))
+            },
+        });
+
+        if (checkoutRef.current) {
+            checkout.create('dropin').mount(checkoutRef.current);
+        }
 
 
-
-    const createIntent = async () => {
-        const {data} = await axios.post("/api/payment")
-        document.location.href = data.url;
     }
     return (
         <div>
@@ -35,9 +59,9 @@ export default function Donate() {
                     </Tabs.List>
 
                     <Tabs.Panel value="creditcard" pt="xs">
-                        <Button onClick={() => createIntent()} mt={"xl"}>Donate via credit card</Button>
+                        <Button onClick={() => createSession()} mt={"xl"}>Donate via credit card</Button>
 
-
+                        <div ref={checkoutRef}></div>
                     </Tabs.Panel>
 
                 </Tabs>

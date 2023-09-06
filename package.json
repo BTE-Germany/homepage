@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@adyen/adyen-web": "^5.49.6",
     "@directus/sdk": "^11.0.2",
     "@emotion/react": "^11.10.4",
     "@mantine/carousel": "^5.2.6",

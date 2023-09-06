@@ -229,7 +229,7 @@ const Navbar = ({disableAnimation}) => {
                                 linkList.map((link, index) => {
                                     return (
                                         <Box key={index} style={{marginLeft: "1.5rem", cursor: "pointer"}}>
-                                            <motion.a
+                                            <motion.span
                                                 initial={{opacity: 0, y: 10}}
                                                 animate={{opacity: 1, y: 0}} transition={{
                                                 delay: index * 0.1,
@@ -244,7 +244,7 @@ const Navbar = ({disableAnimation}) => {
                                                 <Link href={link.link}>
                                                     {link.name}
                                                 </Link>
-                                            </motion.a>
+                                            </motion.span>
                                         </Box>
 
                                     )

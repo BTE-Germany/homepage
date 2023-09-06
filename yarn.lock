@@ -5,6 +5,21 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@adyen/adyen-web@npm:^5.49.6":
+  version: 5.49.6
+  resolution: "@adyen/adyen-web@npm:5.49.6"
+  dependencies:
+    "@babel/runtime": ^7.15.4
+    "@babel/runtime-corejs3": ^7.20.1
+    "@types/applepayjs": ^3.0.4
+    "@types/googlepay": ^0.7.0
+    classnames: ^2.3.1
+    core-js-pure: ^3.25.3
+    preact: 10.13.2
+  checksum: f365bae584fcd40a1d006b2ef0604839308646ff5d5c77e33945dc9daaccb44dac33fbe1f89260ca9b3ea39f3cd35840d70ec4191b7b3b3b9c4adc5f46b42a91
+  languageName: node
+  linkType: hard
+
 "@babel/code-frame@npm:^7.0.0":
   version: 7.18.6
   resolution: "@babel/code-frame@npm:7.18.6"
@@ -76,6 +91,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime-corejs3@npm:^7.20.1":
+  version: 7.22.11
+  resolution: "@babel/runtime-corejs3@npm:7.22.11"
+  dependencies:
+    core-js-pure: ^3.30.2
+    regenerator-runtime: ^0.14.0
+  checksum: d7649e3dd789fce9f15a80521109e51faeda195ab0b65c330c61c9c0b2a13b11f5611e5d25db5b75df873e2ec06f642b60dc6ace6bacc699b975c4bc9d5cff88
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.18.9":
   version: 7.20.1
   resolution: "@babel/runtime@npm:7.20.1"
@@ -91,6 +116,15 @@ __metadata:
   dependencies:
     regenerator-runtime: ^0.13.11
   checksum: 4629ce5c46f06cca9cfb9b7fc00d48003335a809888e2b91ec2069a2dcfbfef738480cff32ba81e0b7c290f8918e5c22ddcf2b710001464ee84ba62c7e32a3a3
+  languageName: node
+  linkType: hard
+
+"@babel/runtime@npm:^7.15.4":
+  version: 7.22.11
+  resolution: "@babel/runtime@npm:7.22.11"
+  dependencies:
+    regenerator-runtime: ^0.14.0
+  checksum: a5cd6683a8fcdb8065cb1677f221e22f6c67ec8f15ad1d273b180b93ab3bd86c66da2c48f500d4e72d8d2cfa85ff4872a3f350e5aa3855630036af5da765c001
   languageName: node
   linkType: hard
 
@@ -911,10 +945,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/applepayjs@npm:^3.0.4":
+  version: 3.0.4
+  resolution: "@types/applepayjs@npm:3.0.4"
+  checksum: cce6b3d70f445c485f648e367e069ec38e019d6c2ac215975978d76ed5c123ff8d53b98758e076fe9cc35decd7b9a3e1d3178aa3cf9d80e1a79fe55ecf78529a
+  languageName: node
+  linkType: hard
+
 "@types/estree@npm:^1.0.0":
   version: 1.0.0
   resolution: "@types/estree@npm:1.0.0"
   checksum: 910d97fb7092c6738d30a7430ae4786a38542023c6302b95d46f49420b797f21619cdde11fa92b338366268795884111c2eb10356e4bd2c8ad5b92941e9e6443
+  languageName: node
+  linkType: hard
+
+"@types/googlepay@npm:^0.7.0":
+  version: 0.7.1
+  resolution: "@types/googlepay@npm:0.7.1"
+  checksum: 70ddb1a44b978ca2cfec15c8126e5bf3dfd09fad8ba7fc2637c575481f6e5af9ed29f5cb7e119d4691c4e76b5a08ebb3758581927d6caa301fc2c16697faec6a
   languageName: node
   linkType: hard
 
@@ -1297,6 +1345,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"classnames@npm:^2.3.1":
+  version: 2.3.2
+  resolution: "classnames@npm:2.3.2"
+  checksum: 2c62199789618d95545c872787137262e741f9db13328e216b093eea91c85ef2bfb152c1f9e63027204e2559a006a92eb74147d46c800a9f96297ae1d9f96f4e
+  languageName: node
+  linkType: hard
+
 "client-only@npm:0.0.1":
   version: 0.0.1
   resolution: "client-only@npm:0.0.1"
@@ -1377,6 +1432,13 @@ __metadata:
   version: 3.26.1
   resolution: "core-js-pure@npm:3.26.1"
   checksum: d88c40e5e29e413c11d1ef991a8d5b6a63f00bd94707af0f649d3fc18b3524108b202f4ae75ce77620a1557d1ba340bc3362b4f25d590eccc37cf80fc75f7cd4
+  languageName: node
+  linkType: hard
+
+"core-js-pure@npm:^3.25.3, core-js-pure@npm:^3.30.2":
+  version: 3.32.1
+  resolution: "core-js-pure@npm:3.32.1"
+  checksum: 06d3b1585b1f161e84adaf6a0f1db2434309b8d6c748ee82f1806c5d9755272a30074dfa888d60a164c639c6820588ab8462f1073c6971e76659f13788c2f10d
   languageName: node
   linkType: hard
 
@@ -2899,6 +2961,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "mainwebsitev2@workspace:."
   dependencies:
+    "@adyen/adyen-web": ^5.49.6
     "@directus/sdk": ^11.0.2
     "@emotion/react": ^11.10.4
     "@mantine/carousel": ^5.2.6
@@ -3377,6 +3440,13 @@ __metadata:
   peerDependencies:
     preact: ">=10"
   checksum: be8d5d8fb502d422c503e68af7bcccb6facd942f3ae9a4d093ebe3f1d4f0b15c540624bdac434d53a2a8e8fb7afa4606383414e937c40933ca43445470a026ff
+  languageName: node
+  linkType: hard
+
+"preact@npm:10.13.2":
+  version: 10.13.2
+  resolution: "preact@npm:10.13.2"
+  checksum: 3bc98aa09bcd297eb59abd7e4f3a4d499b8e345bd68b922f7678ef105ba4721dc9b9940b221e6e3443f957d51402fe407bb96ccaa0a4b65d6808ca8a3be76bfa
   languageName: node
   linkType: hard
 
