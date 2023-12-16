@@ -1,6 +1,13 @@
 {
   "application": {
     "title": "Apply as a builder at BTE Germany",
-    "signInRequired": "You need to be signed in to your BTE Germany account in order to apply as a builder."
+    "signInRequired": "You need to be signed in to your BTE Germany account in order to apply as a builder.",
+    "signInRequiredTitle": "Please sign in",
+    "linkRequired": "In order to apply, you first have to link both your Discord and Minecraft accounts.",
+    "linkRequiredTitle": "Please link your accounts",
+    "toAccountPage": "Go to your account page",
+    "minecraftUsername": "Minecraft username",
+    "discordUsername": "Discord username",
+    "applicationType": "For which role do you want to apply?"
   }
 }

@@ -2,7 +2,7 @@ import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import {Button, Container, Tabs, Text, Title} from "@mantine/core";
 import {useTranslation} from "next-i18next";
 import Navbar from "../components/Navbar";
-import {IconCreditCard} from "@tabler/icons";
+import {IconCreditCard} from "@tabler/icons-react";
 import {loadStripe} from "@stripe/stripe-js";
 import {Elements, PaymentElement} from "@stripe/react-stripe-js";
 import axios from "axios";

@@ -2,7 +2,7 @@ import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import {Alert, Anchor, Container, Text, Title, TypographyStylesProvider} from "@mantine/core";
 import {Trans, useTranslation} from "next-i18next";
 import Navbar from "../components/Navbar";
-import {IconInfoCircle} from "@tabler/icons";
+import {IconInfoCircle} from "@tabler/icons-react";
 import axios from "axios";
 
 export default function Legal() {
@@ -19,7 +19,7 @@ export default function Legal() {
                 <Title >{t('legal:legalnotice.title')}</Title>
                 <Title order={6} mb={"xl"}>{t('legalnotice.subtitle')}</Title>
 
-                <Alert icon={<IconInfoCircle size={18} />} my={"xl"}>
+                <Alert icon={<IconInfoCircle />} my={"xl"} title={t('legalnotice.noticeScopeTitle')}>
                     <Trans i18nKey={"legalnotice.noticeScope"}>
                         This legal notice applies to our websites (*.bte-germany.de and *.buildthe.earth) and our social media presences on <Anchor href={"https://www.youtube.com/@buildtheearthgermany"}>YouTube</Anchor>, <Anchor href={"https://www.instagram.com/buildtheearthgermany/"}>Instagram</Anchor> and <Anchor href={"https://www.tiktok.com/@btegermany"}>TikTok</Anchor>
                     </Trans>

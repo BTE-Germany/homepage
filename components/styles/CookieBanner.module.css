@@ -1,0 +1,16 @@
+/*
+ * CookieBanner.module.css
+ *
+ * Copyright (c) 2023 BuildTheEarth Germany e.V.
+ * https://bte-germany.de
+ * This project is released under the MIT license.
+ */
+
+
+.banner {
+    position: fixed;
+    z-index: 999;
+    bottom: var(--mantine-spacing-lg);
+    right: var(--mantine-spacing-lg);
+    width: 25%;
+}

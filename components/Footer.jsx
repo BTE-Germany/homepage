@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import {ActionIcon, Anchor, createStyles, Group, Image, Stack, Stepper, Text} from "@mantine/core";
-import {IconBrandInstagram, IconBrandTwitter, IconBrandYoutube, IconCheck, IconCode, IconCommand} from "@tabler/icons";
+import {ActionIcon, Anchor, Group, Image, Stack, Stepper, Text} from "@mantine/core";
+import {IconBrandInstagram, IconBrandTwitter, IconBrandYoutube, IconCheck, IconCode, IconCommand} from "@tabler/icons-react";
 import Link from "next/link";
 import LanguageSwitcher from "./LanguageSwitcher";
 import {useTranslation} from "next-i18next";
-
+import classes from "./styles/Footer.module.css";
 
 const links = [
     {
@@ -17,44 +17,9 @@ const links = [
     }
 ]
 
-const useStyles = createStyles((theme) => ({
-    footer: {
-        marginTop: 120,
-        borderTop: `1px solid ${
-            theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2]
-        }`,
-        paddingTop: `${theme.spacing.md}`,
-        paddingBottom: `${theme.spacing.md}`,
-        paddingLeft: "8%",
-        paddingRight: "8%",
-        [`@media (max-width: ${theme.breakpoints.xl}px)`]: {
-            paddingLeft: "3%",
-            paddingRight: "3%",
-        },
-    },
-
-    inner: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-
-
-        [theme.fn.smallerThan('sm')]: {
-            flexDirection: 'column',
-        },
-    },
-
-    links: {
-        [theme.fn.smallerThan('sm')]: {
-            marginTop: theme.spacing.lg,
-            marginBottom: theme.spacing.sm,
-        },
-    },
-}));
 
 const Footer = props => {
-    const {classes} = useStyles();
-    const {t} = useTranslation("common");
+        const {t} = useTranslation("common");
 
     const items = links.map((link) => (
         <Anchor
@@ -86,11 +51,13 @@ const Footer = props => {
 
                 </Stack>
 
-                <Group spacing="xs" position="right" noWrap>
+                <Group spacing="xs" position="right" noWrap align={"center"}>
                     <ActionIcon size="lg" variant="default" radius="xl">
                         <IconBrandYoutube size={18} stroke={1.5}/>
                     </ActionIcon>
                     <LanguageSwitcher />
+                    <a href="https://aws.amazon.com/what-is-cloud-computing"><img src="https://d0.awsstatic.com/logos/powered-by-aws-white.png" alt="Powered by AWS Cloud Computing" width={100}/></a>
+
                 </Group>
             </div>
         </div>

@@ -1,14 +1,15 @@
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import React, {useEffect, useState} from "react";
-import {Anchor, Box, Button, Container, Grid, MediaQuery, SimpleGrid, Space, Text, Title} from "@mantine/core";
+import {Anchor, Box, Button, Container, Grid, Group, MediaQuery, SimpleGrid, Space, Text, Title} from "@mantine/core";
 import FloatingImages, {FloatingImage} from "../components/FloatingImages";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import {Trans, useTranslation} from "next-i18next";
 import CountUp from "react-countup";
-import {IconArrowRight, IconBuilding, IconDeviceFloppy, IconUsers} from "@tabler/icons";
+import {IconArrowRight, IconBuilding, IconDeviceFloppy, IconUsers} from "@tabler/icons-react";
 import HomeGallery from "../components/HomeGallery";
 import axios from "axios";
+import Link from "next/link";
 
 export default function Home({cities, mapStats}) {
 
@@ -22,12 +23,13 @@ export default function Home({cities, mapStats}) {
 
     const {t} = useTranslation()
 
-    const builderCount = 1102;
+    const builderCount = 1204;
     const discordMembers = "20.000";
 
 
     return (
         <div style={{overflowX: "hidden"}}>
+
 
             <Navbar/>
             <Hero/>
@@ -40,9 +42,9 @@ export default function Home({cities, mapStats}) {
             <Space h={{sm: 300, base: 50}}/>
 
             <Container size="xl">
-                <Grid>
-                    <MediaQuery smallerThan="lg" styles={{display: 'none'}}>
-                        <Grid.Col sm={12} lg={6}>
+                <Grid style={{overflow: "visible"}}>
+
+                        <Grid.Col span={{sm: 12, lg: 6}} visibleFrom="lg" style={{overflow: "visible"}}>
 
                             <FloatingImages>
                                 <FloatingImage speed={70 * 2} z={0} offsetY={-50} offsetX={-50} h={350} w={200}
@@ -53,11 +55,10 @@ export default function Home({cities, mapStats}) {
                                                url={"https://cms.bte-germany.de/assets/f5ae9a23-69e6-4170-baaa-39da23b959f1?format=webp"}/>
                             </FloatingImages>
                         </Grid.Col>
-                    </MediaQuery>
-                    <Grid.Col sm={12} lg={6}>
+                    <Grid.Col span={{sm: 12, lg: 6}}>
                         <Text tt="uppercase" variant="gradient"
                               gradient={{from: 'blue', to: 'cyan', deg: 45}} fw={700}
-                              sx={{fontFamily: '"Lexend Deca", sans-serif'}}>
+                              style={{fontFamily: '"Lexend Deca", sans-serif'}}>
                             {t('home:about.subtitle')}
                         </Text>
                         <Title mb={"md"}>
@@ -72,18 +73,18 @@ export default function Home({cities, mapStats}) {
                                 welches weltweit aktiv ist. Mit über {{builderCount}} aktiv beteiligten Personen ist BTE Germany das international zweitgrößte Bauteam.
                             </Trans>
                             <br/>
-                            <Button variant={"default"} mt={"xl"} rightIcon={<IconArrowRight size={20} />}>
+                            <Button variant={"default"} mt={"xl"} rightIcon={<IconArrowRight size={20} />} component={Link} href={"/join"}>
                                 {t('home:joinUs')}
                             </Button>
                         </Text>
                     </Grid.Col>
                 </Grid>
                 <Space h={{sm: 450, base: 150}}/>
-                <Grid>
-                    <Grid.Col sm={12} lg={6}>
+                <Grid style={{overflow: "visible"}}>
+                    <Grid.Col span={{sm: 12, lg: 6}}>
                         <Text tt="uppercase" variant="gradient"
                               gradient={{from: 'blue', to: 'cyan', deg: 45}} fw={700}
-                              sx={{fontFamily: '"Lexend Deca", sans-serif'}}>
+                              style={{fontFamily: '"Lexend Deca", sans-serif'}}>
                             {t('home:community.subtitle')}
                         </Text>
                         <Title mb={"md"}>
@@ -101,13 +102,13 @@ export default function Home({cities, mapStats}) {
                                 we will be happy to help you and get you ready to build. We look forward to seeing you!
                             </Trans>
                             <br/>
-                            <Button variant={"default"} mt={"xl"} rightIcon={<IconArrowRight size={20} />}>
+                            <Button variant={"default"} mt={"xl"} rightIcon={<IconArrowRight size={20} />} component={Link} href={"/join"}>
                                 {t('home:joinUs')}
                             </Button>
                         </Text>
                     </Grid.Col>
-                    <MediaQuery smallerThan="lg" styles={{display: 'none'}}>
-                        <Grid.Col sm={12} lg={6}>
+
+                        <Grid.Col span={{sm: 12, lg: 6}} visibleFrom="md">
                             <FloatingImages>
                                 <FloatingImage speed={70 * 2} z={0} offsetY={-50 -50} offsetX={50} h={350} w={200}
                                                url={"https://cms.bte-germany.de/assets/fcfdf894-491a-4249-a293-e06f0d51a413?format=webp"}/>
@@ -117,7 +118,6 @@ export default function Home({cities, mapStats}) {
                                                url={"https://cms.bte-germany.de/assets/4868a449-820f-4a13-a7b6-0fb837b2c3c1?format=webp"}/>
                             </FloatingImages>
                         </Grid.Col>
-                    </MediaQuery>
 
                 </Grid>
 
@@ -128,25 +128,29 @@ export default function Home({cities, mapStats}) {
 
             <Space h={{sm: 300, base: 100}}/>
 
-            <Box  sx={(theme) => ({
-                color: theme.colors.gray[1],
-                background: theme.fn.gradient({ from: 'blue.9', to: 'blue.6', deg: 45 })
-
-            })}>
+            <Box  style={{
+                color: "var(--mantine-color-gray-1)",
+                background: "linear-gradient(45deg, var(--mantine-color-blue-9) 0%, var(--mantine-color-blue-6) 100%)"
+            }}>
                 <Container size={"xl"} py={50}>
-                    <Title mb={"xl"}>{t('home:numbers.title')}</Title>
+                    <Title mb={"xl"} align={"center"}>{t('home:numbers.title')}</Title>
 
-                    <SimpleGrid breakpoints={[
-                        { minWidth: 'md', cols: 3, spacing: 'md' },
-                        { maxWidth: 'xs', cols: 1, spacing: '80' },
-                    ]} mt={80}>
-                        <Box sx={{
+                    <SimpleGrid cols={{
+                        md: 3,
+                        xs: 1
+                    }} spacing={{
+                        md: "md",
+                        xs: "80"
+                    }}
+
+                     mt={80}>
+                        <Box style={{
                             display: "flex",
                             flexDirection: "column",
                             alignItems: "center"
                         }}>
                             <Title size={"h1"}>
-                                <Box sx={{textAlign: "center"}}>
+                                <Box style={{textAlign: "center"}}>
                                     <IconUsers size={40} />
                                 </Box>
                                 <CountUp
@@ -164,13 +168,13 @@ export default function Home({cities, mapStats}) {
                                 {t('home:numbers.builder')}
                             </Title>
                         </Box>
-                        <Box sx={{
+                        <Box style={{
                             display: "flex",
                             flexDirection: "column",
                             alignItems: "center"
                         }}>
                             <Title size={"h1"}>
-                                <Box sx={{textAlign: "center"}}>
+                                <Box style={{textAlign: "center"}}>
                                     <IconDeviceFloppy size={40} />
                                 </Box>
                                 <CountUp
@@ -189,13 +193,13 @@ export default function Home({cities, mapStats}) {
                                 {t('home:numbers.mapSize')}
                             </Title>
                         </Box>
-                        <Box sx={{
+                        <Box style={{
                             display: "flex",
                             flexDirection: "column",
                             alignItems: "center"
                         }}>
                             <Title size={"h1"}>
-                                <Box sx={{textAlign: "center"}}>
+                                <Box style={{textAlign: "center"}}>
                                     <IconBuilding size={40} />
                                 </Box>
                                 <CountUp
@@ -221,7 +225,18 @@ export default function Home({cities, mapStats}) {
             <Space h={{sm: 200, base: 150}}/>
             <HomeGallery cities={cities}/>
 
+            <Box mt={"xl"}>
+                <Container size={"xl"} py={50}>
+                    <Title align={"center"}>{t('home:cta.title')}</Title>
+                    <Text mb={"xl"} align={"center"} >{t('home:cta.subtitle')}</Text>
+                    <Group justify={"center"} style={{width: "100%"}}>
+                        <Button variant={"default"} mt={"xl"} size={"lg"} rightIcon={<IconArrowRight size={20} />} component={Link} href={"/join"}>
+                            {t('home:joinUs')}
+                        </Button>
+                    </Group>
 
+                </Container>
+            </Box>
 
 
 

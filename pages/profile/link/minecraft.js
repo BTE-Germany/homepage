@@ -2,7 +2,7 @@ import Navbar from "../../../components/Navbar";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import {Box, Button, Code, Container, Group, PinInput, Stack, Stepper, Text, Title} from "@mantine/core";
 import {Trans, useTranslation} from "next-i18next";
-import {IconCheck, IconCode, IconCommand, IconInfoCircle, IconInputSearch} from "@tabler/icons";
+import {IconCheck, IconCode, IconCommand, IconInfoCircle, IconInputSearch} from "@tabler/icons-react";
 import React, {useState} from "react";
 import ConfettiExplosion from "react-confetti-explosion";
 import Link from "next/link";

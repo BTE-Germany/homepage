@@ -1,17 +1,10 @@
 import React, {useEffect, useRef} from 'react';
-import {createStyles, keyframes} from "@mantine/core";
 import arrowAnimation from "../animations/arrow.json";
 import Lottie from "lottie-react";
 
 
-const useStyle = createStyles((theme) => ({
-    arrowAnimatation: {
-
-    }
-}));
 
 const ArrowDownAnimation = () => {
-    const {classes} = useStyle();
     const lottieRef = useRef();
 
     useEffect(() => {
@@ -21,7 +14,7 @@ const ArrowDownAnimation = () => {
     }, []);
 
     return (
-        <div className={classes.arrowAnimatation}>
+        <div>
             <Lottie animationData={arrowAnimation} loop={true} lottieRef={lottieRef} autoplay={false} style={{width: 48, height: 48}}/>
         </div>
     );

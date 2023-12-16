@@ -1,0 +1,44 @@
+/*
+ * CardRadio.module.css
+ *
+ * Copyright (c) 2023 BuildTheEarth Germany e.V.
+ * https://bte-germany.de
+ * This project is released under the MIT license.
+ */
+
+.card {
+    color: var(--mantine-color-gray-5);
+    padding: var(--mantine-spacing-md) var(--mantine-spacing-lg);
+    border-radius: var(--mantine-radius-md);
+    background-color: var(--mantine-color-gray-light);
+    border: 1.5px solid var(--mantine-color-gray-8);
+    transition: background 0.1s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+}
+
+
+.card:hover {
+    background-color: var(--mantine-color-gray-light-hover);
+}
+.card:disabled {
+    opacity: 0.5;
+}
+.card:disabled:hover {
+    background-color: var(--mantine-color-gray-light-hover);
+}
+
+.active {
+    background-color: var(--mantine-color-blue-light);
+    border: 1.5px solid var(--mantine-color-blue-9);
+}
+
+.active:hover {
+    background-color: var(--mantine-color-blue-light-hover);
+}
+

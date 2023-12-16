@@ -1,0 +1,45 @@
+.overlay {
+  z-index: 50;
+  position: absolute;
+  background-image: url(/heroOverlay.svg);
+  height: 100%;
+  width: calc(100vw - (100vw - 100%));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.overlay h1 {
+  font-family: Lexend Deca, sans-serif;
+  font-weight: 900;
+  color: white;
+  font-size: 80px;
+  line-height: 1;
+  text-align: center;
+}
+
+@media (max-width: $mantine-breakpoint-xl) {
+  .overlay h1 {
+    font-size: 40px;
+  }
+}
+
+.background {
+  height: 100vh;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.heroVideo {
+  position: absolute;
+  height: 100%;
+  width: calc(100vw - (100vw - 100%));
+  z-index: 20;
+  object-fit: cover;
+}

@@ -2,7 +2,8 @@ import { createStyles, UnstyledButton, Menu, Image, Group, rem } from '@mantine/
 import React, {useState} from "react";
 import {useTranslation} from "next-i18next";
 import {useRouter} from "next/router";
-import {IconChevronDown} from "@tabler/icons";
+import {IconChevronDown} from "@tabler/icons-react";
+import classes from "./LanguageSwitcher.module.css";
 
 const languages = [
     { label: 'English', code: "en" },
@@ -10,40 +11,6 @@ const languages = [
 ];
 
 
-const useStyles = createStyles((theme, { opened }) => ({
-    control: {
-        width: rem(200),
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: `${theme.spacing.xs} ${theme.spacing.md}`,
-        borderRadius: theme.radius.md,
-        border: `${rem(1)} solid ${
-            theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[2]
-        }`,
-        transition: 'background-color 150ms ease',
-        backgroundColor:
-            theme.colorScheme === 'dark'
-                ? theme.colors.dark[opened ? 5 : 6]
-                : opened
-                    ? theme.colors.gray[0]
-                    : theme.white,
-
-        '&:hover': {
-            backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[0],
-        },
-    },
-
-    label: {
-        fontWeight: 500,
-        fontSize: theme.fontSizes.sm,
-    },
-
-    icon: {
-        transition: 'transform 150ms ease',
-        transform: opened ? 'rotate(180deg)' : 'rotate(0deg)',
-    },
-}));
 
 export default function LanguageSwitcher() {
 
@@ -51,7 +18,6 @@ export default function LanguageSwitcher() {
     const router = useRouter()
     const [opened, setOpened] = useState(false);
     const { pathname, asPath, query } = router;
-    const { classes } = useStyles({ opened });
 
     const items = languages.map((item) => (
         <Menu.Item

@@ -35,7 +35,7 @@ export const FloatingImage = ({offsetX, offsetY, speed, z, h, w, url}) => {
 }
 const FloatingImages = ({children}) => {
     return (
-        <div style={{position: "relative"}}>
+        <div style={{position: "relative", overflow: "visible"}}>
             {children}
         </div>
     )

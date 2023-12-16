@@ -1,18 +1,25 @@
 import React, {useEffect, useState} from 'react';
-import {Box, Button, Container, createStyles, Grid, Image, SimpleGrid, Title, useMantineTheme} from "@mantine/core";
+import {
+    Box,
+    Button,
+    Container,
+    createStyles,
+    Grid, Group,
+    Image,
+    rem,
+    SimpleGrid,
+    Title,
+    useMantineTheme
+} from "@mantine/core";
 import {AnimatePresence, motion} from "framer-motion";
-import {IconArrowRight} from "@tabler/icons";
+import {IconArrowDown, IconArrowLeft, IconArrowRight, IconArrowUp} from "@tabler/icons-react";
 import {useTranslation} from "next-i18next";
 
-const useStyles = createStyles((theme, _params, getRef) => ({}));
 
-const PRIMARY_COL_HEIGHT = 500;
-
+const PRIMARY_COL_HEIGHT = rem(500);
 
 
 const HomeGallery = ({cities}) => {
-
-    const {classes} = useStyles();
 
 
     let images = cities.map((city) => {
@@ -29,6 +36,22 @@ const HomeGallery = ({cities}) => {
         return city.name
     })
 
+    const next = () => {
+        if (index+1 >= images.length) {
+            setIndex(0)
+            return;
+        }
+        setIndex((prevState) => {return prevState+1})
+    }
+
+    const prev = () => {
+        if (index === 0) {
+            setIndex(images.length-1)
+            return;
+        }
+        setIndex((prevState) => {return prevState-1})
+    }
+
     const {t} = useTranslation();
 
 
@@ -42,14 +65,14 @@ const HomeGallery = ({cities}) => {
 
     return (
         <Container size={"xl"}>
-            <Title sx={{fontWeight: 500}}>
+            <Title style={{fontWeight: 500}}>
                 {t('home:gallery.title')}
                 <TextLoop words={words} index={index}/>
             </Title>
 
 
-            <SimpleGrid cols={2} spacing="md" breakpoints={[{maxWidth: 'sm', cols: 2}]} mt={"xl"} style={{minHeight: PRIMARY_COL_HEIGHT}}>
-                <Box sx={{display: "inline", position: "relative", width: "100%"}}>
+            <SimpleGrid cols={{sm: 1, md: 2}} spacing="md" mt={"xl"} style={{minHeight: PRIMARY_COL_HEIGHT}}>
+                <Box style={{display: "inline", position: "relative", width: "100%"}}>
                     <AnimatePresence initial={false}>
                         <motion.div style={{position: "absolute"}}
                                     key={index}
@@ -81,7 +104,7 @@ const HomeGallery = ({cities}) => {
                                         opacity: {duration: 0.5}
                                     }}>
 
-                        <Image radius={"md"} height={PRIMARY_COL_HEIGHT}
+                        <Image radius={"md"} style={{height: PRIMARY_COL_HEIGHT}}
                                src={images[index][0]}/>
                         </motion.div>
                     </AnimatePresence>
@@ -93,10 +116,13 @@ const HomeGallery = ({cities}) => {
 
             </SimpleGrid>
 
+            <Group mt={"xl"}>
+                <IconArrowUp onClick={prev} />
+                <IconArrowDown onClick={next} />
 
-            <Button variant={"subtle"} mt={"xl"} rightIcon={<IconArrowRight size={20} />} size={"md"}>
-                {t('home:gallery.seeMore')}
-            </Button>
+            </Group>
+
+
 
         </Container>
     )
@@ -137,7 +163,7 @@ const ImageGallery = ({index, images}) => {
 
 const ImagesGrid = ({index, images}) => {
     const theme = useMantineTheme();
-    const SECONDARY_COL_HEIGHT = PRIMARY_COL_HEIGHT / 2 - theme.spacing.md / 2;
+    const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - ${theme.spacing.md} / 2)`;
     const child = {
         enter: {
             translateY: 20,
@@ -160,13 +186,13 @@ const ImagesGrid = ({index, images}) => {
     };
     return (
         <div style={{position: "absolute"}}>
-            <Grid>
+            <Grid h={"100%"} style={{overflow: "visible"}}>
                 <Grid.Col span={6}>
                     <motion.div variants={child} transition={{
                         translateY: {type: "spring", stiffness: 1000, damping: 200},
                         opacity: {duration: 0.5},
                     }} layout>
-                        <Image radius={"md"} height={SECONDARY_COL_HEIGHT}
+                        <Image radius={"md"} style={{height: SECONDARY_COL_HEIGHT}}
                                src={images[index][1]}/>
                     </motion.div>
                 </Grid.Col>
@@ -175,7 +201,7 @@ const ImagesGrid = ({index, images}) => {
                         translateY: {type: "spring", stiffness: 1000, damping: 200},
                         opacity: {duration: 0.5},
                     }} layout>
-                        <Image radius={"md"} height={SECONDARY_COL_HEIGHT}
+                        <Image radius={"md"} style={{height: SECONDARY_COL_HEIGHT}}
                                src={images[index][2]}/>
                     </motion.div>
                 </Grid.Col>
@@ -184,7 +210,7 @@ const ImagesGrid = ({index, images}) => {
                         translateY: {type: "spring", stiffness: 1000, damping: 200},
                         opacity: {duration: 0.5},
                     }} layout>
-                        <Image radius={"md"} height={SECONDARY_COL_HEIGHT}
+                        <Image radius={"md"} style={{height: SECONDARY_COL_HEIGHT}}
                                src={images[index][3]} />
                     </motion.div>
 
@@ -199,7 +225,7 @@ const TextLoop = ({words, index}) => {
 
 
     return (
-        <Box sx={{display: "inline", position: "relative", width: "100%"}}>
+        <Box style={{display: "inline", position: "relative", width: "100%"}}>
             <AnimatePresence initial={false}>
                 <motion.span
                     style={{position: "absolute", fontWeight: "bold", marginLeft: "10px"}}

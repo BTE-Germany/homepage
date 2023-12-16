@@ -34,7 +34,7 @@ import {
     IconKey,
     IconLink,
     IconQuestionCircle, IconUnlink, IconX
-} from "@tabler/icons";
+} from "@tabler/icons-react";
 import {useForm} from "@mantine/form";
 import axios from "axios";
 import dayjs from "dayjs";
@@ -42,7 +42,7 @@ import {modals} from "@mantine/modals";
 import {notifications, showNotification} from "@mantine/notifications";
 import {AnimatePresence, motion} from "framer-motion";
 import getPkce from 'oauth-pkce';
-import jwt_decode from "jwt-decode";
+import * as jwt_decode from "jwt-decode";
 import {useHash} from "@mantine/hooks";
 import Link from "next/link";
 
@@ -125,7 +125,7 @@ export default function ProfilePage() {
             label={item.label}
             description={item.description}
             rightSection={item.rightSection}
-            icon={<item.icon size="1rem" stroke={1.5}/>}
+            leftSection={<item.icon size="1rem" stroke={1.5}/>}
             onClick={() => {
                 switchPage(index)
             }}
@@ -514,7 +514,8 @@ const DiscordCard = ({isLinked, data, sessionData, reload}) => {
 
     const generateDiscordLinkURL = async () => {
         const nonce = crypto.randomUUID();
-        const jwtData = jwt_decode(sessionData.accessToken);
+       // const jwtData = jwt_decode(sessionData.accessToken);
+        const jwtData = {};
         const input = nonce + jwtData.session_state + jwtData.azp + "discord";
         console.log(input)
         const digest = await hash(input);
@@ -541,7 +542,7 @@ const DiscordCard = ({isLinked, data, sessionData, reload}) => {
 
                 <Flex gap={5} direction={"column"} style={{flex: 1}}>
                     <Flex align={"center"} gap={"xs"}>
-                        <Text weight={"bold"}>Discord</Text>
+                        <Text style={{fontWeight: "bold"}}>Discord</Text>
                         {
                             !isLinked && <Badge color={"red"}>{t('links.notLinked')}</Badge>
                         }
@@ -594,7 +595,7 @@ const MinecraftCard = ({isLinked, data, reload}) => {
 
                 <Flex gap={5} direction={"column"} style={{flex: 1}}>
                     <Flex align={"center"} gap={"xs"}>
-                        <Text weight={"bold"}>Minecraft</Text>
+                        <Text style={{fontWeight: "bold"}}>Minecraft</Text>
                         {
                             !isLinked && <Badge color={"red"}>{t('links.notLinked')}</Badge>
                         }

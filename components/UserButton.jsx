@@ -1,6 +1,6 @@
 import {Avatar, Menu, Skeleton} from "@mantine/core";
 import React from "react";
-import {IconLock, IconUser} from "@tabler/icons";
+import {IconLock, IconUser} from "@tabler/icons-react";
 import {signIn, signOut, useSession} from "next-auth/react";
 import {useTranslation} from "next-i18next";
 import Link from "next/link";
@@ -19,7 +19,7 @@ const UserButton = () => {
                         <Avatar radius="xl" ml={"md"} height={35}/>
                     </Menu.Target>
                     <Menu.Dropdown>
-                        <Menu.Item icon={<IconLock size={14} />} onClick={() => signIn("keycloak")}>{t("common:signIn")}</Menu.Item>
+                        <Menu.Item leftSection={<IconLock size={14} />} onClick={() => signIn("keycloak")}>{t("common:signIn")}</Menu.Item>
 
                     </Menu.Dropdown>
                 </Menu>
@@ -31,8 +31,8 @@ const UserButton = () => {
                         <Avatar radius="xl" ml={"md"} height={35}>{data.user.username.slice(0, 2).toUpperCase()}</Avatar>
                     </Menu.Target>
                     <Menu.Dropdown>
-                        <Menu.Item icon={<IconUser size={14} />} component={Link} href={"/profile"}>{t("common:myProfile")}</Menu.Item>
-                        <Menu.Item icon={<IconLock size={14} />} onClick={() => signOut()} color={"red"}>{t("common:signOut")}</Menu.Item>
+                        <Menu.Item leftSection={<IconUser size={14} />} component={Link} href={"/profile"}>{t("common:myProfile")}</Menu.Item>
+                        <Menu.Item leftSection={<IconLock size={14} />} onClick={() => signOut()} color={"red"}>{t("common:signOut")}</Menu.Item>
 
                     </Menu.Dropdown>
                 </Menu>
