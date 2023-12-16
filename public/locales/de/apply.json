@@ -1,6 +1,13 @@
 {
     "application": {
         "title": "Bewerbe dich als Builder bei BTE Germany",
-        "signInRequired": "Du musst mit deinem BTE Germany Konto angemeldet sein, um dich als Builder zu bewerben."
+        "signInRequired": "Du musst mit deinem BTE Germany Konto angemeldet sein, um dich als Builder zu bewerben.",
+        "signInRequiredTitle": "Bitte melden Sie sich an",
+        "linkRequired": "Um sich zu bewerben, müsst ihr zunächst eure Discord- und Minecraft-Konten miteinander verbinden.",
+        "linkRequiredTitle": "Bitte verknüpfen Sie Ihre Konten",
+        "toAccountPage": "Gehen Sie zu Ihrer Kontoseite",
+        "minecraftUsername": "Minecraft-Benutzername",
+        "discordUsername": "Discord-Benutzername",
+        "applicationType": "Für welche Stelle möchten Sie sich bewerben?"
     }
 }
