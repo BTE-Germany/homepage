@@ -23,5 +23,11 @@
     "confirm": "Bestätigen",
     "cancel": "Abbrechen",
     "success": "Erfolg",
-    "error": "Fehler"
+    "error": "Fehler",
+    "cookies": {
+        "title": "Cookies zulassen?",
+        "text": "Wir verwenden Cookies auf unserer Website. Sie haben die Wahl, ob Sie nur wesentliche Cookies (z. B. Anmelde-Cookies) oder auch Analyse-Cookies zulassen möchten, damit wir unsere Website verbessern können.",
+        "acceptAll": "Alle akzeptieren",
+        "onlyEssential": "Nur Wesentliches akzeptieren"
+    }
 }
