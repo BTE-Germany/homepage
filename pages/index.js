@@ -11,7 +11,7 @@ import HomeGallery from "../components/HomeGallery";
 import axios from "axios";
 import Link from "next/link";
 
-export default function Home({cities, mapStats}) {
+export default function Home({cities, mapStats, cmsAssets}) {
 
 
     const [navVisible, setNavVisible] = useState(false);
@@ -223,7 +223,7 @@ export default function Home({cities, mapStats}) {
             </Box>
 
             <Space h={{sm: 200, base: 150}}/>
-            <HomeGallery cities={cities}/>
+            <HomeGallery cities={cities} cmsAssets={cmsAssets}/>
 
             <Box mt={"xl"}>
                 <Container size={"xl"} py={50}>
@@ -254,6 +254,7 @@ export async function getServerSideProps({locale}) {
         props: {
             cities: citiesData.data,
             mapStats: mapStatsData,
+            cmsAssets: process.env.CMS_URL + "/assets/",
             ...(await serverSideTranslations(locale, [
                 'common',
                 'home',

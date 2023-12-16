@@ -19,12 +19,12 @@ import {useTranslation} from "next-i18next";
 const PRIMARY_COL_HEIGHT = rem(500);
 
 
-const HomeGallery = ({cities}) => {
+const HomeGallery = ({cities, cmsAssets}) => {
 
 
     let images = cities.map((city) => {
         return city.images.map((image) => {
-            return process.env.NEXT_PUBLIC_CMS_ASSETS_URL + image.directus_files_id + "?format=webp"
+            return cmsAssets + image.directus_files_id + "?format=webp"
         })
     })
 
