@@ -23,5 +23,9 @@
         "seeMore": "Schau dir mehr in der Galerie an"
     },
     "joinUs": "Mitmachen",
-    "asSeenIn": "Bekannt aus"
+    "asSeenIn": "Bekannt aus",
+    "cta": {
+        "title": "Interesse geweckt?",
+        "subtitle": "Mache jetzt mit und helfe uns, unser ehrgeiziges Projekt zu beenden."
+    }
 }
