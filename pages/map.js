@@ -6,7 +6,9 @@
  * This project is released under the MIT license.
  */
 
-
+export default function Map() {
+    return <>You're being redirected...</>
+}
 export async function getServerSideProps(context) {
     return {
         redirect: {
