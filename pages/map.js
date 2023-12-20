@@ -7,7 +7,7 @@
  */
 
 export default function Map() {
-    return <>You're being redirected...</>
+    return <>You&apos;re being redirected...</>
 }
 export async function getServerSideProps(context) {
     return {
