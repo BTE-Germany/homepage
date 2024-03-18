@@ -56,7 +56,7 @@ export default function Index() {
                                         <Title size={"h3"}>{t('build')}</Title>
                                         <Text color={"dimmed"}>{t('buildDescription')}</Text>
                                     </div>
-                                    <Button mt={"xl"} rightIcon={<IconArrowRight size={18} />} component={Link} href={"https://buildtheearth.net/buildteams/11/join"}>{t('startApplication')}</Button>
+                                    <Button mt={"xl"} rightIcon={<IconArrowRight size={18} />} component={Link} href={"https://buildtheearth.net/teams/de/apply"}>{t('startApplication')}</Button>
                                 </Flex>
                             </Box>
                         </Card>
