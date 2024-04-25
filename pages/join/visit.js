@@ -2,8 +2,7 @@ import Navbar from "../../components/Navbar";
 import {Container, Title} from "@mantine/core";
 import {useTranslation} from "next-i18next";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
-import {createDirectus} from "@directus/sdk";
-import {readItems, rest} from "@directus/sdk/rest";
+import {createDirectus, readItems, rest} from "@directus/sdk";
 
 export default function Visit({content}) {
     const {t} = useTranslation("join")

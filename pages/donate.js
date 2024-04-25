@@ -1,8 +1,8 @@
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
-import {Button, Container, Tabs, Text, Title} from "@mantine/core";
+import {Button, Card, Container, CopyButton, Paper, Tabs, Text, Title, Tooltip} from "@mantine/core";
 import {useTranslation} from "next-i18next";
 import Navbar from "../components/Navbar";
-import {IconCreditCard} from "@tabler/icons-react";
+import {IconBrandPaypal, IconBrandPaypalFilled, IconBuildingBank, IconCreditCard} from "@tabler/icons-react";
 import {loadStripe} from "@stripe/stripe-js";
 import {Elements, PaymentElement} from "@stripe/react-stripe-js";
 import axios from "axios";
@@ -14,35 +14,8 @@ export default function Donate() {
 
     const {t} = useTranslation();
 
-    const [sessionData, setSessionData] = useState("");
-    const [paymentId, setPaymentId] = useState("");
-    const checkoutRef = useRef();
-
-    const createSession = async () => {
-        const {data} = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/payments/donation`, {amount: 100})
-        setSessionData(data.sessionData)
-        setPaymentId(data.paymentId)
-
-        const checkout = await AdyenCheckout({
-            session: {
-                sessionData: data.sessionData,
-                id: data.paymentId
-            },
-            clientKey: "test_OPULT4YY7JBK5IPANFHYC72DSM6Y6KZR",
-            environment: "test",
-            onPaymentCompleted: (response, _component) =>
-                alert(JSON.stringify(response, null, 2)),
-            onError: (error, _component) => {
-                alert(JSON.stringify(error, null, 2))
-            },
-        });
-
-        if (checkoutRef.current) {
-            checkout.create('dropin').mount(checkoutRef.current);
-        }
 
 
-    }
     return (
         <div>
             <Navbar disableAnimation/>
@@ -50,18 +23,87 @@ export default function Donate() {
             <div style={{height: "150px"}}></div>
 
             <Container size={"xl"}>
-                <Title mb={"xl"}>💶 {t('donate:title')}</Title>
+                <Title mb={"md"}>{t('donate:title')}</Title>
                 <Text>{t('donate:description')}</Text>
-                <Tabs defaultValue="creditcard">
+                <Text size={"sm"} c={"dimmed"}>{t('donate:disclaimer')}</Text>
+                <Tabs defaultValue="banktransfer" mt={"lg"}>
                     <Tabs.List>
+                        <Tabs.Tab value="banktransfer"
+                                  leftSection={<IconBuildingBank size={14}/>}>{t('donate:bankTransfer')}</Tabs.Tab>
+                        <Tabs.Tab value="paypal"
+                                  leftSection={<IconBrandPaypalFilled size={14}/>}>{t('donate:paypal')}</Tabs.Tab>
                         <Tabs.Tab value="creditcard"
-                                  icon={<IconCreditCard size={14}/>}>{t('donate:creditcard')}</Tabs.Tab>
+                                  leftSection={<IconCreditCard size={14}/>}>{t('donate:creditcard')}</Tabs.Tab>
                     </Tabs.List>
 
-                    <Tabs.Panel value="creditcard" pt="xs">
-                        <Button onClick={() => createSession()} mt={"xl"}>Donate via credit card</Button>
+                    <Tabs.Panel value="banktransfer" pt="xs">
 
-                        <div ref={checkoutRef}></div>
+                        {t('donate:bankTransferDescription')}
+
+                        <Paper shadow="xs" p="xl" withBorder mt={"xl"} className={"flex gap-8"}>
+                            <div className={"flex flex-col h-32 w-32 text-center"}>
+                                <img src={"/bankTransferCode.png"} className={""}/>
+                                <p className={"text-sm opacity-55"}>{t("donate:scan")}</p>
+                            </div>
+                            <div className={"flex flex-col items-start"}>
+                                <p className={"text-sm opacity-55"}>
+                                    {t("donate:accountHolder")}
+                                </p>
+                                <CopyButton value="BuildTheEarth Germany e.V." timeout={2000}>
+                                    {({copied, copy}) => (
+                                        <Tooltip label={copied ? t("common:copied") : t("common:copy")} withArrow>
+                                            <Text onClick={copy} className={"cursor-pointer"}>BuildTheEarth Germany
+                                                e.V.</Text>
+                                        </Tooltip>
+                                    )}
+                                </CopyButton>
+
+                                <p className={"text-sm opacity-55 mt-3"}>
+                                    {t("donate:iban")}
+                                </p>
+                                <CopyButton value="DE46 5085 2553 0016 1501 20" timeout={2000}>
+                                    {({copied, copy}) => (
+                                        <Tooltip label={copied ? t("common:copied") : t("common:copy")} withArrow>
+                                            <Text onClick={copy} className={"cursor-pointer"}>DE46 5085 2553 0016 1501
+                                                20</Text>
+                                        </Tooltip>
+                                    )}
+                                </CopyButton>
+
+                                <p className={"text-sm opacity-55 mt-3"}>
+                                    {t("donate:bic")}
+                                </p>
+                                <CopyButton value="HELADEF1GRG" timeout={2000}>
+                                    {({copied, copy}) => (
+                                        <Tooltip label={copied ? t("common:copied") : t("common:copy")} withArrow>
+                                            <Text onClick={copy} className={"cursor-pointer"}>HELADEF1GRG</Text>
+                                        </Tooltip>
+                                    )}
+                                </CopyButton>
+                            </div>
+
+
+                        </Paper>
+
+                    </Tabs.Panel>
+
+                    <Tabs.Panel value="paypal" pt="xs">
+                        {t('donate:paypalDescription')}
+                        <br/>
+                        <Button mt={"xl"} component={"a"} href={"https://www.paypal.com/donate/?hosted_button_id=F8L75HQG7YSLQ"} target={"_blank"} leftSection={<IconBrandPaypalFilled size={18} />}>
+                            {t('donate:paypalDonate')}
+                        </Button>
+
+                    </Tabs.Panel>
+
+                    <Tabs.Panel value="creditcard" pt="xs">
+
+
+                        {t('donate:creditcardDescription')}
+                        <br/>
+                        <Button mt={"xl"} component={"a"} href={"https://donate.stripe.com/4gw5lx6V6alQ5OgaEE"} target={"_blank"} leftSection={<IconCreditCard size={18} />}>
+                            {t('donate:creditcardDonate')}
+                        </Button>
                     </Tabs.Panel>
 
                 </Tabs>
@@ -72,7 +114,7 @@ export default function Donate() {
     )
 }
 
-export async function getStaticProps({locale}) {
+export async function getServerSideProps({locale}) {
     return {
         props: {
             ...(await serverSideTranslations(locale, [

@@ -37,6 +37,10 @@ const Navbar = ({ disableAnimation }) => {
             link: "/faq"
         },
         {
+            name: t("common:navigation.store"),
+            link: "/store"
+        },
+        {
             name: t("common:navigation.about"),
             links: [
                 {
@@ -82,7 +86,7 @@ const Navbar = ({ disableAnimation }) => {
         >
             <Box style={{ display: "flex", width: "100%", alignItems: "center" }}>
                 <Link href="/" style={{ display: "flex", alignItems: "center" }}>
-                    <Image src={"/logo.gif"} width={50} height={50} alt={"logo"} />
+                    <Image src={"/logo.gif"} width={50} height={50} alt={"logo"} className={"w-[50px] h-[50px]"}/>
                     <Title order={3} ml={"md"}>BTE Germany</Title>
                 </Link>
                 <Box style={{ marginLeft: "auto", display: "flex", alignItems: "center" }}>

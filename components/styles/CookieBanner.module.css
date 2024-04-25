@@ -13,4 +13,7 @@
     bottom: var(--mantine-spacing-lg);
     right: var(--mantine-spacing-lg);
     width: 25%;
+    @media (max-width: $mantine-breakpoint-xs) {
+        width: 100%;
+    }
 }

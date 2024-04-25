@@ -2,8 +2,7 @@
 import Navbar from "../components/Navbar";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { createDirectus } from "@directus/sdk";
-import { readItems, rest } from "@directus/sdk/rest";
+import {createDirectus, readItems, rest} from "@directus/sdk";
 import {SimpleGrid, Paper, Avatar, Text, Container, Title, Box} from "@mantine/core";
 import {Trans, useTranslation} from "next-i18next";
 export default function Team({ content }) {

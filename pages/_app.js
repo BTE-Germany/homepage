@@ -37,7 +37,7 @@ function MyApp({Component, pageProps}) {
 
     return (
 
-        <MantineProvider theme={theme} defaultColorScheme="dark">
+        <MantineProvider theme={theme} defaultColorScheme="dark" withCSSVariables withGlobalStyles withNormalizeCSS>
 
                 <Head>
                     <title>BTE Germany</title>

@@ -42,7 +42,7 @@ export default function LanguageSwitcher() {
             <Menu.Target>
                 <UnstyledButton className={classes.control}>
                     <Group spacing="xs">
-                        <Image src={`/flags/${i18n.language}.svg`} width={22} height={22} radius={99} />
+                        <Image src={`/flags/${i18n.language}.svg`} width={22} height={22} radius={99} className={"w-[22px] h-[22px]"} />
                         <span className={classes.label}>{languages.filter((l) => l.code === i18n.language)[0].label}</span>
                     </Group>
                     <IconChevronDown size="1rem" className={classes.icon} stroke={1.5} />

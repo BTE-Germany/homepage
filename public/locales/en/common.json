@@ -9,7 +9,8 @@
     "ourTeam": "Our team",
     "association": "Association",
     "press": "Press",
-    "contact": "Contact"
+    "contact": "Contact",
+    "store": "Store"
   },
   "footer": {
     "notAssociated": "No official Minecraft service. We are not associated or approved by Mojang nor Microsoft."
@@ -23,6 +24,8 @@
   "cancel": "Cancel",
   "success": "Success",
   "error": "Error",
+  "copy": "Copy",
+    "copied": "Copied",
   "cookies": {
     "title": "Allow cookies?",
     "text": "We use cookies on our website. You have the choice, if you only want to allow essential cookies (e.g log-in cookies) or also allow analytics cookies, so we can improve our website experience.",

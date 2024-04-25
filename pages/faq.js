@@ -1,8 +1,7 @@
 import Navbar from "../components/Navbar";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { createDirectus } from "@directus/sdk";
-import { readItems, rest } from "@directus/sdk/rest";
+import {createDirectus, readItems, rest} from "@directus/sdk";
 import { Container, Title, Accordion, TypographyStylesProvider } from '@mantine/core';
 import classes from "./styles/faq.module.css";
 import Markdown from 'react-markdown'
@@ -30,8 +29,6 @@ export default function FAQ({ content }) {
                             );
                         })
                     }
-
-
                 </Accordion>
             </Container>
         </>

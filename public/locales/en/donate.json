@@ -1,5 +1,17 @@
 {
   "title": "Donate",
-  "description": "Thank you for you interest in supporting the BTE Germany project financially 💕",
-  "creditcard": "Credit card"
+  "description": "Thank you for you interest in supporting the BTE Germany project financially, we really appreciate it 💕",
+  "bankTransfer": "Bank transfer",
+  "bankTransferDescription": "You can donate via bank transfer to the following account. Please use the reference \"Donation\" and your Discord username so we can allocate your donation correctly.",
+  "paypal": "PayPal",
+  "paypalDescription": "You can donate through PayPal by clicking the button below. You will be redirected to the PayPal website.",
+  "paypalDonate": "Donate through PayPal",
+  "creditcard": "Credit card, Apple Pay, Google Pay, GiroPay, Sofort",
+    "creditcardDescription": "You can donate with credit card or other payment services by clicking the button below. You will be redirected to Stripe, our payment provider.",
+    "creditcardDonate": "Donate with credit card",
+  "disclaimer": "Please note, that BuildTheEarth Germany e.V. is no charitable organization and therefore donations are not tax-deductible.",
+  "accountHolder": "Account holder",
+  "iban": "IBAN",
+  "bic": "BIC",
+  "scan": "Scan this code with your banking app"
 }
