@@ -149,7 +149,7 @@ export default function Home({cities, mapStats, cmsAssets}) {
                             flexDirection: "column",
                             alignItems: "center"
                         }}>
-                            <Title size={"h1"}>
+                            <Title size={"h1"} className={"flex items-center flex-col"}>
                                 <Box style={{textAlign: "center"}}>
                                     <IconUsers size={40} />
                                 </Box>
@@ -173,7 +173,7 @@ export default function Home({cities, mapStats, cmsAssets}) {
                             flexDirection: "column",
                             alignItems: "center"
                         }}>
-                            <Title size={"h1"}>
+                            <Title size={"h1"} className={"flex items-center flex-col"}>
                                 <Box style={{textAlign: "center"}}>
                                     <IconDeviceFloppy size={40} />
                                 </Box>
@@ -198,7 +198,7 @@ export default function Home({cities, mapStats, cmsAssets}) {
                             flexDirection: "column",
                             alignItems: "center"
                         }}>
-                            <Title size={"h1"}>
+                            <Title size={"h1"} className={"flex items-center flex-col"}>
                                 <Box style={{textAlign: "center"}}>
                                     <IconBuilding size={40} />
                                 </Box>
