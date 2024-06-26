@@ -12,10 +12,19 @@ import '@mantine/notifications/styles.css';
 import Head from "next/head";
 import React, {useEffect} from "react";
 import CookieBanner from "../components/CookieBanner";
+import formbricks from "@formbricks/js/app";
+import {useRouter} from "next/router";
 
 
+if (typeof window !== "undefined") {
+    formbricks.init({
+        environmentId: "clxvw74bg0037p0njaa81ly5z",
+        apiHost: "https://forms.bte-germany.de",
+    });
+}
 
 function MyApp({Component, pageProps}) {
+    const router = useRouter();
 
     const theme = createTheme({
         headings: {
@@ -32,6 +41,16 @@ function MyApp({Component, pageProps}) {
             g.src = 'https://analytics.bte-germany.de/js/container_uhweMTLz.js';
             s.parentNode.insertBefore(g, s);
         })();
+    }, []);
+
+    useEffect(() => {
+        // Connect next.js router to Formbricks
+        const handleRouteChange = formbricks?.registerRouteChange;
+        router.events.on("routeChangeComplete", handleRouteChange);
+
+        return () => {
+            router.events.off("routeChangeComplete", handleRouteChange);
+        };
     }, []);
 
 

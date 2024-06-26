@@ -373,6 +373,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@formbricks/js@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "@formbricks/js@npm:2.1.0"
+  checksum: 2bbb811ad6d2375b1c5640d0d9909fe1e5fb4b9412745e2378ddb0a0eb2e94861932b127692d289a6c79973f554765958ec1f1a1614c1bf4817ee61603bad5d0
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.13.0":
   version: 0.13.0
   resolution: "@humanwhocodes/config-array@npm:0.13.0"
@@ -3738,6 +3745,7 @@ __metadata:
     "@adyen/adyen-web": ^5.63.0
     "@directus/sdk": ^15.1.0
     "@emotion/react": ^11.11.4
+    "@formbricks/js": ^2.1.0
     "@mantine/carousel": ^7.8.0
     "@mantine/core": ^7.8.0
     "@mantine/form": ^7.8.0
