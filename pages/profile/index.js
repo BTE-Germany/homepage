@@ -747,7 +747,7 @@ const PlusPage = ({data, t}) => {
                                 </Button>
                             }
                             {
-                                <ActionIcon onClick={sync} variant={"subtle"}>
+                                <ActionIcon onClick={sync} variant={"subtle"} className={"hidden"}>
                                     <IconRefresh style={{ width: '70%', height: '70%' }} stroke={1.5} />
                                 </ActionIcon>
                             }
