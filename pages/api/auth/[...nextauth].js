@@ -1,10 +1,9 @@
 import { JWT } from 'next-auth/jwt';
 import KeycloakProvider, {KeycloakProfile} from 'next-auth/providers/keycloak';
 import NextAuth from 'next-auth';
-import {OAuthConfig} from "next-auth/providers";
 import * as process from "process";
 
-const refreshAccessToken = async (token: JWT) => {
+const refreshAccessToken = async (token) => {
     try {
         if (Date.now() > token.refreshTokenExpired) throw Error;
         const details = {
@@ -13,8 +12,8 @@ const refreshAccessToken = async (token: JWT) => {
             grant_type: 'refresh_token',
             refresh_token: token.refreshToken,
         };
-        const formBody: string[] = [];
-        Object.entries(details).forEach(([key, value]: [string, any]) => {
+        const formBody = [];
+        Object.entries(details).forEach(([key, value]) => {
             const encodedKey = encodeURIComponent(key);
             const encodedValue = encodeURIComponent(value);
             formBody.push(encodedKey + '=' + encodedValue);
@@ -63,7 +62,7 @@ const handler = NextAuth({
         }),
     ],
     events: {
-        async signOut({ token }: { token: JWT }) {
+        async signOut({ token }) {
             const issuerUrl = process.env.KEYCLOAK_URL;
             const logOutUrl = new URL(`${issuerUrl}/protocol/openid-connect/logout`)
             logOutUrl.searchParams.set("id_token_hint", token.id_token)
@@ -79,7 +78,7 @@ const handler = NextAuth({
                 return '/unauthorized';
             }
         },
-        jwt: async ({ token, account, user }: any) => {
+        jwt: async ({ token, account, user }) => {
             // Initial sign in
             if (account && user) {
                 // Add access_token, refresh_token and expirations to the token right after signin
@@ -97,7 +96,7 @@ const handler = NextAuth({
             // Access token has expired, try to update it
             return refreshAccessToken(token);
         },
-        session: async ({ session, token }: any) => {
+        session: async ({ session, token }) => {
             if (token) {
                 session.user = token.user;
                 session.error = token.error;
@@ -108,7 +107,7 @@ const handler = NextAuth({
     }
 });
 
-function capitalize(string: string) {
+function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 

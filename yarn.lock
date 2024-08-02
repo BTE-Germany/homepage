@@ -699,9 +699,9 @@ __metadata:
   linkType: hard
 
 "@panva/hkdf@npm:^1.0.2":
-  version: 1.1.1
-  resolution: "@panva/hkdf@npm:1.1.1"
-  checksum: f0dd12903751d8792420353f809ed3c7de860cf506399759fff5f59f7acfef8a77e2b64012898cee7e5b047708fa0bd91dff5ef55a502bf8ea11aad9842160da
+  version: 1.2.1
+  resolution: "@panva/hkdf@npm:1.2.1"
+  checksum: a4a9d1812f88f02bc163b365524bbaa5239cc4711e5e7be1bda68dabae1c896cf1cd12520949b0925a6910733d1afcb25ab51fd3cf06f0f69aee988fffebf56e
   languageName: node
   linkType: hard
 
@@ -3354,17 +3354,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jose@npm:^4.15.1":
-  version: 4.15.4
-  resolution: "jose@npm:4.15.4"
-  checksum: dccad91cb3357f36423774a0b89ad830dd84b31090de65cd139b85488439f16a00f8c59c0773825e8a1adb0dd9d13ad725ad66e6ea33880ecb3959bb99e1ea5b
-  languageName: node
-  linkType: hard
-
 "jose@npm:^4.15.5":
-  version: 4.15.5
-  resolution: "jose@npm:4.15.5"
-  checksum: 7dde76447c7707bd4b448f914b216f3858e701aa83f00447434252461af5b9e159dcbffb88badea3f9616739526763581267c9560622f0a058df8d68c86d7f79
+  version: 4.15.9
+  resolution: "jose@npm:4.15.9"
+  checksum: 41abe1c99baa3cf8a78ebbf93da8f8e50e417b7a26754c4afa21865d87527b8ac2baf66de2c5f6accc3f7d7158658dae7364043677236ea1d07895b040097f15
   languageName: node
   linkType: hard
 
@@ -4687,14 +4680,14 @@ __metadata:
   linkType: hard
 
 "openid-client@npm:^5.4.0":
-  version: 5.6.1
-  resolution: "openid-client@npm:5.6.1"
+  version: 5.6.5
+  resolution: "openid-client@npm:5.6.5"
   dependencies:
-    jose: ^4.15.1
+    jose: ^4.15.5
     lru-cache: ^6.0.0
     object-hash: ^2.2.0
     oidc-token-hash: ^5.0.3
-  checksum: 9d939cec57540e6dd3f67e9a248ec5ecec3b439b7ab5bd2e9fb4481bd03e8d030deedd87a447348194be7f3e93e84085841b0414033caf86479870f526cdbc2f
+  checksum: 2240079f761173b10635ce5fefbac04b6820f54e00d588ab2afdddb6c0f0ab6568e663cf1ab6a4a2297fbdbb73e42d78b8190f91dba7e1b80d287b2127fcbc7c
   languageName: node
   linkType: hard
 
@@ -4988,9 +4981,9 @@ __metadata:
   linkType: hard
 
 "preact@npm:^10.6.3":
-  version: 10.19.3
-  resolution: "preact@npm:10.19.3"
-  checksum: cb4fcc801f7ff302b9706eb4bb4a36cc7cd96f3231ac28baeb3ea5caf6724372222121cb487f66af44a1312bf61dbe74825ce2fda98295d2108e7443c20b0e56
+  version: 10.23.1
+  resolution: "preact@npm:10.23.1"
+  checksum: fb7d28c7da1442ed80435444326fa2dcb563d4af05f631611fff8c08fb46a6f209d1a780aa7638a0bc2ac4d7a351f3304ff97bebfd6f5ee5bc4feb880d84a34f
   languageName: node
   linkType: hard
 
