@@ -48,7 +48,6 @@ const refreshAccessToken = async (token: JWT) => {
 
 const handler = NextAuth({
     secret: process.env.NEXTAUTH_SECRET,
-    debug: true,
     providers: [
         KeycloakProvider({
             clientId: process.env.KEYCLOAK_ID || '',
@@ -106,10 +105,7 @@ const handler = NextAuth({
             }
             return session;
         },
-    },
-    pages: {
-        signIn: '/auth/signin',
-    },
+    }
 });
 
 function capitalize(string: string) {
