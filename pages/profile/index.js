@@ -15,7 +15,8 @@ import {
     Skeleton,
     Text,
     TextInput,
-    Title, Tooltip
+    Title,
+    Tooltip
 } from "@mantine/core";
 import {useTranslation} from "next-i18next";
 import {signIn, signOut, useSession} from "next-auth/react";
@@ -28,12 +29,15 @@ import {
     IconBrandFirefox,
     IconBrandSafari,
     IconBrandWindows,
+    IconCrown,
     IconDevices,
     IconFingerprint,
     IconForms,
     IconKey,
     IconLink,
-    IconQuestionCircle, IconUnlink, IconX
+    IconQuestionCircle, IconRefresh,
+    IconUnlink,
+    IconX
 } from "@tabler/icons-react";
 import {useForm} from "@mantine/form";
 import axios from "axios";
@@ -42,9 +46,9 @@ import {modals} from "@mantine/modals";
 import {notifications, showNotification} from "@mantine/notifications";
 import {AnimatePresence, motion} from "framer-motion";
 import getPkce from 'oauth-pkce';
-import * as jwt_decode from "jwt-decode";
 import {useHash} from "@mantine/hooks";
 import Link from "next/link";
+import {jwtDecode} from "jwt-decode";
 
 
 export default function ProfilePage() {
@@ -73,6 +77,9 @@ export default function ProfilePage() {
             case "links":
                 setActivePage(3)
                 break;
+            case "plus":
+                setActivePage(4)
+                break;
         }
     }, [hash]);
 
@@ -90,6 +97,9 @@ export default function ProfilePage() {
                 break;
             case 3:
                 setHash("links")
+                break;
+            case 4:
+                setHash("plus")
                 break;
         }
     }
@@ -114,6 +124,11 @@ export default function ProfilePage() {
             icon: IconLink,
             label: t('profilePage.navigation.links'),
             description: t('profilePage.navigation.linksDescription')
+        },
+        {
+            icon: IconCrown,
+            label: t('profilePage.navigation.plus'),
+            description: t('profilePage.navigation.plusDescription')
         },
     ];
 
@@ -173,6 +188,7 @@ export default function ProfilePage() {
                             {activePage === 1 && <SecurityPage t={t} data={data}/>}
                             {activePage === 2 && <SessionPage t={t} data={data}/>}
                             {activePage === 3 && <LinksPage t={t} data={data}/>}
+                            {activePage === 4 && <PlusPage t={t} data={data}/>}
                         </motion.div>
                     </AnimatePresence>
                 </Flex>
@@ -473,9 +489,9 @@ const PasswordCard = ({data}) => {
     const {t} = useTranslation("profile");
 
     const changePassword = () => {
-        getPkce(50, (error, { challenge}) => {
+        getPkce(50, (error, {challenge}) => {
             window.location = `${process.env.NEXT_PUBLIC_KEYCLOAK_URL}
-                    /protocol/openid-connect/auth?client_id=website&redirect_uri=${window.location.href}&response_type=code&scope=openid&kc_action=UPDATE_PASSWORD&code_challenge=${challenge}&code_challenge_method=S256`
+                    /protocol/openid-connect/auth?client_id=website&redirect_uri=${encodeURIComponent(window.location.href)}&response_type=code&scope=openid&kc_action=UPDATE_PASSWORD&code_challenge=${challenge}&code_challenge_method=S256`
         });
     }
 
@@ -514,8 +530,9 @@ const DiscordCard = ({isLinked, data, sessionData, reload}) => {
 
     const generateDiscordLinkURL = async () => {
         const nonce = crypto.randomUUID();
-       // const jwtData = jwt_decode(sessionData.accessToken);
-        const jwtData = {};
+        const jwtData = jwtDecode(sessionData.accessToken);
+        console.log(jwtData)
+        //const jwtData = {};
         const input = nonce + jwtData.session_state + jwtData.azp + "discord";
         console.log(input)
         const digest = await hash(input);
@@ -525,7 +542,11 @@ const DiscordCard = ({isLinked, data, sessionData, reload}) => {
 
     const unlink = async () => {
         setUnlinkLoading(true);
-        await axios.delete(`${process.env.NEXT_PUBLIC_KEYCLOAK_URL}/account/linked-accounts/discord`, {headers: {authorization: "Bearer " + sessionData.accessToken}})
+        try {
+            await axios.delete(`${process.env.NEXT_PUBLIC_KEYCLOAK_URL}/account/linked-accounts/discord`, {headers: {authorization: "Bearer " + sessionData.accessToken}})
+        } catch (e) {
+
+        }
         await reload();
         setUnlinkLoading(false);
 
@@ -606,13 +627,136 @@ const MinecraftCard = ({isLinked, data, reload}) => {
                 </Flex>
                 {
                     isLinked ? <Button leftIcon={<IconUnlink size={18}/>} loading={loading} onClick={unlink}>
-                        {t('links.unlink')}
-                    </Button> : <Button leftIcon={<IconLink size={18}/>} component={Link} href={"/profile/link/minecraft"}>
-                        {t('links.link')}
-                    </Button>
+                            {t('links.unlink')}
+                        </Button> :
+                        <Button leftIcon={<IconLink size={18}/>} component={Link} href={"/profile/link/minecraft"}>
+                            {t('links.link')}
+                        </Button>
                 }
             </Flex>
         </Card>
+    )
+}
+
+const PlusPage = ({data, t}) => {
+
+    const [loading, setLoading] = useState(true);
+    const [accountData, setAccountData] = useState({});
+    const [subData, setSubData] = useState({});
+
+
+    const getUserData = async () => {
+        setLoading(true);
+        try {
+
+            const {data: response} = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/users/@me`, {headers: {authorization: "Bearer " + data.accessToken}});
+            if (response.stripeCustomerId) {
+                const {data: subData} = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/payments/subscription`,  {headers: {"Authorization": "Bearer " + data.accessToken}})
+                setSubData(subData)
+            }
+            setAccountData(response)
+
+            setLoading(false);
+        } catch (e) {
+            signOut()
+        }
+
+    }
+
+    const openPortal = async () => {
+        // Redirect to the billing portal
+        try {
+            const {data: reqData} = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/payments/portal`,  {headers: {"Authorization": "Bearer " + data.accessToken}})
+            window.location = reqData.url;
+        } catch (e) {
+            console.error(e)
+        }
+    }
+
+    const sync = async () => {
+        try {
+            await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/payments/plus/sync`,  {headers: {"Authorization": "Bearer " + data.accessToken}})
+        } catch (e) {
+            console.error(e)
+        }
+    }
+
+    useEffect(() => {
+        getUserData();
+    }, []);
+
+    return (
+        <>
+            <Title mb={"xl"} size={"h3"}>{t('profilePage.navigation.plus')}</Title>
+            <Box w={"100%"}>
+                <Skeleton animate visible={loading}>
+
+
+                    <div className={"border border-neutral-600 w-full rounded-md p-4 flex justify-between items-center"}>
+
+
+                        <div className={"flex gap-5 items-center"}>
+                            <div className={`flex justify-center items-center w-12 h-12 rounded-full ${accountData.plus ? "bg-green-600/30": "bg-neutral-600"}`}>
+                                <IconCrown size={30}/>
+                            </div>
+                            <div>
+                                <Title size={"h4"}>{
+                                    accountData.plus ? t('plus.active') : t('plus.inactive')
+                                }</Title>
+                                {
+                                    (!accountData.stripeCustomerId && accountData.plus) &&
+                                    <Text c={"dimmed"}>
+                                        {t('plus.lifetime')}
+                                    </Text>
+                                }
+                                {
+                                    subData?.subscription?.plan?.interval &&
+                                    <Text c={"dimmed"}>
+                                        {
+                                            subData.subscription.plan.interval === "year" ? t('plus.yearly') : t('plus.monthly')
+                                        }
+
+                                    </Text>
+                                }
+                                {
+                                    subData?.subscription?.cancel_at ?
+                                    <Text c={"dimmed"}>
+                                        {t('plus.canceledAsOf')}
+                                        {' '}
+                                        {dayjs(subData.subscription?.cancel_at * 1000).format('DD.MM.YYYY')}
+                                    </Text> : subData?.subscription?.current_period_end && <Text c={"dimmed"}>
+                                            {t('plus.nextPayment')}
+                                            {' '}
+                                            {dayjs(subData.subscription?.current_period_end * 1000).format('DD.MM.YYYY')}
+                                        </Text>
+                                }
+
+                            </div>
+                        </div>
+
+                        <div className={"flex items-center gap-2"}>
+                            {
+                                (accountData.stripeCustomerId && accountData.plus) && <Button onClick={openPortal}>
+                                    {t('plus.manageSubscription')}
+                                </Button>
+                            }
+
+                            {
+                                (!accountData.plus) && <Button component={Link} href={"/store/plus"}>
+                                    {t('plus.buy')}
+                                </Button>
+                            }
+                            {
+                                <ActionIcon onClick={sync} variant={"subtle"}>
+                                    <IconRefresh style={{ width: '70%', height: '70%' }} stroke={1.5} />
+                                </ActionIcon>
+                            }
+                        </div>
+
+                    </div>
+                </Skeleton>
+            </Box>
+        </>
     )
 }
 

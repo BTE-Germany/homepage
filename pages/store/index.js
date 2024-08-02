@@ -29,15 +29,15 @@ export default function Store({products}) {
                 </Title>
 
                 <Grid mb={"xs"}>
-                    {/*<Grid.Col span={6}>
-                        <div className={"w-full rounded-md bg-gradient-to-br from-blue-600 to-blue-800 py-8 text-white flex items-center flex-col hover:scale-[1.02] transition-transform"}>
+                    <Grid.Col span={6}>
+                        <Link className={"w-full rounded-md bg-gradient-to-br from-blue-600 to-blue-800 py-8 text-white flex items-center flex-col hover:scale-[1.02] transition-transform"} href={"/store/plus"}>
                             <IconCrown size={50}/>
                             <Title ta="center">
                                 Plus Rank
                             </Title>
-                        </div>
-                    </Grid.Col>*/}
-                    <Grid.Col span={12}>
+                        </Link>
+                    </Grid.Col>
+                    <Grid.Col span={6}>
                         <Link className={"w-full rounded-md bg-gradient-to-br from-green-600 to-green-900 py-8 text-white flex items-center flex-col hover:scale-[1.02] transition-transform"} href={"/donate"}>
                             <IconHeart size={50}/>
                             <Title ta="center">

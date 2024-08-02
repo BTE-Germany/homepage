@@ -9,7 +9,9 @@
       "sessions": "Sessions",
       "sessionsDescription": "Manage your login sessions",
       "links": "Links",
-      "linksDescription": "Manage services linked with your account"
+      "linksDescription": "Manage services linked with your account",
+      "plus": "Plus Rank",
+        "plusDescription": "Manage your Plus Rank subscription"
     }
   },
   "general": {
@@ -48,5 +50,16 @@
       "error": "There was an error linking your account. If this error persists, please contact us on Discord.",
       "unlinkError": "There was an error unlinking your account. If this error persists, please contact us on Discord."
     }
+  },
+  "plus": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "manageSubscription": "Manage subscription",
+    "lifetime": "Lifetime",
+    "buy": "Buy Plus Rank",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "nextPayment": "Next payment:",
+    "canceledAsOf": "Canceled as of: "
   }
 }

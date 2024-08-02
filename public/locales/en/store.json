@@ -1,3 +1,22 @@
 {
-  "title": "Store"
+  "title": "Store",
+  "plus": {
+    "title": "Plus Rank",
+    "description": "Get the plus rank for more cosmetic options, a special role in the discord server and support our mission.",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "onetime": "One Time payment",
+    "monthlyPrice": "per month",
+    "yearlyPrice": "per year",
+    "onetimePrice": "one time",
+    "subscribe": "Subscribe",
+    "disclaimer": "The subscription will be automatically renewed. You can cancel it at any time. All prices are are without VAT, according to §19 UStG. Terms and conditions apply.",
+    "linkRequiredTitle": "Link your accounts",
+    "linkRequired": "A Discord and Minecraft account is required to get the plus rank.",
+    "toAccountPage": "Link your accounts",
+    "popular": "Most popular",
+    "success": "Success!",
+    "successMessage": "You have successfully subscribed to the plus rank. You can now use the plus rank in the Discord server and ingame. Thank you for your support!",
+    "manageBilling": "Manage billing"
+  }
 }
