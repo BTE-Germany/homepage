@@ -9,7 +9,9 @@
             "sessions": "Sitzungen",
             "sessionsDescription": "Verwalte dein Anmeldesitzungen",
             "links": "Links",
-            "linksDescription": "Verwalten der mit deinem Konto verbundenen Dienste"
+            "linksDescription": "Verwalten der mit deinem Konto verbundenen Dienste",
+            "plus": "Plus Rang",
+            "plusDescription": "Verwalten Sie Ihr Plus Rank-Abonnement"
         }
     },
     "general": {
@@ -48,5 +50,16 @@
             "error": "Es ist ein Fehler bei der Verknüpfung deines Kontos aufgetreten. Wenn dieser Fehler weiterhin besteht, kontaktiere uns bitte auf Discord.",
             "unlinkError": "Es ist ein Fehler beim Entkoppeln deines Kontos aufgetreten. Wenn dieser Fehler weiterhin besteht, kontaktiere uns bitte auf Discord."
         }
+    },
+    "plus": {
+        "active": "Aktiv",
+        "inactive": "Inaktiv",
+        "manageSubscription": "Abonnement verwalten",
+        "lifetime": "Lebenslang",
+        "buy": "Plus-Rang kaufen",
+        "monthly": "Monatlich",
+        "yearly": "Jährlich",
+        "nextPayment": "Nächste Zahlung:",
+        "canceledAsOf": "Gestrichen ab: "
     }
 }
