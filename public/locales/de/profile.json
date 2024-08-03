@@ -11,7 +11,7 @@
             "links": "Links",
             "linksDescription": "Verwalten der mit deinem Konto verbundenen Dienste",
             "plus": "Plus Rang",
-            "plusDescription": "Verwalten Sie Ihr Plus Rank-Abonnement"
+            "plusDescription": "Verwalte dein Plus Rank-Abonnement"
         }
     },
     "general": {
@@ -60,6 +60,6 @@
         "monthly": "Monatlich",
         "yearly": "Jährlich",
         "nextPayment": "Nächste Zahlung:",
-        "canceledAsOf": "Gestrichen ab: "
+        "canceledAsOf": "Gekündigt zum: "
     }
 }
