@@ -9,6 +9,8 @@ import Link from "next/link";
 import axios from "axios";
 import {showNotification} from "@mantine/notifications";
 import {signIn, useSession} from "next-auth/react";
+import * as Sentry from "@sentry/nextjs";
+
 
 export default function MinecraftLink() {
     const {t} = useTranslation("profile");
@@ -27,15 +29,21 @@ export default function MinecraftLink() {
 
     const linkAccount = async () => {
         setLoading(true)
+        Sentry.addBreadcrumb({
+            category: "mcLink",
+            message: `User is trying to link their Minecraft account with linking code ${code}`,
+            level: "info",
+        });
         try {
             let {data: responseData} = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/links/minecraft`, {code}, {headers: {authorization: "Bearer " + sessionData.accessToken}})
             setUsername(responseData.username)
         } catch (e) {
             console.error(e)
+            const id = Sentry.captureException(e);
             showNotification({
                 color: "red",
                 title: t('common:error'),
-                message: t('link.minecraft.error')
+                message: t('link.minecraft.error') + " Trace-ID: " + id
             })
             setError(true)
             return;

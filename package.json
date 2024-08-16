@@ -20,6 +20,7 @@
     "@mantine/modals": "^7.8.0",
     "@mantine/notifications": "^7.8.0",
     "@mantine/nprogress": "^7.8.0",
+    "@sentry/nextjs": "^8",
     "@stripe/react-stripe-js": "^2.7.0",
     "@stripe/stripe-js": "^3.3.0",
     "@tabler/icons": "^3.2.0",

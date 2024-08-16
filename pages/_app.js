@@ -65,7 +65,7 @@ function MyApp({Component, pageProps}) {
                 <ModalsProvider modalProps={{
                     centered: true
                 }}>
-                    <Notifications/>
+                    <Notifications zIndex={100001}/>
                     <SessionProvider>
                         <RouterTransition/>
                         <CookieBanner/>

@@ -49,6 +49,7 @@ import getPkce from 'oauth-pkce';
 import {useHash} from "@mantine/hooks";
 import Link from "next/link";
 import {jwtDecode} from "jwt-decode";
+import * as Sentry from "@sentry/nextjs";
 
 
 export default function ProfilePage() {
@@ -168,6 +169,16 @@ export default function ProfilePage() {
             </div>
         )
     }
+
+
+    const error = () => {
+        const id = Sentry.captureException("Test Error");
+        showNotification({
+            color: "red",
+            title: t('common:error'),
+            message: "Trace-ID: " + id
+        })
+    }
     return (
         <>
             <Navbar disableAnimation/>
@@ -175,6 +186,7 @@ export default function ProfilePage() {
             <div style={{height: "150px"}}></div>
             <Container size={"xl"}>
                 <Title mb={"xl"}>{t('profilePage.title', {"username": data.user.username})}</Title>
+                    <Button onClick={error}>Error</Button>
 
 
                 <Flex gap={"xl"} direction={{base: 'column', sm: 'row'}}>

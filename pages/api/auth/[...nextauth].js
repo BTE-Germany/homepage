@@ -2,6 +2,8 @@ import { JWT } from 'next-auth/jwt';
 import KeycloakProvider, {KeycloakProfile} from 'next-auth/providers/keycloak';
 import NextAuth from 'next-auth';
 import * as process from "process";
+import * as Sentry from "@sentry/nextjs";
+
 
 const refreshAccessToken = async (token) => {
     try {
@@ -67,12 +69,15 @@ const handler = NextAuth({
             const logOutUrl = new URL(`${issuerUrl}/protocol/openid-connect/logout`)
             logOutUrl.searchParams.set("id_token_hint", token.id_token)
             await fetch(logOutUrl);
+            Sentry.setUser(null);
         },
     },
     callbacks: {
         signIn: async ({ user, account }) => {
             if (account && user) {
+                Sentry.setUser({ email: user.email, id: account.userId, username: user.username });
                 return true;
+
             } else {
                 // TODO : Add unauthorized page
                 return '/unauthorized';
