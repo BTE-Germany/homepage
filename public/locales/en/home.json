@@ -7,7 +7,7 @@
     "about": {
         "subtitle": "About us",
         "title": "We are BTE Germany.",
-        "text": "Build the Earth Germany's mission is to recreate the entire German territory on a scale of 1:1 in the computer game <1>Minecraft</1>. Minecraft is the world's best-selling video game, with over 200 billion sales, and works much like a Lego box - but with an infinite number of bricks and an infinite amount of space. Build the Earth Germany is part of the <3>Build the Earth</3> project, which is active worldwide. With over {{builderCount}} people actively involved, BTE Germany is the second largest building team internationally."
+        "text": "Build the Earth Germany's mission is to recreate the entire German territory on a scale of 1:1 in the computer game <1>Minecraft</1>. Minecraft is the world's best-selling video game, with about 300 million sales, and works much like a Lego box - but with an infinite number of bricks and an infinite amount of space. Build the Earth Germany is part of the <3>Build the Earth</3> project, which is active worldwide. With over {{builderCount}} people actively involved, BTE Germany is the second largest building team internationally."
     },
     "community": {
         "subtitle": "Who we are",
