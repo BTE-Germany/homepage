@@ -27,7 +27,7 @@ module.exports = withSentryConfig(
 
     org: "btegermany",
     project: "homepage",
-    sentryUrl: "https://errors.dachstein.cloud/",
+    sentryUrl: "https://errors.dachstein.cloud",
 
     // Only print logs for uploading source maps in CI
     silent: !process.env.CI,
