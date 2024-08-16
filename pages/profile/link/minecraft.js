@@ -39,7 +39,13 @@ export default function MinecraftLink() {
             setUsername(responseData.username)
         } catch (e) {
             console.error(e)
+            Sentry.addBreadcrumb({
+                category: "mcLink",
+                message: JSON.stringify(e.response),
+                level: "debug",
+            });
             const id = Sentry.captureException(e);
+
             showNotification({
                 color: "red",
                 title: t('common:error'),
