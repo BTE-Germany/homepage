@@ -171,14 +171,7 @@ export default function ProfilePage() {
     }
 
 
-    const error = () => {
-        const id = Sentry.captureException("Test Error");
-        showNotification({
-            color: "red",
-            title: t('common:error'),
-            message: "Trace-ID: " + id
-        })
-    }
+
     return (
         <>
             <Navbar disableAnimation/>
@@ -186,7 +179,7 @@ export default function ProfilePage() {
             <div style={{height: "150px"}}></div>
             <Container size={"xl"}>
                 <Title mb={"xl"}>{t('profilePage.title', {"username": data.user.username})}</Title>
-                    <Button onClick={error}>Error</Button>
+
 
 
                 <Flex gap={"xl"} direction={{base: 'column', sm: 'row'}}>
