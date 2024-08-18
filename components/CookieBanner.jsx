@@ -24,12 +24,14 @@ export default function CookieBanner() {
     }
 
     const allowEssentialCookies = () => {
+        window._paq=window._paq||[];window._paq.push(['rememberConsentGiven']);
+
         setShow(false);
     }
 
     useEffect(() => {
-        console.log(getCookie('mtm_cookie_consent'))
-        if (getCookie('mtm_cookie_consent')) {
+        console.log(getCookie('mtm_consent'))
+        if (getCookie('mtm_consent') || getCookie('mtm_cookie_consent')) {
             setShow(false);
         } else {
             setShow(true)

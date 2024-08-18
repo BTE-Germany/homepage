@@ -9,11 +9,11 @@
 
 .banner {
     position: fixed;
-    z-index: 999;
+    z-index: 9999999;
     bottom: var(--mantine-spacing-lg);
     right: var(--mantine-spacing-lg);
     width: 25%;
-    @media (max-width: $mantine-breakpoint-xs) {
-        width: 100%;
+    @media (max-width: $mantine-breakpoint-md) {
+        width: 80vw;
     }
 }
