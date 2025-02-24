@@ -68,7 +68,6 @@ function MyApp({Component, pageProps}) {
                     <Notifications zIndex={100001}/>
                     <SessionProvider>
                         <RouterTransition/>
-                        <CookieBanner/>
                         <div style={{display: "flex", minHeight: "100vh", flexDirection: "column"}}>
                             <div style={{flex: 1}}>
 

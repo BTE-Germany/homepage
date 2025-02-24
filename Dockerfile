@@ -27,6 +27,9 @@ COPY . .
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
+ENV KEYCLOAK_URL="https://auth.bte-germany.de/realms/btegermany"
+ENV KEYCLOAK_ID="website"
+
 RUN yarn build
 
 # If using npm comment out above and use below instead

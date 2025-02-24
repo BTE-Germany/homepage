@@ -18,25 +18,6 @@ export default function CookieBanner() {
     const {t} = useTranslation("common");
     const [show, setShow] = useState(false);
 
-    const allowCookies = () => {
-        window._paq=window._paq||[];window._paq.push(['rememberCookieConsentGiven']);
-        setShow(false);
-    }
-
-    const allowEssentialCookies = () => {
-        window._paq=window._paq||[];window._paq.push(['rememberConsentGiven']);
-
-        setShow(false);
-    }
-
-    useEffect(() => {
-        console.log(getCookie('mtm_consent'))
-        if (getCookie('mtm_consent') || getCookie('mtm_cookie_consent')) {
-            setShow(false);
-        } else {
-            setShow(true)
-        }
-    }, [])
 
     return (
         <AnimatePresence>
