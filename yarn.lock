@@ -5042,7 +5042,7 @@ __metadata:
     react-countup: ^6.5.3
     react-dom: 18.2.0
     react-i18next: ^14.1.0
-    react-markdown: ^9.0.1
+    react-markdown: ^10.0.0
     stripe: ^15.3.0
     tailwind-merge: ^2.4.0
     tailwindcss: ^3.4.3
@@ -6633,11 +6633,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-markdown@npm:^9.0.1":
-  version: 9.0.1
-  resolution: "react-markdown@npm:9.0.1"
+"react-markdown@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "react-markdown@npm:10.0.0"
   dependencies:
     "@types/hast": ^3.0.0
+    "@types/mdast": ^4.0.0
     devlop: ^1.0.0
     hast-util-to-jsx-runtime: ^2.0.0
     html-url-attributes: ^3.0.0
@@ -6650,7 +6651,7 @@ __metadata:
   peerDependencies:
     "@types/react": ">=18"
     react: ">=18"
-  checksum: ca1daa650d48b84a5a9771683cdb3f3d2d418247ce0faf73ede3207c65f2a21cdebb9df37afda67f6fc8f0f0a7b9ce00eb239781954a4d6c7ad88ea4df068add
+  checksum: 9f5805f54492858186b7a0d7bbc26bcf69bf5dabecce9db1a06914be446d15fd77efc9a17b86e525e782abea62645c5426c43b18dd56049d8e352fa1f0d46477
   languageName: node
   linkType: hard
 

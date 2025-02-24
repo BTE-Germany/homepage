@@ -56,8 +56,6 @@ const Footer = props => {
                         <IconBrandYoutube size={18} stroke={1.5}/>
                     </ActionIcon>
                     <LanguageSwitcher />
-                    <a href="https://aws.amazon.com/what-is-cloud-computing"><img src="https://d0.awsstatic.com/logos/powered-by-aws-white.png" alt="Powered by AWS Cloud Computing" width={100}/></a>
-
                 </Group>
             </div>
         </div>

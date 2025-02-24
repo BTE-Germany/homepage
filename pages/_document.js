@@ -7,10 +7,8 @@ export default function Document() {
     <Html lang="en">
         <Head>
             <ColorSchemeScript/>
-            <script async
-                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8619681460061994"
-                    crossOrigin="anonymous"></script>
         </Head>
+        <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/ff6bd54212f44.js" data-cmp-host="c.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="0"></script>
         <body>
         <Main/>
 
