@@ -526,23 +526,14 @@ const DiscordCard = ({isLinked, data, sessionData, reload}) => {
     const [discordLinkUrl, setDiscordLinkUrl] = useState("");
     const [unlinkLoading, setUnlinkLoading] = useState(false);
 
-    async function hash(string) {
-        const utf8 = new TextEncoder().encode(string);
-        const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
-        const base64Hash = btoa(String.fromCharCode(...new Uint8Array(hashBuffer)));
-        return base64Hash.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-    }
 
     const generateDiscordLinkURL = async () => {
-        const nonce = crypto.randomUUID();
-        const jwtData = jwtDecode(sessionData.accessToken);
-        console.log(jwtData)
-        //const jwtData = {};
-        const input = nonce + jwtData.session_state + jwtData.azp + "discord";
-        console.log(input)
-        const digest = await hash(input);
-        const link = `${process.env.NEXT_PUBLIC_KEYCLOAK_URL}/broker/discord/link?client_id=website&redirect_uri=${encodeURIComponent(window.location.href)}&nonce=${nonce}&hash=${digest}`;
-        setDiscordLinkUrl(link)
+
+        getPkce(50, (error, {challenge}) => {
+            const link = `${process.env.NEXT_PUBLIC_KEYCLOAK_URL}/protocol/openid-connect/auth?client_id=website&redirect_uri=${encodeURIComponent(window.location.href)}&response_type=code&scope=openid&kc_action=idp_link:discord&code_challenge=${challenge}&code_challenge_method=S256`;
+            setDiscordLinkUrl(link)
+        });
+
     }
 
     const unlink = async () => {
