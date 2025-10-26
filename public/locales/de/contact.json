@@ -1,6 +1,7 @@
 {
     "title": "Kontakt",
-    "general": "Allgemeiner Kontakt",
     "generalAndTechnical": "Allgemeiner und technischer Kontakt",
-    "socialMedia": "Kontakt für soziale Medien und PR"
+    "socialMedia": "Kontakt für soziale Medien und PR",
+    "moderation": "Kontakt für Moderation und Entbannungsanträge",
+    "info": "Kontakt für allgemeine Anfragen und Unterstützung"
 }
