@@ -8,7 +8,7 @@ export default function Document() {
         <Head>
             <ColorSchemeScript/>
         </Head>
-        <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/ff6bd54212f44.js" data-cmp-host="c.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="0"></script>
+        <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="ac1952bd-ed21-4271-b7b9-1a25d6ce3301" data-blockingmode="auto" type="text/javascript"></script>
         <body>
         <Main/>
 
