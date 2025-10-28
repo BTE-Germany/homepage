@@ -1,6 +1,7 @@
 {
-    "title": "Contact us",
-    "general": "General contact",
-    "generalAndTechnical": "General and technical contact",
-    "socialMedia": "Social media & PR contact"
+  "title": "Contact us",
+  "generalAndTechnical": "General and technical contact",
+  "socialMedia": "Social media & PR contact",
+  "moderation": "Moderation & unban requests contact",
+  "info": "General inquiries & support contact"
 }

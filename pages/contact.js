@@ -27,24 +27,20 @@ export default function Contact() {
                         <div>
                             <Group wrap="nowrap">
                                 <Avatar
-                                    src="/avatars/leander.png"
+                                    src="/avatars/info.png"
                                     size={94}
                                     radius="md"
                                 />
                                 <div>
-                                    <Text fz="xs" tt="uppercase" fw={700} c="dimmed">
-                                        {t('general')}
-                                    </Text>
-
-                                    <Text fz="lg" fw={500} className={classes.name}>
-                                        Leander S.
+                                    <Text fz="lg" tt="uppercase" fw={700} c="dimmed">
+                                        {t('info')}
                                     </Text>
 
                                     <Group wrap="nowrap" gap={10} mt={3}>
                                         <IconAt stroke={1.5} size="1rem" className={classes.icon}/>
                                         <Text fz="xs" c="dimmed" component={"a"}
-                                              href={"mailto:leander@bte-germany.de"}>
-                                            leander@bte-germany.de
+                                              href={"mailto:info@bte-germany.de"}>
+                                            info@bte-germany.de
                                         </Text>
                                     </Group>
                                 </div>
@@ -52,6 +48,27 @@ export default function Contact() {
                         </div>
                         <div>
                             <Group wrap="nowrap">
+                                <Avatar
+                                    src="/avatars/moderation.png"
+                                    size={94}
+                                    radius="md"
+                                />
+                                <div>
+                                    <Text fz="lg" tt="uppercase" fw={700} c="dimmed">
+                                        {t('moderation')}
+                                    </Text>
+
+                                    <Group wrap="nowrap" gap={10} mt={3}>
+                                        <IconAt stroke={1.5} size="1rem" className={classes.icon}/>
+                                        <Text fz="xs" c="dimmed" component={"a"} href={"mailto:moderation@bte-germany.de"}>
+                                            moderation@bte-germany.de
+                                        </Text>
+                                    </Group>
+                                </div>
+                            </Group>
+                        </div>
+                        <div>
+                            <Group wrap="nowrap" mt={40}>
                                 <Avatar
                                     src="/avatars/robin.png"
                                     size={94}
@@ -84,7 +101,7 @@ export default function Contact() {
                             </Group>
                         </div>
                         <div>
-                            <Group wrap="nowrap">
+                            <Group wrap="nowrap" mt={40}>
                                 <Avatar
                                     src="/avatars/moritz.png"
                                     size={94}
