@@ -24,6 +24,9 @@
             "paragraph": "At BTE Germany, our strength lies in our vibrant and dedicated community of Minecraft enthusiasts. Together, we collaborate to bring the vision of Germany to life, sharing ideas, skills, and creativity to ensure every detail is captured with precision.",
             "joinDiscord": "Join our Discord"
         },
+        "map": {
+            "buildingIn": "We're building in"
+        },
         "cta": {
             "title": "Become a part of something big.",
             "paragraph": "Join BTE Germany today and contribute to the largest Minecraft project in Germany. Whether you're an experienced builder or just starting out, there's a place for you in our community. Help us shape the future of BTE Germany and leave your mark on this incredible journey.",
@@ -36,5 +39,10 @@
         "privacyPolicy": "Privacy Policy",
         "termsAndConditions": "T&C",
         "cancelSubscription": "Cancel Subscription"
+    },
+    "CookieBanner": {
+        "title": "We're using cookies.",
+        "message": "BTE Germany uses only necessary cookies to ensure the functionality of the website. We do not use tracking or marketing cookies.",
+        "accept": "Got it"
     }
 }

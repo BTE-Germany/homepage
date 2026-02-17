@@ -16,7 +16,7 @@ export default function Home() {
         <Stats />
         <Infos />
 
-        <CityNameSwitcher />
+        <CityNameSwitcher  />
 
         <Suspense fallback={<div className="w-1/2 h-128 flex items-center justify-center">Loading map...</div>}>
           <div className="flex justify-center my-16">

@@ -49,27 +49,27 @@ export default function Hero() {
         useDotButton(emblaApi)
 
     return (
-        <section className="container mx-auto mt-32">
+        <section className="container mx-auto mt-20 sm:mt-24 md:mt-32 px-4 sm:px-6 md:px-0">
             <motion.div className="rounded-2xl overflow-hidden relative shadow-lg" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, ease: [.03, .72, .04, .98] }}>
                 <div className="h-full w-full bg-neutral-900/50 absolute z-10" />
-                <div className="absolute w-full z-10 p-8 md:p-16 flex flex-col gap-6 text-white justify-between h-full">
-                    <div>
+                <div className="absolute w-full z-10 p-5 sm:p-8 md:p-16 flex flex-col gap-4 md:gap-6 text-white justify-between h-full">
+                    <div className="text-wrap">
 
-                        <motion.h1 className="text-4xl lg:text-8xl font-black uppercase" variants={containerVariants} initial="hidden" animate="visible">
+                        <motion.h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-8xl font-black uppercase" variants={containerVariants} initial="hidden" animate="visible">
                             {t('hero.title').split(' ').map((word, index) => (
-                                <motion.span key={index} className="block" variants={wordVariants}>
+                                <motion.span key={index} className="block mr-1" variants={wordVariants}>
                                     {word}
                                 </motion.span>
                             ))}
                         </motion.h1>
                     </div>
 
-                    <div className="w-full flex justify-between items-center">
-                        <motion.p className="text-lg font-medium flex items-center gap-2" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.2, duration: 1, ease: [.03, .72, .04, .98] }}>
+                    <div className="w-full flex flex-col gap-4 md:flex-row md:gap-0 justify-between items-start md:items-center">
+                        <motion.p className="text-base sm:text-lg font-medium flex items-center gap-2" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.2, duration: 1, ease: [.03, .72, .04, .98] }}>
                             <IconArrowNarrowDown />
                             {t('hero.moreInfo')}
                         </motion.p>
-                        <div className="flex">
+                        <div className="flex flex-wrap">
                             {scrollSnaps.map((_, index) => (
                                 <div
                                     key={index}
@@ -219,7 +219,7 @@ function ImageCarousel({ emblaRef, emblaApi }: { emblaRef?: EmblaViewportRefType
                         <div className="flex-[0_0_100%] min-w-0" key={index}>
                             <div className="embla__parallax">
                                 <div className="embla__parallax__layer">
-                                    <Image src={img} alt={`Slide ${index + 1}`} className="object-cover w-full" />
+                                    <Image src={img} alt={`Slide ${index + 1}`} className="object-cover w-full h-[520px] sm:h-[600px] md:h-auto" />
                                 </div>
                             </div>
 

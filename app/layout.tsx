@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/common/Navbar";
 import { NextIntlClientProvider } from "next-intl";
 import Footer from "@/components/common/Footer";
+import Script from "next/script";
+import CookieNotice from "@/components/common/CookieNotice";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -25,12 +27,15 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} antialiased dark px-8 lg:px-0 flex w-full min-h-screen flex-col bg-background`}
       >
+        <Script src="https://umami.app.k8s.bteger.dev/script.js" data-website-id="17126ad1-a8ec-4164-8606-5a548d1996e4" />
         <NextIntlClientProvider>
-          <div className="flex-1">
+          <CookieNotice />
+          <div className="flex-1 h-full">
             <Navbar />
             {children}
-            <Footer />
+
           </div>
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

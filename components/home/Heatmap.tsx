@@ -39,7 +39,7 @@ export default function Heatmap() {
 
 
     return (
-        <motion.div className='w-1/2 h-128 relative rounded-xl overflow-hidden' initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, ease: [.03, .72, .04, .98], delay: 0.2 }}>
+        <motion.div className='w-full md:w-1/2 h-72 sm:h-96 md:h-128 relative rounded-xl overflow-hidden' initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, ease: [.03, .72, .04, .98], delay: 0.2 }}>
             <APIProvider apiKey="AIzaSyANhUgZFM7npYG33sj09nLMMNKyzfc7IiI">
                 <DeckGL
                     initialViewState={{

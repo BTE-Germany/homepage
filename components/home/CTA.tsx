@@ -30,7 +30,7 @@ export default function CTA() {
 
 
     return (
-        <motion.div className="container mx-auto mt-32" initial="hidden"
+        <motion.div className="container mx-auto mt-20 sm:mt-28 md:mt-32 px-4 sm:px-6 md:px-0" initial="hidden"
             whileInView="visible"
             variants={{
                 hidden: { opacity: 0, y: 20 },
@@ -38,16 +38,16 @@ export default function CTA() {
             }}
 
             transition={{ duration: 0.5, ease: [.03, .72, .04, .98], delay: 0.2 }}>
-            <div className="flex flex-row items-center justify-center gap-16">
-                <div className="relative w-lg">
+            <div className="flex flex-col md:flex-row items-center md:items-center justify-center gap-10 md:gap-16">
+                <div className="relative w-full max-w-lg">
                     <div className="absolute bg-linear-to-br from-background-800/60 via-background/70 via-30% to-background w-full h-full">
 
                     </div>
                     <img src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`} className="w-full " />
                 </div>
-                <div className="flex flex-col w-full items-start">
-                    <h1 className="text-3xl font-bold">{t("cta.title")}</h1>
-                    <p className="my-4 text-muted-foreground">{t("cta.paragraph")}</p>
+                <div className="flex flex-col w-full items-center md:items-start text-center md:text-left">
+                    <h1 className="text-2xl sm:text-3xl font-bold">{t("cta.title")}</h1>
+                    <p className="my-4 text-muted-foreground text-base sm:text-lg">{t("cta.paragraph")}</p>
                     <Button>
                         <IconConfettiFilled />
                         {t("cta.joinNow")}
