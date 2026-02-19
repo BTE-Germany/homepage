@@ -8,41 +8,18 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { IconArrowNarrowDown } from "@tabler/icons-react";
 import Autoplay from "embla-carousel-autoplay";
-import { ComponentPropsWithRef, useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
     EmblaCarouselType,
     EmblaEventType,
-    EmblaOptionsType
 } from 'embla-carousel'
 import useEmblaCarousel, { EmblaViewportRefType } from 'embla-carousel-react'
 import { useTranslations } from "next-intl";
+import Heading from "../animate-ui/primitives/texts/heading";
 
 export default function Hero() {
 
     const t = useTranslations('Home');
-
-
-    const containerVariants = {
-        hidden: {
-
-        },
-        visible: {
-            transition: {
-                ease: [.03, .72, .04, .98],
-                duration: 0.6,
-                staggerChildren: 0.08,
-            },
-        },
-    };
-
-    const wordVariants = {
-        hidden: { opacity: 0, y: 50 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { ease: [.03, .72, .04, .98], duration: 2 },
-        },
-    };
 
     const [emblaRef, emblaApi] = useEmblaCarousel({ dragFree: true, loop: true }, [Autoplay()])
     const { selectedIndex, scrollSnaps, onDotButtonClick } =
@@ -54,14 +31,7 @@ export default function Hero() {
                 <div className="h-full w-full bg-neutral-900/50 absolute z-10" />
                 <div className="absolute w-full z-10 p-5 sm:p-8 md:p-16 flex flex-col gap-4 md:gap-6 text-white justify-between h-full">
                     <div className="text-wrap">
-
-                        <motion.h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-8xl font-black uppercase" variants={containerVariants} initial="hidden" animate="visible">
-                            {t('hero.title').split(' ').map((word, index) => (
-                                <motion.span key={index} className="block mr-1" variants={wordVariants}>
-                                    {word}
-                                </motion.span>
-                            ))}
-                        </motion.h1>
+                        <Heading>{t('hero.title')}</Heading>
                     </div>
 
                     <div className="w-full flex flex-col gap-4 md:flex-row md:gap-0 justify-between items-start md:items-center">
@@ -82,9 +52,6 @@ export default function Hero() {
                 </div>
 
                 <ImageCarousel emblaRef={emblaRef} emblaApi={emblaApi} />
-
-
-
 
             </motion.div>
         </section>
@@ -219,7 +186,7 @@ function ImageCarousel({ emblaRef, emblaApi }: { emblaRef?: EmblaViewportRefType
                         <div className="flex-[0_0_100%] min-w-0" key={index}>
                             <div className="embla__parallax">
                                 <div className="embla__parallax__layer">
-                                    <Image src={img} alt={`Slide ${index + 1}`} className="object-cover w-full h-[520px] sm:h-[600px] md:h-auto" />
+                                    <Image src={img} alt={`Slide ${index + 1}`} className="object-cover w-full h-130 sm:h-150 md:h-auto" />
                                 </div>
                             </div>
 
