@@ -1,10 +1,13 @@
 import { IconConfettiFilled } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import { Button } from "../ui/button";
+import { useTranslations } from "next-intl";
 
 function CTA() {
+  const t = useTranslations("History.cta");
+
   return (
-    <section className="mb-40">
+    <section className="mb-48">
       <motion.div
         className="container mx-auto mt-20 sm:mt-28 md:mt-32 px-4 sm:px-6 md:px-0"
         initial="hidden"
@@ -24,20 +27,16 @@ function CTA() {
             className="text-2xl sm:text-3xl md:text-4xl font-bold flex justify-center"
             data-date
           >
-            And in the future?
+            {t("title")}
           </h2>
 
           <div className=" flex flex-col items-center justify-start gap-2 text-center mx-0 md:mx-16">
             <p className="my-4 text-muted-foreground text-base sm:text-lg">
-              Together our community has already experienced a variety of
-              historical milestones with many more to come. Interested in
-              becoming a first-hand spectator of our future or even help in
-              shaping it yourself? Become a member of our community today and
-              join us on our mission!
+              {t("paragraph")}
             </p>
             <Button>
               <IconConfettiFilled />
-              Join now
+              {t("joinNow")}
             </Button>
           </div>
         </div>

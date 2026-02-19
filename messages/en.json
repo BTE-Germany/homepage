@@ -33,6 +33,23 @@
             "joinNow": "Join Now"
         }
     },
+    "History": {
+        "hero": {
+            "title": "Our Story",
+            "subText": "Did you know: Our mission to recreate the entire earth 1:1 within Minecraft already started way back in 2020. Let's take a quick look back at some of the most important milestones that shaped the project into what it has become today."
+        },
+        "timeline": {
+            "1": {
+                "date": "Mar 21, 2020",
+                "info": "American YouTuber PippenFTS uploads his video \"The Earth in Minecraft, 1:1 scale... for the first time\" showcasing a full recreation of the earth's terrain. Following his call to populate the still empty surface builders all around the world start to organize."
+            }
+        },
+        "cta": {
+            "title": "And in the future?",
+            "paragraph":  "Together our community has already experienced a variety of historical milestones with many more to come. Interested in becoming a first-hand spectator of our future or even help in shaping it yourself? Become a member of our community today and join us on our mission!",
+            "joinNow": "Join Now"
+        }
+    },
     "Footer": {
         "notAffiliated": "BTE Germany is not affiliated with or endorsed by Mojang AB or Microsoft Corporation.",
         "legalNotice": "Legal Notice",

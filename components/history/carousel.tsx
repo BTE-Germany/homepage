@@ -74,6 +74,7 @@ export default function ImageCarousel({ baseVelocity = 100 }: CarouselProps) {
     baseX.set(baseX.get() + moveBy);
   });
 
+  // TODO: Name - Image pairings for image alts
   const images = [Image1, Image2, Image3, Image4];
 
   return (

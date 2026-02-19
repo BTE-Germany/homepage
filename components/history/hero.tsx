@@ -1,11 +1,14 @@
+import { useTranslations } from "next-intl";
 import Heading from "../animate-ui/primitives/texts/heading";
 import { motion } from "motion/react";
 
 function Hero() {
+  const t = useTranslations("History");
+
   return (
     <section className="mb-32">
       <div className="*:flex *:flex-wrap *:justify-center">
-        <Heading>History of BTE Germany</Heading>
+        <Heading>{t("hero.title")}</Heading>
       </div>
 
       <motion.p
@@ -15,10 +18,7 @@ function Hero() {
         transition={{ duration: 0.5, ease: [0.03, 0.72, 0.04, 0.98] }}
         viewport={{ once: true }}
       >
-        Did you know that our mission to recreate the entire earth 1:1 within
-        Minecraft already started way back in 2020? Let's take a quick look back
-        at some of the most important events that shaped the project into what
-        it has become today.
+        {t("hero.subText")}
       </motion.p>
     </section>
   );

@@ -3,6 +3,7 @@ import Image, { StaticImageData } from "next/image";
 import { useRef } from "react";
 
 import Image1 from "@/public/hero_images/heroimage1.png";
+import { useTranslations } from "next-intl";
 
 type TimelineElement = {
   date: string;
@@ -11,10 +12,12 @@ type TimelineElement = {
 };
 
 export default function Timeline() {
+  const t = useTranslations("History.timeline");
+
   const testEntry: TimelineElement = {
-    date: "Mar 2020",
+    date: t("1.date"),
     image: Image1,
-    desc: "American YouTuber PippenFTS uploads his first video showcasing a full recreation of the earth's terrain and calling for members to start forming the first team of builders",
+    desc: t("1.info"),
   };
 
   const entries = [testEntry, testEntry, testEntry, testEntry, testEntry];

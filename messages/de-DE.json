@@ -1,48 +1,65 @@
 {
-    "Navbar": {
-        "language": "Sprache"
+  "Navbar": {
+    "language": "Sprache"
+  },
+  "Home": {
+    "hero": {
+      "title": "Wir bauen Deutschland in Minecraft.",
+      "moreInfo": "Mehr Infos"
     },
-    "Home": {
-        "hero": {
-            "title": "Wir bauen Deutschland in Minecraft.",
-            "moreInfo": "Mehr Infos"
-        },
-        "stats": {
-            "worldSize": "Weltgröße",
-            "builders": "Builder:innen",
-            "totalArea": "Fertiggestellte Fläche"
-        },
-        "about": {
-            "heading": "Über uns",
-            "title": "Wir sind BTE Germany.",
-            "paragraph": "BTE Germany ist ein gemeinschaftliches Minecraft-Projekt, das sich der detailgetreuen Nachbildung ganz Deutschlands verschrieben hat. Unsere Mission ist es, eine präzise und immersive Darstellung der Städte, Landschaften und Sehenswürdigkeiten Deutschlands im Minecraft-Universum zu erstellen.",
-            "joinUs": "Mach mit"
-        },
-        "community": {
-            "heading": "Unsere Community",
-            "title": "Eine passionierte Community von Buildern.",
-            "paragraph": "Bei BTE Germany liegt unsere Stärke in unserer lebendigen und engagierten Community von Minecraft-Enthusiasten. Gemeinsam arbeiten wir daran, die Vision von Deutschland zum Leben zu erwecken, indem wir Ideen, Fähigkeiten und Kreativität austauschen, um sicherzustellen, dass jedes Detail präzise umgesetzt wird.",
-            "joinDiscord": "Tritt unserem Discord bei"
-        },
-        "map": {
-            "buildingIn": "Wir bauen in"
-        },
-        "cta": {
-            "title": "Werde Teil von etwas Großem.",
-            "paragraph": "Werde noch heute Mitglied bei BTE Germany und trage zum größten Minecraft-Projekt Deutschlands bei. Egal, ob du ein erfahrener Baumeister bist oder gerade erst anfängst, in unserer Community ist Platz für dich. Hilf uns dabei, die Zukunft von BTE Germany zu gestalten, und hinterlasse deine Spuren auf dieser unglaublichen Reise.",
-            "joinNow": "Jetzt mitmachen"
-        }
+    "stats": {
+      "worldSize": "Weltgröße",
+      "builders": "Builder:innen",
+      "totalArea": "Fertiggestellte Fläche"
     },
-    "Footer": {
-        "notAffiliated": "BTE Germany steht in keiner Verbindung zu Mojang AB oder Microsoft Corporation und wird von diesen Unternehmen nicht unterstützt.",
-        "legalNotice": "Impressum",
-        "privacyPolicy": "Datenschutzerklärung",
-        "termsAndConditions": "AGB",
-        "cancelSubscription": "Vertäge kündigen"
+    "about": {
+      "heading": "Über uns",
+      "title": "Wir sind BTE Germany.",
+      "paragraph": "BTE Germany ist ein gemeinschaftliches Minecraft-Projekt, das sich der detailgetreuen Nachbildung ganz Deutschlands verschrieben hat. Unsere Mission ist es, eine präzise und immersive Darstellung der Städte, Landschaften und Sehenswürdigkeiten Deutschlands im Minecraft-Universum zu erstellen.",
+      "joinUs": "Mach mit"
     },
-    "CookieBanner": {
-        "title": "Wir nutzen Cookies.",
-        "message": "BTE Germany verwendet ausschließlich notwendige Cookies, um die Funktionalität der Website zu gewährleisten.",
-        "accept": "Verstanden"
+    "community": {
+      "heading": "Unsere Community",
+      "title": "Eine passionierte Community von Buildern.",
+      "paragraph": "Bei BTE Germany liegt unsere Stärke in unserer lebendigen und engagierten Community von Minecraft-Enthusiasten. Gemeinsam arbeiten wir daran, die Vision von Deutschland zum Leben zu erwecken, indem wir Ideen, Fähigkeiten und Kreativität austauschen, um sicherzustellen, dass jedes Detail präzise umgesetzt wird.",
+      "joinDiscord": "Tritt unserem Discord bei"
+    },
+    "map": {
+      "buildingIn": "Wir bauen in"
+    },
+    "cta": {
+      "title": "Werde Teil von etwas Großem.",
+      "paragraph": "Werde noch heute Mitglied bei BTE Germany und trage zum größten Minecraft-Projekt Deutschlands bei. Egal, ob du ein erfahrener Baumeister bist oder gerade erst anfängst, in unserer Community ist Platz für dich. Hilf uns dabei, die Zukunft von BTE Germany zu gestalten, und hinterlasse deine Spuren auf dieser unglaublichen Reise.",
+      "joinNow": "Jetzt mitmachen"
     }
+  },
+  "History": {
+    "hero": {
+      "title": "Unsere Geschichte",
+      "subText": "Wusstest du schon: Unsere Mission, die gesamte Erde 1:1 in Minecraft nachzubauen, hat bereits 2020 ihren Anfang gefunden. Lass uns einen Blick zurück auf die bedeutendsten Meilensteine werfen, die das Projekt zu dem gemacht haben, was es heute ist."
+    },
+    "timeline": {
+      "1": {
+        "date": "21. Mär 2020",
+        "info": "Der US-amerikanische YouTuber PippenFTS lädt das Video \"The Earth in Minecraft, 1:1 scale... for the first time\" hoch, in welchem er das digitale Abbild des Terrains der Erde vorstellt. Seinem Aufruf folgend versammeln sich in den nächsten Tagen Builder:innen aus der gesamten Welt, um die noch leere Oberfläche mit Leben zu füllen."
+      }
+    },
+    "cta": {
+      "title": "Und in der Zukunft?",
+      "paragraph": "Gemeinsam hat unsere Community bereits eine Vielzahl von historischen Meilensteinen erreicht mit vielen weiteren bereits am Horizont. Du bist interessiert unsere zukunft aus erster Hand mitzuerleben oder möchtest uns sogar dabei helfen, sie selbst zu gestalten? Dann tritt jetzt unserer Community bei und werde Teil unserer Mission!",
+      "joinNow": "Jetzt mitmachen"
+    }
+  },
+  "Footer": {
+    "notAffiliated": "BTE Germany steht in keiner Verbindung zu Mojang AB oder Microsoft Corporation und wird von diesen Unternehmen nicht unterstützt.",
+    "legalNotice": "Impressum",
+    "privacyPolicy": "Datenschutzerklärung",
+    "termsAndConditions": "AGB",
+    "cancelSubscription": "Vertäge kündigen"
+  },
+  "CookieBanner": {
+    "title": "Wir nutzen Cookies.",
+    "message": "BTE Germany verwendet ausschließlich notwendige Cookies, um die Funktionalität der Website zu gewährleisten.",
+    "accept": "Verstanden"
+  }
 }
