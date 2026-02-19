@@ -78,7 +78,7 @@ export default function ImageCarousel({ baseVelocity = 100 }: CarouselProps) {
   const images = [Image1, Image2, Image3, Image4];
 
   return (
-    <section className="mb-40">
+    <section className=" mb-30 lg:mb-40">
       <div className="overflow-hidden flex flex-nowrap">
         <motion.div
           ref={containerRef}

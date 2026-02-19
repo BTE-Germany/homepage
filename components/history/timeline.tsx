@@ -23,11 +23,13 @@ export default function Timeline() {
   const entries = [testEntry, testEntry, testEntry, testEntry, testEntry];
 
   return (
-    <section className="mb-40">
-      {entries.map((entry, idx) => (
-        <Entry key={`entry-${idx}`} entry={entry} />
-      ))}
-      <div className="flex flex-row justify-center">
+    <section className="mb-56 lg:mb-40">
+      <div>
+        {entries.map((entry, idx) => (
+          <Entry key={`entry-${idx}`} entry={entry} />
+        ))}
+      </div>
+      <div className="hidden lg:flex flex-row justify-center">
         <div className="bg-white w-2 h-80 rounded-b-full bg-linear-to-b from-white to-background"></div>
       </div>
     </section>
@@ -44,11 +46,11 @@ function Entry({ entry }: { entry: TimelineElement }) {
   return (
     <div
       ref={ref}
-      className="relative py-20 flex items-stretch gap-8 odd:flex-row odd:**:data-date:justify-end even:flex-row-reverse first:**:data-linestart:rounded-t-full last:**:data-lineend:rounded-b-full"
+      className="relative py-20 flex items-stretch gap-2 lg:gap-8 odd:flex-row odd:**:data-date:justify-end lg:even:flex-row-reverse first:**:data-line:rounded-t-full last:**:data-line:rounded-b-full"
     >
-      <div className="w-full">
+      <div className="lg:w-full">
         <h2
-          className="text-2xl sm:text-3xl md:text-4xl font-bold flex sticky top-62 my-6"
+          className="text-2xl sm:text-3xl md:text-4xl font-bold flex sticky top-62 mx-4 lg:mx-0 lg:my-6 text-nowrap [writing-mode:vertical-lr] lg:[writing-mode:lr]"
           data-date
         >
           {entry.date}
@@ -56,10 +58,7 @@ function Entry({ entry }: { entry: TimelineElement }) {
       </div>
 
       <div className="flex flex-col gap-4 items-center justify-stretch">
-        <div
-          className="bg-white w-2 h-full absolute top-0"
-          data-linestart
-        ></div>
+        <div className="bg-white w-2 h-full absolute top-0" data-line></div>
         <Circle scrollYValue={scrollYProgress} />
       </div>
 
@@ -91,7 +90,7 @@ function InfoDisplay({ entry }: { entry: TimelineElement }) {
 function Circle({ scrollYValue }: { scrollYValue: MotionValue<number> }) {
   return (
     <>
-      <figure className="sticky top-56 w-20 h-20 flex">
+      <figure className="sticky top-56 w-15 h-15 lg:w-20 lg:h-20 flex scale-75 md:scale-100">
         <svg
           className="stroke-white -rotate-90"
           width="80"

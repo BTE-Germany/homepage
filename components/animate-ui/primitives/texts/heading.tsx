@@ -27,7 +27,7 @@ type HeadingProps = {
 export default function Heading({ children }: HeadingProps) {
   return (
     <motion.h1
-      className="text-3xl sm:text-4xl md:text-4xl lg:text-8xl font-black uppercase gap-4"
+      className="text-3xl sm:text-4xl md:text-4xl lg:text-8xl font-black uppercase"
       variants={containerVariants}
       initial="hidden"
       animate="visible"

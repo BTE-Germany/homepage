@@ -7,7 +7,7 @@ function CTA() {
   const t = useTranslations("History.cta");
 
   return (
-    <section className="mb-48">
+    <section className="mb-16 lg:mb-48">
       <motion.div
         className="container mx-auto mt-20 sm:mt-28 md:mt-32 px-4 sm:px-6 md:px-0"
         initial="hidden"
