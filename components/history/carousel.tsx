@@ -10,16 +10,32 @@ import {
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-import Image1 from "@/public/hero_images/heroimage1.png";
-import Image2 from "@/public/hero_images/heroimage2.png";
-import Image3 from "@/public/hero_images/heroimage3.png";
-import Image4 from "@/public/hero_images/heroimage4.png";
+import Image1 from "@/public/carousel_images/carousel1.png";
+import Image2 from "@/public/carousel_images/carousel2.png";
+import Image3 from "@/public/carousel_images/carousel3.png";
+import Image4 from "@/public/carousel_images/carousel4.png";
+import Image5 from "@/public/carousel_images/carousel5.png";
+import Image6 from "@/public/carousel_images/carousel6.png";
+import Image7 from "@/public/carousel_images/carousel7.png";
+import Image8 from "@/public/carousel_images/carousel8.png";
 
 type CarouselProps = {
   baseVelocity: number;
 };
 
 export default function ImageCarousel({ baseVelocity = 100 }: CarouselProps) {
+  // TODO: Name - Image pairings for image alts
+  const images = [
+    Image1,
+    Image2,
+    Image3,
+    Image4,
+    Image5,
+    Image6,
+    Image7,
+    Image8,
+  ];
+
   const baseX = useMotionValue(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const [contentWidth, setContentWidth] = useState(0);
@@ -73,9 +89,6 @@ export default function ImageCarousel({ baseVelocity = 100 }: CarouselProps) {
 
     baseX.set(baseX.get() + moveBy);
   });
-
-  // TODO: Name - Image pairings for image alts
-  const images = [Image1, Image2, Image3, Image4];
 
   return (
     <section className=" mb-30 lg:mb-40">

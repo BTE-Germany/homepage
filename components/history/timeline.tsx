@@ -2,7 +2,19 @@ import { useScroll, motion, MotionValue } from "motion/react";
 import Image, { StaticImageData } from "next/image";
 import { useRef } from "react";
 
-import Image1 from "@/public/hero_images/heroimage1.png";
+import ImgBteglogo from "@/public/timeline_images/bteg_logo.png";
+import ImgPippen from "@/public/timeline_images/pippen.png";
+import ImgBeilstein from "@/public/timeline_images/beilstein.png";
+import ImgSpark from "@/public/timeline_images/spark.png";
+import ImgAnniversary from "@/public/timeline_images/bteg_anniversary.png";
+import ImgWochenblatt from "@/public/timeline_images/meersburg.png";
+import ImgTelekom from "@/public/timeline_images/telekom.png";
+import ImgBtegThumbnail from "@/public/timeline_images/bteg_thumbnail.jpg";
+import ImgEntrupArticle from "@/public/timeline_images/entrup.png";
+import ImgBteGames from "@/public/timeline_images/bte_games.png";
+import ImgExaroton from "@/public/timeline_images/exaroton.png";
+import ImgAssociation from "@/public/timeline_images/verein.png";
+
 import { useTranslations } from "next-intl";
 
 type TimelineElement = {
@@ -14,13 +26,20 @@ type TimelineElement = {
 export default function Timeline() {
   const t = useTranslations("History.timeline");
 
-  const testEntry: TimelineElement = {
-    date: t("1.date"),
-    image: Image1,
-    desc: t("1.info"),
-  };
-
-  const entries = [testEntry, testEntry, testEntry, testEntry, testEntry];
+  const entries = [
+    { date: t("1.date"), image: ImgPippen, desc: t("1.info") },
+    { date: t("2.date"), image: ImgBteglogo, desc: t("2.info") },
+    { date: t("3.date"), image: ImgBeilstein, desc: t("3.info") },
+    { date: t("4.date"), image: ImgSpark, desc: t("4.info") },
+    { date: t("5.date"), image: ImgAnniversary, desc: t("5.info") },
+    { date: t("6.date"), image: ImgWochenblatt, desc: t("6.info") },
+    { date: t("7.date"), image: ImgTelekom, desc: t("7.info") },
+    { date: t("8.date"), image: ImgBtegThumbnail, desc: t("8.info") },
+    { date: t("9.date"), image: ImgEntrupArticle, desc: t("9.info") },
+    { date: t("10.date"), image: ImgAssociation, desc: t("10.info") },
+    { date: t("11.date"), image: ImgBteGames, desc: t("11.info") },
+    { date: t("12.date"), image: ImgExaroton, desc: t("12.info") },
+  ];
 
   return (
     <section className="mb-56 lg:mb-40">
@@ -46,7 +65,7 @@ function Entry({ entry }: { entry: TimelineElement }) {
   return (
     <div
       ref={ref}
-      className="relative py-20 flex items-stretch gap-2 lg:gap-8 odd:flex-row odd:**:data-date:justify-end lg:even:flex-row-reverse first:**:data-line:rounded-t-full last:**:data-line:rounded-b-full"
+      className="relative py-10 flex items-stretch gap-2 lg:gap-8 odd:flex-row odd:**:data-date:justify-end lg:even:flex-row-reverse first:**:data-line:rounded-t-full max-lg:last:**:data-line:rounded-b-full "
     >
       <div className="lg:w-full">
         <h2
