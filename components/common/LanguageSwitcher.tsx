@@ -7,12 +7,10 @@ import {
     DropdownMenuItem,
     DropdownMenuLabel,
     DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 import { Locale } from "@/i18n/locales";
-import { usePathname, useRouter } from "@/i18n/navigation";
+import { useRouter } from "@/i18n/navigation";
 import { useLocale, useTranslations } from "next-intl";
-import { useParams } from "next/navigation";
-
 
 export default function LanguageSwitcher() {
     const locale = useLocale() as Locale;
@@ -37,24 +35,14 @@ export default function LanguageSwitcher() {
             <DropdownMenuContent sideOffset={10}>
                 <DropdownMenuLabel>{t("language")}</DropdownMenuLabel>
                 <DropdownMenuGroup>
-                    <DropdownMenuItem
-                        onClick={() => handleLocaleChange("de-DE")}
-                    >
-
+                    <DropdownMenuItem onClick={() => handleLocaleChange("de-DE")}>
                         Deutsch
-
                     </DropdownMenuItem>
-                    <DropdownMenuItem
-                        onClick={() => handleLocaleChange("en")}
-                    >
-
+                    <DropdownMenuItem onClick={() => handleLocaleChange("en")}>
                         English
-
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
-
-
             </DropdownMenuContent>
-        </DropdownMenu >
+        </DropdownMenu>
     );
 }

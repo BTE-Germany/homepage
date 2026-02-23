@@ -8,36 +8,39 @@ import Script from "next/script";
 import CookieNotice from "@/components/common/CookieNotice";
 
 const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
+    variable: "--font-outfit",
+    subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Deutschland in Minecraft | BTE Germany",
-  description: "Wir bauen gemeinsam Deutschland in Minecraft nach. 1 zu 1. Block für Block.",
+    title: "Deutschland in Minecraft | BTE Germany",
+    description:
+        "Wir bauen gemeinsam Deutschland in Minecraft nach. 1 zu 1. Block für Block.",
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${outfit.variable} antialiased dark px-8 lg:px-0 flex w-full min-h-screen flex-col bg-background`}
-      >
-        <Script src="https://umami.app.k8s.bteger.dev/script.js" data-website-id="17126ad1-a8ec-4164-8606-5a548d1996e4" />
-        <NextIntlClientProvider>
-          <CookieNotice />
-          <div className="flex-1 h-full">
-            <Navbar />
-            {children}
-
-          </div>
-          <Footer />
-        </NextIntlClientProvider>
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <body
+                className={`${outfit.variable} antialiased dark px-8 lg:px-0 flex w-full min-h-screen flex-col bg-background`}
+            >
+                <Script
+                    src="https://umami.app.k8s.bteger.dev/script.js"
+                    data-website-id="17126ad1-a8ec-4164-8606-5a548d1996e4"
+                />
+                <NextIntlClientProvider>
+                    <CookieNotice />
+                    <div className="flex-1 h-full">
+                        <Navbar />
+                        {children}
+                    </div>
+                    <Footer />
+                </NextIntlClientProvider>
+            </body>
+        </html>
+    );
 }

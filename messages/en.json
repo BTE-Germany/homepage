@@ -1,109 +1,109 @@
 {
-  "Navbar": {
-    "language": "Language"
-  },
-  "Home": {
-    "hero": {
-      "title": "We're building Germany in Minecraft.",
-      "moreInfo": "More Info"
+    "Navbar": {
+        "language": "Language"
     },
-    "stats": {
-      "worldSize": "Total World Size",
-      "builders": "Builders",
-      "totalArea": "Finished Area"
+    "Home": {
+        "hero": {
+            "title": "We're building Germany in Minecraft.",
+            "moreInfo": "More Info"
+        },
+        "stats": {
+            "worldSize": "Total World Size",
+            "builders": "Builders",
+            "totalArea": "Finished Area"
+        },
+        "about": {
+            "heading": "About Us",
+            "title": "We are BTE Germany.",
+            "paragraph": "BTE Germany is a community-driven Minecraft project dedicated to recreating the entirety of Germany in meticulous detail. Our mission is to build an accurate and immersive representation of Germany's cities, landscapes, and landmarks within the Minecraft universe.",
+            "joinUs": "Join Our Mission"
+        },
+        "community": {
+            "heading": "Our Community",
+            "title": "A passionate community of builders.",
+            "paragraph": "At BTE Germany, our strength lies in our vibrant and dedicated community of Minecraft enthusiasts. Together, we collaborate to bring the vision of Germany to life, sharing ideas, skills, and creativity to ensure every detail is captured with precision.",
+            "joinDiscord": "Join our Discord"
+        },
+        "map": {
+            "buildingIn": "We're building in"
+        },
+        "cta": {
+            "title": "Become a part of something big.",
+            "paragraph": "Join BTE Germany today and contribute to the largest Minecraft project in Germany. Whether you're an experienced builder or just starting out, there's a place for you in our community. Help us shape the future of BTE Germany and leave your mark on this incredible journey.",
+            "joinNow": "Join Now"
+        }
     },
-    "about": {
-      "heading": "About Us",
-      "title": "We are BTE Germany.",
-      "paragraph": "BTE Germany is a community-driven Minecraft project dedicated to recreating the entirety of Germany in meticulous detail. Our mission is to build an accurate and immersive representation of Germany's cities, landscapes, and landmarks within the Minecraft universe.",
-      "joinUs": "Join Our Mission"
+    "History": {
+        "hero": {
+            "title": "Our History",
+            "subText": "Did you know: Our mission to recreate the entire earth 1:1 within Minecraft already started way back in 2020. Let's take a quick look back at some of the most important milestones that shaped the project into what it has become today."
+        },
+        "timeline": {
+            "1": {
+                "date": "Mar 21, 2020",
+                "info": "American YouTuber PippenFTS uploads his video \"The Earth in Minecraft, 1:1 scale... for the first time\" showcasing a full recreation of the earth's terrain. Following his call to populate the still empty surface builders all around the world start to organize."
+            },
+            "2": {
+                "date": "Mar 26, 2020",
+                "info": "Just a few days after the launch of the international BTE project, a server was set up for the German community, initially organised by a small group of people around abti.fmx (formerly FFA.2016). Application buildings were constructed in single player mode and manually transferred to the server, which at that time was still running on Hamachi."
+            },
+            "3": {
+                "date": "May 15, 2020",
+                "info": "Regular build events are a constant feature throughout the project, where our builders set themselves the goal of recreating a designated area within a limited time. The first of these events took place in the small community of Beilstein (Moselle). While this event was just about building together, future events became larger and a rating system with prizes was introduced."
+            },
+            "4": {
+                "date": "Jul 01, 2020",
+                "info": "As awareness grew, other content creators also became aware of the project. This led to a server tour with SparkofPhoenix, who was shown the current status in various cities by some team members. More showcases like this would follow in the near future, including ones by TheJoCraft and NQRMEN."
+            },
+            "5": {
+                "date": "Mar 26, 2021",
+                "info": "Exactly one year after the project launch, a recap of the past year was published on the BuildTheEarth Germany YouTube channel. In addition to interviews with various staff members about their personal experiences in the project, some statistics about the server and social media channels were also published. After just one year, BTE Germany already had over 650 builders."
+            },
+            "6": {
+                "date": "Feb 19, 2022",
+                "info": "The WOCHENBLATT, a local newspaper in the Lake Constance area, was the first traditional media outlet to publish a report on our project. In addition to interviews with some of the builders, the report mainly focused on the progress made in the cities of Friedrichshafen, Meersburg and Passau. Since then, numerous other reports have followed from a wide variety of towns and cities, including Oldenburg, Dresden and Entrup."
+            },
+            "7": {
+                "date": "May 05, 2023",
+                "info": "A comment from Telekom under one of our TikToks led to the biggest corporate collaboration to date. A replica of the headquarters and Magenta Blossom Field in Bonn was followed by a digital recreation of the Telekom booth at MWC Barcelona 2025."
+            },
+            "8": {
+                "date": "Aug 19,2023",
+                "info": "Over time, as more and more people became aware of our project, there was one question that we were asked almost daily: When will we be done with Germany? We dedicated an entire video to answering this question, in which we not only discuss figures and statistics, but also the motivations that drive us to continue despite the rather overwhelming reality."
+            },
+            "9": {
+                "date": "Dec 20, 2023",
+                "info": "After several local newspapers had already reported on the progress made in their region in our project, WDR's Lokalzeit programme aired its first television report about us, showcasing the massive progress made in Entrup and featuring an interview with the local builder. Following this initial coverage, other broadcasters such as rbb24, RTL West, SWR, SR 3, HR and NDR joined in to present the current status in their regions."
+            },
+            "10": {
+                "date": "Apr  04, 2024",
+                "info": "After four years of our project's existence, BuildTheEarth Germany e.V. was finally founded, and we have been operating as a registered association ever since."
+            },
+            "11": {
+                "date": "Jul 26, 2024",
+                "info": "Organised by the Main BTE Team, the BTE Games were held, a building competition between all build teams participating in the international BTE project. The teams competed in a total of five rounds to climb the tournament tree. After more than a year and a half of competition, our team finally won the tournament in the final against BTUK."
+            },
+            "12": {
+                "date": "Sep 04, 2025",
+                "info": "The entire project has always relied heavily on the support of all our members, whether through their skills or financially. With exaroton as the new sponsor and host for our Minecraft servers, we have taken an important step towards providing you with a great experience on our servers in the future, regardless of donations."
+            }
+        },
+        "cta": {
+            "title": "And in the future?",
+            "paragraph": "Together our community has already experienced a variety of historical milestones with many more to come. Interested in becoming a first-hand spectator of our future or even help in shaping it yourself? Become a member of our community today and join us on our mission!",
+            "joinNow": "Join Now"
+        }
     },
-    "community": {
-      "heading": "Our Community",
-      "title": "A passionate community of builders.",
-      "paragraph": "At BTE Germany, our strength lies in our vibrant and dedicated community of Minecraft enthusiasts. Together, we collaborate to bring the vision of Germany to life, sharing ideas, skills, and creativity to ensure every detail is captured with precision.",
-      "joinDiscord": "Join our Discord"
+    "Footer": {
+        "notAffiliated": "BTE Germany is not affiliated with or endorsed by Mojang AB or Microsoft Corporation.",
+        "legalNotice": "Legal Notice",
+        "privacyPolicy": "Privacy Policy",
+        "termsAndConditions": "T&C",
+        "cancelSubscription": "Cancel Subscription"
     },
-    "map": {
-      "buildingIn": "We're building in"
-    },
-    "cta": {
-      "title": "Become a part of something big.",
-      "paragraph": "Join BTE Germany today and contribute to the largest Minecraft project in Germany. Whether you're an experienced builder or just starting out, there's a place for you in our community. Help us shape the future of BTE Germany and leave your mark on this incredible journey.",
-      "joinNow": "Join Now"
+    "CookieBanner": {
+        "title": "We're using cookies.",
+        "message": "BTE Germany uses only necessary cookies to ensure the functionality of the website. We do not use tracking or marketing cookies.",
+        "accept": "Got it"
     }
-  },
-  "History": {
-    "hero": {
-      "title": "Our History",
-      "subText": "Did you know: Our mission to recreate the entire earth 1:1 within Minecraft already started way back in 2020. Let's take a quick look back at some of the most important milestones that shaped the project into what it has become today."
-    },
-    "timeline": {
-      "1": {
-        "date": "Mar 21, 2020",
-        "info": "American YouTuber PippenFTS uploads his video \"The Earth in Minecraft, 1:1 scale... for the first time\" showcasing a full recreation of the earth's terrain. Following his call to populate the still empty surface builders all around the world start to organize."
-      },
-      "2": {
-        "date": "Mar 26, 2020",
-        "info": "Just a few days after the launch of the international BTE project, a server was set up for the German community, initially organised by a small group of people around abti.fmx (formerly FFA.2016). Application buildings were constructed in single player mode and manually transferred to the server, which at that time was still running on Hamachi."
-      },
-      "3": {
-        "date": "May 15, 2020",
-        "info": "Regular build events are a constant feature throughout the project, where our builders set themselves the goal of recreating a designated area within a limited time. The first of these events took place in the small community of Beilstein (Moselle). While this event was just about building together, future events became larger and a rating system with prizes was introduced."
-      },
-      "4": {
-        "date": "Jul 01, 2020",
-        "info": "As awareness grew, other content creators also became aware of the project. This led to a server tour with SparkofPhoenix, who was shown the current status in various cities by some team members. More showcases like this would follow in the near future, including ones by TheJoCraft and NQRMEN."
-      },
-      "5": {
-        "date": "Mar 26, 2021",
-        "info": "Exactly one year after the project launch, a recap of the past year was published on the BuildTheEarth Germany YouTube channel. In addition to interviews with various staff members about their personal experiences in the project, some statistics about the server and social media channels were also published. After just one year, BTE Germany already had over 650 builders."
-      },
-      "6": {
-        "date": "Feb 19, 2022",
-        "info": "The WOCHENBLATT, a local newspaper in the Lake Constance area, was the first traditional media outlet to publish a report on our project. In addition to interviews with some of the builders, the report mainly focused on the progress made in the cities of Friedrichshafen, Meersburg and Passau. Since then, numerous other reports have followed from a wide variety of towns and cities, including Oldenburg, Dresden and Entrup."
-      },
-      "7": {
-        "date": "May 05, 2023",
-        "info": "A comment from Telekom under one of our TikToks led to the biggest corporate collaboration to date. A replica of the headquarters and Magenta Blossom Field in Bonn was followed by a digital recreation of the Telekom booth at MWC Barcelona 2025."
-      },
-      "8": {
-        "date": "Aug 19,2023",
-        "info": "Over time, as more and more people became aware of our project, there was one question that we were asked almost daily: When will we be done with Germany? We dedicated an entire video to answering this question, in which we not only discuss figures and statistics, but also the motivations that drive us to continue despite the rather overwhelming reality."
-      },
-      "9": {
-        "date": "Dec 20, 2023",
-        "info": "After several local newspapers had already reported on the progress made in their region in our project, WDR's Lokalzeit programme aired its first television report about us, showcasing the massive progress made in Entrup and featuring an interview with the local builder. Following this initial coverage, other broadcasters such as rbb24, RTL West, SWR, SR 3, HR and NDR joined in to present the current status in their regions."
-      },
-      "10": {
-        "date": "Apr  04, 2024",
-        "info": "After four years of our project's existence, BuildTheEarth Germany e.V. was finally founded, and we have been operating as a registered association ever since."
-      },
-      "11": {
-        "date": "Jul 26, 2024",
-        "info": "Organised by the Main BTE Team, the BTE Games were held, a building competition between all build teams participating in the international BTE project. The teams competed in a total of five rounds to climb the tournament tree. After more than a year and a half of competition, our team finally won the tournament in the final against BTUK."
-      },
-      "12": {
-        "date": "Sep 04, 2025",
-        "info": "The entire project has always relied heavily on the support of all our members, whether through their skills or financially. With exaroton as the new sponsor and host for our Minecraft servers, we have taken an important step towards providing you with a great experience on our servers in the future, regardless of donations."
-      }
-    },
-    "cta": {
-      "title": "And in the future?",
-      "paragraph": "Together our community has already experienced a variety of historical milestones with many more to come. Interested in becoming a first-hand spectator of our future or even help in shaping it yourself? Become a member of our community today and join us on our mission!",
-      "joinNow": "Join Now"
-    }
-  },
-  "Footer": {
-    "notAffiliated": "BTE Germany is not affiliated with or endorsed by Mojang AB or Microsoft Corporation.",
-    "legalNotice": "Legal Notice",
-    "privacyPolicy": "Privacy Policy",
-    "termsAndConditions": "T&C",
-    "cancelSubscription": "Cancel Subscription"
-  },
-  "CookieBanner": {
-    "title": "We're using cookies.",
-    "message": "BTE Germany uses only necessary cookies to ensure the functionality of the website. We do not use tracking or marketing cookies.",
-    "accept": "Got it"
-  }
 }
