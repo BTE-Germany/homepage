@@ -11,9 +11,17 @@ export default function Home() {
         <>
             <Hero />
             <div className="mb-64">
-                <Stats />
-                <Infos />
+                <Suspense
+                    fallback={
+                        <div className="w-1/2 h-128 flex items-center justify-center">
+                            Loading stats...
+                        </div>
+                    }
+                >
+                    <Stats />
+                </Suspense>
 
+                <Infos />
                 <CityNameSwitcher />
 
                 <Suspense

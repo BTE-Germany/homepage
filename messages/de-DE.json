@@ -1,6 +1,9 @@
 {
     "Navbar": {
-        "language": "Sprache"
+        "language": "Sprache",
+        "join": "Mitmachen",
+        "map": "Karte",
+        "history": "Geschichte"
     },
     "Home": {
         "hero": {

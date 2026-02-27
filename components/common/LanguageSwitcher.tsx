@@ -25,7 +25,7 @@ export default function LanguageSwitcher() {
 
     return (
         <DropdownMenu modal={false}>
-            <DropdownMenuTrigger asChild>
+            <DropdownMenuTrigger className="cursor-pointer" asChild>
                 <img
                     src={`https://cdn.bte-germany.de/general/flags/${locale}.svg`}
                     alt={locale}
