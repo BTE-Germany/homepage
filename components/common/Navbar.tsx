@@ -6,15 +6,13 @@ import LogoAnimated from "@/public/logo_animated.gif";
 import { motion } from "motion/react";
 import Image from "next/image";
 import LanguageSwitcher from "./LanguageSwitcher";
-import Link from "next/link";
-import { useTransitionRouter } from "next-view-transitions";
-import { usePathname } from "next/navigation";
-import { MouseEvent } from "react";
 import { useTranslations } from "next-intl";
+import HamburgerIcon from "../animate-ui/primitives/icons/hamburger";
+import TransitionLink from "./TransitionLink";
+import { useEffect, useState } from "react";
+import TextZoop from "../animate-ui/primitives/texts/text-zoop";
 
 export default function Navbar() {
-    const router = useTransitionRouter();
-    const pathName = usePathname();
     const t = useTranslations("Navbar");
 
     const routes: { path: string; name: string; external?: boolean }[] = [
@@ -23,35 +21,29 @@ export default function Navbar() {
         { path: "/history", name: t("history") },
     ];
 
-    function transitionPage(path: string, e: MouseEvent) {
-        e.preventDefault();
+    const [isExpanded, setIsExpanded] = useState(false);
 
-        if (pathName === path) {
-            window.scroll({
-                top: 0,
-                behavior: "smooth",
-            });
-            return;
-        }
+    const hideMobileMenu = () => setIsExpanded(false);
 
-        router.push(path, {
-            onTransitionReady: pageAnimation,
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            hideMobileMenu();
         });
-    }
+    }, []);
 
     return (
         <>
             <div className="h-16"></div>
             <nav className="fixed top-0 left-0 w-full z-50 bg-transparent py-4 ">
                 <motion.div
-                    className="max-w-[80%] mx-auto my-8"
+                    className="max-w-[90%] lg:max-w-[80%] mx-auto my-8"
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.1, ease: [0.03, 0.72, 0.04, 0.98] }}
                 >
-                    <div className="bg-neutral-900/50 backdrop-blur-md rounded-2xl py-5 px-8 border border-neutral-700/30 flex items-center justify-between">
+                    <div className="bg-neutral-900/50 backdrop-blur-md rounded-2xl py-5 px-4 lg:px-8 border border-neutral-700/30 flex items-center justify-between">
                         <motion.div initial="initial" whileHover="hovered">
-                            <Link href="/" onClick={(e) => transitionPage("/", e)}>
+                            <TransitionLink route="/" callback={hideMobileMenu}>
                                 <div className="flex items-center gap-5 hover:**:data-static:hidden hover:**:data-animated:block">
                                     <Image
                                         src={Logo}
@@ -69,123 +61,81 @@ export default function Navbar() {
                                         className="object-contain hidden"
                                         data-animated
                                     />
-                                    <div className="text-lg overflow-hidden relative">
+                                    <div className="text-lg overflow-hidden relative leading-5">
                                         <TextZoop>BTE Germany</TextZoop>
                                     </div>
                                 </div>
-                            </Link>
+                            </TransitionLink>
                         </motion.div>
-                        <div className="flex gap-12 items-center">
-                            <div className="flex gap-8">
+                        <div className="flex gap-4 lg:gap-12 items-center justify-center">
+                            <div className="lg:flex gap-8 hidden">
                                 {routes.map((route) => (
                                     <motion.div
                                         key={route.name}
                                         initial="initial"
                                         whileHover="hovered"
-                                        className="relative overflow-hidden"
+                                        className="relative overflow-hidden leading-5"
                                     >
-                                        <Link
-                                            href={route.path}
-                                            onClick={(e) => {
-                                                if (!route.external)
-                                                    transitionPage(route.path, e);
-                                            }}
-                                            target="_blank"
+                                        <TransitionLink
+                                            route={route.path}
+                                            callback={hideMobileMenu}
                                         >
                                             <TextZoop>{route.name}</TextZoop>
-                                        </Link>
+                                        </TransitionLink>
                                     </motion.div>
                                 ))}
                             </div>
 
                             <LanguageSwitcher />
+
+                            <div className="block lg:hidden">
+                                <button
+                                    onClick={() => setIsExpanded((prev) => !prev)}
+                                    className="flex items-center justify-center"
+                                >
+                                    <HamburgerIcon active={isExpanded} />
+                                </button>
+                            </div>
                         </div>
                     </div>
+
+                    {/* Mobile Navbar popover */}
+                    <motion.div
+                        className="lg:hidden mx-4 rounded-b-2xl bg-neutral-900/50 backdrop-blur-md"
+                        initial={isExpanded ? "open" : "collapsed"}
+                        animate={isExpanded ? "open" : "collapsed"}
+                        variants={{
+                            open: {
+                                opacity: 1,
+                                height: "auto",
+                            },
+                            collapsed: { opacity: 0, height: 0 },
+                        }}
+                        transition={{
+                            type: "spring",
+                            duration: 0.5,
+                        }}
+                    >
+                        <div className="py-8 flex flex-col justify-center items-center gap-4">
+                            {routes.map((route) => (
+                                <motion.div
+                                    key={route.name}
+                                    initial="initial"
+                                    whileHover="hovered"
+                                    className="relative overflow-hidden leading-4"
+                                >
+                                    <TransitionLink
+                                        route={route.path}
+                                        callback={hideMobileMenu}
+                                    >
+                                        <TextZoop>{route.name}</TextZoop>
+                                    </TransitionLink>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </motion.div>
                 </motion.div>
             </nav>
-        </>
-    );
-}
-
-const pageAnimation = () => {
-    document.documentElement.animate(
-        [
-            {
-                opacity: 1,
-                scale: 1,
-                transform: "translateY(0)",
-            },
-            {
-                opacity: 0.5,
-                scale: 0.9,
-                transform: "translateY(-100px)",
-            },
-        ],
-        {
-            duration: 1000,
-            easing: "cubic-bezier(0.76, 0, 0.24, 1)",
-            fill: "forwards",
-            pseudoElement: "::view-transition-old(root)",
-        },
-    );
-
-    document.documentElement.animate(
-        [
-            {
-                transform: "translateY(100%)",
-            },
-            {
-                transform: "translateY(0)",
-            },
-        ],
-        {
-            duration: 1000,
-            easing: "cubic-bezier(0.76, 0, 0.24, 1)",
-            fill: "forwards",
-            pseudoElement: "::view-transition-new(root)",
-        },
-    );
-};
-
-function TextZoop({ children }: { children: string }) {
-    return (
-        <>
-            <div className="font-bold">
-                {children.split("").map((l, i) => {
-                    return (
-                        <motion.span
-                            key={`1-${i}`}
-                            className="inline-block whitespace-pre"
-                            variants={{ initial: { y: 0 }, hovered: { y: "-100%" } }}
-                            transition={{
-                                duration: 0.2,
-                                ease: "easeInOut",
-                                delay: 0.02 * i,
-                            }}
-                        >
-                            {l}
-                        </motion.span>
-                    );
-                })}
-            </div>
-            <div className="font-bold absolute inset-0">
-                {children.split("").map((l, i) => {
-                    return (
-                        <motion.span
-                            key={`2-${i}`}
-                            className="inline-block  whitespace-pre"
-                            variants={{ initial: { y: "100%" }, hovered: { y: 0 } }}
-                            transition={{
-                                duration: 0.2,
-                                ease: "easeInOut",
-                                delay: 0.01 * i,
-                            }}
-                        >
-                            {l}
-                        </motion.span>
-                    );
-                })}
-            </div>
         </>
     );
 }
