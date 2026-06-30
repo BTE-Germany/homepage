@@ -3,46 +3,7 @@
 import Heading from "@/components/animate-ui/primitives/texts/heading";
 import { useTranslations } from "next-intl";
 import { GuideCard } from "@/components/guides/TutorialCard";
-
-export type Guide = {
-    titleKey: string;
-    descriptionKey: string;
-    category: "join" | "building";
-};
-
-// List of guides to display on the guides page
-const guides: Guide[] = [
-    {
-        titleKey: "Visit the server",
-        descriptionKey: "Learn how to join our server and become part of our community.",
-        category: "join",
-    },
-    {
-        titleKey: "Become a builder",
-        descriptionKey: "Discover how to contribute to our projects as a builder.",
-        category: "join",
-    },
-    {
-        titleKey: "Join our team",
-        descriptionKey: "Find out how to join our team and collaborate on exciting projects.",
-        category: "join",
-    },
-    {
-        titleKey: "How to build a plot",
-        descriptionKey: "Step-by-step guide on how to build your own plot.",
-        category: "building",
-    },
-    {   
-        titleKey: "tpll tutorial",
-        descriptionKey: "Learn how to use tpll for your building projects.",
-        category: "building",
-    },
-    {
-        titleKey: "Measuring building heights",
-        descriptionKey: "Tips and techniques for accurately measuring building heights.",
-        category: "building",
-    },
-]
+import { guides } from "@/lib/guides";
 
 export default function GuidesPage() {
     const t = useTranslations("Guides");

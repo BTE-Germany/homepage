@@ -22,18 +22,27 @@ const wordVariants: Variants = {
 
 type HeadingProps = {
     children: string;
+    inline?: boolean;
+    size?: "default" | "half";
 };
 
-export default function Heading({ children }: HeadingProps) {
+const sizeClasses = {
+    default: "text-3xl sm:text-4xl md:text-4xl lg:text-8xl",
+    half: "text-[0.9375rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[3rem]",
+};
+
+export default function Heading({ children, inline = false, size = "default" }: HeadingProps) {
+    const wordClassName = inline ? "inline-block mr-2" : "block mr-1";
+
     return (
         <motion.h1
-            className="text-3xl sm:text-4xl md:text-4xl lg:text-8xl font-black uppercase"
+            className={`${sizeClasses[size]} font-black uppercase`}
             variants={containerVariants}
             initial="hidden"
             animate="visible"
         >
-            {children.split(" ").map((word, index) => (
-                <motion.span key={index} className="block mr-1" variants={wordVariants}>
+            {children.split(/\s+/).filter(Boolean).map((word, index) => (
+                <motion.span key={`${word}-${index}`} className={wordClassName} variants={wordVariants}>
                     {word}
                 </motion.span>
             ))}

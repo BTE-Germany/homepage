@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import { useRef, useCallback, useEffect } from "react";
-import { Guide } from "@/app/[locale]/guides/page";
+import { Guide } from "@/lib/guides";
+import TransitionLink from "../common/TransitionLink";
 
 export function GuideCard({ content }: { content: Guide; }) {
     // How far the card appears from the viewer in 3D space.
@@ -74,23 +75,27 @@ export function GuideCard({ content }: { content: Guide; }) {
 
     return (
         <div className={`[perspective:${CARD_PERSPECTIVE}px]`}>
-            <div
-                ref={cardRef}
-                className={`bg-card rounded-lg ${CARD_TRANSITION_CLASSES} shadow-sm ${CARD_HOVER_SHADOW} will-change-transform`}
-                style={{ transform: CARD_INITIAL_TRANSFORM }}
-                onMouseMove={handleMouseMove}
-                onMouseLeave={resetTransform}
+            <TransitionLink
+                route={`/guides/${content.id}`}
             >
-                <Image src={`/community.png`}
-                    alt={content.titleKey}
-                    width={400}
-                    height={225}
-                    className="rounded-t-lg w-full object-cover" />
-                <div className="flex flex-col gap-2 p-4">
-                    <h3 className="text-lg font-bold">{content.titleKey}</h3>
-                    <p>{content.descriptionKey}</p>
+                <div
+                    ref={cardRef}
+                    className={`bg-card rounded-lg ${CARD_TRANSITION_CLASSES} shadow-sm ${CARD_HOVER_SHADOW} will-change-transform`}
+                    style={{ transform: CARD_INITIAL_TRANSFORM }}
+                    onMouseMove={handleMouseMove}
+                    onMouseLeave={resetTransform}
+                >
+                    <Image src={`/community.png`}
+                        alt={content.titleKey}
+                        width={400}
+                        height={225}
+                        className="rounded-t-lg w-full object-cover" />
+                    <div className="flex flex-col gap-2 p-4">
+                        <h3 className="text-lg font-bold">{content.titleKey}</h3>
+                        <p>{content.descriptionKey}</p>
+                    </div>
                 </div>
-            </div>
+            </TransitionLink>
         </div>
     );
 }

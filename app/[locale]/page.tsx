@@ -10,7 +10,7 @@ export default function Home() {
     return (
         <>
             <Hero />
-            <div className="mb-64">
+            <div className="mb-24">
                 <Suspense
                     fallback={
                         <div className="w-1/2 h-128 flex items-center justify-center">
