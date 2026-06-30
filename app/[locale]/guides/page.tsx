@@ -2,16 +2,16 @@
 
 import Heading from "@/components/animate-ui/primitives/texts/heading";
 import { useTranslations } from "next-intl";
-import { TutorialCard } from "@/components/tutorial/TutorialCard";
+import { GuideCard } from "@/components/guides/TutorialCard";
 
-export type Tutorial = {
+export type Guide = {
     titleKey: string;
     descriptionKey: string;
     category: "join" | "building";
 };
 
-// List of tutorials to display on the tutorial page
-const tutorials: Tutorial[] = [
+// List of guides to display on the guides page
+const guides: Guide[] = [
     {
         titleKey: "Visit the server",
         descriptionKey: "Learn how to join our server and become part of our community.",
@@ -44,8 +44,8 @@ const tutorials: Tutorial[] = [
     },
 ]
 
-export default function TutorialPage() {
-    const t = useTranslations("Tutorial");
+export default function GuidesPage() {
+    const t = useTranslations("Guides");
 
     return (
         <div className="container mx-auto mt-42 md:mt-36 lg:mt-32 flex flex-col items-center gap-16">
@@ -57,22 +57,22 @@ export default function TutorialPage() {
                 </p>
             </div>
             {/* Filter out all unique categories and turn them into sections */}
-            {[... new Set(tutorials.map((tutorial) => tutorial.category))].map((category) => (
+            {[... new Set(guides.map((guide) => guide.category))].map((category) => (
                 <section key={category} className="flex flex-col items-center gap-10 w-full">
                     <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-4xl font-black uppercase">
                         {t(category)}
                     </h2>
                     <div className="flex flex-wrap justify-center gap-3 w-full text-center">
-                        {tutorials
-                            .filter((tutorial) => tutorial.category === category)
-                            .map((tutorial) => (
+                        {guides
+                            .filter((guide) => guide.category === category)
+                            .map((guide) => (
                                 <>
                                     {/* Calculate the width for each tutorial card as if it were in a grid */}
                                     <div
-                                        key={tutorial.titleKey}
+                                        key={guide.titleKey}
                                         className="w-full sm:w-[calc(50%-0.375rem)] md:w-[calc(33.333%-0.5rem)]"
                                     >
-                                        <TutorialCard content={tutorial} />
+                                        <GuideCard content={guide} />
                                     </div>
                                 </>
                             ))}

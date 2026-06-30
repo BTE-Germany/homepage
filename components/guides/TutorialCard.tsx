@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import { useRef, useCallback, useEffect } from "react";
-import { Tutorial } from "@/app/[locale]/tutorial/page";
+import { Guide } from "@/app/[locale]/guides/page";
 
-export function TutorialCard({ content }: { content: Tutorial; }) {
+export function GuideCard({ content }: { content: Guide; }) {
     // How far the card appears from the viewer in 3D space.
     const CARD_PERSPECTIVE = 1200;
     // Maximum degrees of rotation on each axis.
