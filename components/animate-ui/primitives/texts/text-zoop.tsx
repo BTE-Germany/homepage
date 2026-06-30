@@ -9,11 +9,22 @@ export default function TextZoop({ children }: { children: string }) {
                         <motion.span
                             key={`1-${i}`}
                             className="inline-block whitespace-pre"
-                            variants={{ initial: { y: 0 }, hovered: { y: "-100%" } }}
-                            transition={{
-                                duration: 0.2,
-                                ease: "easeInOut",
-                                delay: 0.02 * i,
+                            variants={{
+                                initial: {
+                                    y: 0,
+                                    transition: {
+                                        duration: 0.2,
+                                        ease: "easeInOut",
+                                    },
+                                },
+                                hovered: {
+                                    y: "-100%",
+                                    transition: {
+                                        duration: 0.2,
+                                        ease: "easeInOut",
+                                        delay: 0.02 * i,
+                                    },
+                                },
                             }}
                         >
                             {l}
@@ -27,11 +38,22 @@ export default function TextZoop({ children }: { children: string }) {
                         <motion.span
                             key={`2-${i}`}
                             className="inline-block  whitespace-pre"
-                            variants={{ initial: { y: "100%" }, hovered: { y: 0 } }}
-                            transition={{
-                                duration: 0.2,
-                                ease: "easeInOut",
-                                delay: 0.01 * i,
+                            variants={{
+                                initial: {
+                                    y: "100%",
+                                    transition: {
+                                        duration: 0.2,
+                                        ease: "easeInOut",
+                                    },
+                                },
+                                hovered: {
+                                    y: 0,
+                                    transition: {
+                                        duration: 0.2,
+                                        ease: "easeInOut",
+                                        delay: 0.01 * i,
+                                    },
+                                },
                             }}
                         >
                             {l}
