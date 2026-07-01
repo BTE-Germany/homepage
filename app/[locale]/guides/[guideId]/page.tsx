@@ -33,7 +33,7 @@ export default function GuideDetailPage() {
     const progress = totalSteps === 0 ? 0 : Math.round(((currentStepIndex + 1) / totalSteps) * 100)
 
     return (
-        <div className="container mx-auto mt-30 flex min-h-[calc(100vh-9rem)] flex-col gap-8 px-6 py-8 lg:flex-row lg:gap-10">
+        <div className="container mx-auto mt-24 flex flex-col gap-8 px-6 py-8 lg:flex-row lg:gap-10">
             <aside className="w-full rounded-2xl border border-border/70 bg-card/70 p-6 shadow-sm lg:sticky lg:top-36 lg:h-fit lg:w-72">
                 <div className="mt-4 flex flex-col gap-4">
                     {[... new Set(guides.map((guide) => guide.category))].map((category) => (
@@ -66,22 +66,19 @@ export default function GuideDetailPage() {
                     <Heading size="half" inline>
                         {guide.titleKey}
                     </Heading>
-                    <p className="mt-4 max-w-3xl text-sm text-muted-foreground">
-                        {guide.descriptionKey}
-                    </p>
 
                     <div className="mt-8 flex flex-col gap-6">
                         <section className="rounded-2xl border border-border/60 bg-card/40 p-4">
                             <div className="mb-4 flex items-center gap-3">
-                                <span className="flex h-8 w-8 items-center justify-center rounded-full border border-primary bg-primary text-sm font-semibold text-primary-foreground">
+                                <span className="flex h-8 w-8 items-center justify-center rounded-full border border-primary bg-background text-sm font-semibold text-primary-foreground">
                                     {currentStepIndex + 1}
                                 </span>
                                 <span className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                                    Step {currentStepIndex + 1}
+                                    {guide.content[currentStepIndex]?.stepTitle ?? `Step ${currentStepIndex + 1}`}
                                 </span>
                             </div>
 
-                            {guide.content[currentStepIndex]?.map((row, rowIndex) => (
+                            {guide.content[currentStepIndex]?.content.map((row, rowIndex) => (
                                 <div key={`${guide.id}-${currentStepIndex}-${rowIndex}`} className="flex flex-col md:flex-row gap-4">
                                     {row.map((element, elementIndex) => (
                                         <div key={`${guide.id}-${currentStepIndex}-${rowIndex}-${elementIndex}`} className="w-full">

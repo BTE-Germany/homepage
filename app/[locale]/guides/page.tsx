@@ -2,7 +2,7 @@
 
 import Heading from "@/components/animate-ui/primitives/texts/heading";
 import { useTranslations } from "next-intl";
-import { GuideCard } from "@/components/guides/TutorialCard";
+import { GuideCard } from "@/components/guides/GuideCard";
 import { guides } from "@/lib/guides";
 
 export default function GuidesPage() {

@@ -16,7 +16,7 @@ export default function Navbar() {
     const t = useTranslations("Navbar");
 
     const routes: { path: string; name: string; external?: boolean }[] = [
-        { path: "/join", name: t("join") },
+        { path: "/guides", name: t("join") },
         { path: "https://map.bte-germany.de", name: t("map"), external: true },
         { path: "/history", name: t("history") },
     ];
