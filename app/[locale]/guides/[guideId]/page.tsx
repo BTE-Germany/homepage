@@ -80,24 +80,23 @@ export default function GuideDetailPage() {
                                 </span>
                             </div>
 
-                            {currentStep?.content.map((row, rowIndex) => (
-                                <div key={`${guide.id}-${currentStepIndex}-${rowIndex}`} className="flex flex-col md:flex-row gap-4">
-                                    {row.map((card, elementIndex) => (
-                                        <div key={`${guide.id}-${currentStepIndex}-${rowIndex}-${elementIndex}`} className="w-full">
-                                            <GuideContentCard
-                                                variant={card.variant}
-                                                padding={card.padding ?? true}
-                                            >
-                                                {card.content ? (
-                                                    card.content
-                                                ) : card.textKey ? (
-                                                    <span>{t(card.textKey)}</span>
-                                                ) : null}
-                                            </GuideContentCard>
-                                        </div>
-                                    ))}
-                                </div>
-                            ))}
+                            <div className="flex flex-col gap-4">
+                                {currentStep?.content.map((row, rowIndex) => (
+                                    <div key={`${guide.id}-${currentStepIndex}-${rowIndex}`} className="flex flex-col md:flex-row gap-4">
+                                        {row.map((card, elementIndex) => (
+                                            <div key={`${guide.id}-${currentStepIndex}-${rowIndex}-${elementIndex}`} className="w-full">
+                                                <GuideContentCard
+                                                    variant={card.variant}
+                                                    padding={card.padding ?? true}
+                                                    text={card.textKey ? t.raw(card.textKey) : undefined}
+                                                >
+                                                    {card.content}
+                                                </GuideContentCard>
+                                            </div>
+                                        ))}
+                                    </div>
+                                ))}
+                            </div>
                         </section>
 
                         <div className="flex items-center justify-between gap-4">

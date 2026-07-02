@@ -7,10 +7,12 @@ export default function TransitionLink({
     route,
     callback,
     children,
+    className,
 }: {
     route: string;
     callback?: () => void;
     children: ReactNode | ReactNode[];
+    className?: string;
 }) {
     const router = useTransitionRouter();
     const pathName = usePathname();
@@ -38,7 +40,7 @@ export default function TransitionLink({
     const isExternalLink = (): boolean => !route.startsWith("/");
 
     return (
-        <Link href={route} onClick={(e) => transitionPage(e)} target="_blank">
+        <Link href={route} onClick={(e) => transitionPage(e)} target="_blank" className={className}>
             {children}
         </Link>
     );

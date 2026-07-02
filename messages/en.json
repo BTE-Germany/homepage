@@ -116,9 +116,12 @@
                 "meetTheCommunity": "Meet the community"
             },
             "content": {
+                "requirements1": "If you want to see what our community has already built, you're in the right place. Our server is publicly accessible and can be visited at any time. To join the server you need: <h>Requirements</h>",
+                "requirements2": "Minecraft in the <b>Java Edition</b>",
+                "requirements3": "A game profile on any <i>1.20.x</i> version (We recommend <u>1.21.10</u>)",
                 "openInvite": "Open the invite link and join the community hub to get access to the latest updates.",
                 "sayHello": "Say hello in the welcome channel so the team can point you to the right place.",
-                "browseChannels": "Browse the different channels to find projects, events, and community support."
+                "browseChannels": "Browse the different channels to find <b>projects</b>, <i>events</i>, and <u>community support</u>."
             }
         },
         "becomeABuilder": {
@@ -129,9 +132,9 @@
                 "startContributing": "Start contributing"
             },
             "content": {
-                "chooseProject": "Choose a project that matches your interests and current skill level.",
+                "chooseProject": "Choose a project that matches your <i>interests</i> and current <b>skill level</b>.",
                 "reachOut": "Reach out in the builders channel and share your ideas with the team.",
-                "buildSmallContribution": "Build a small contribution first so you can learn the workflow safely."
+                "buildSmallContribution": "Build a small contribution first so you can learn the <a route=\"/guides/visit-the-server\">workflow</a> safely."
             }
         },
         "joinOurTeam": {

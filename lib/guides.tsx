@@ -33,39 +33,72 @@ export const guides: Guide[] = [
         category: "join",
         content: [
             {
-                stepTitleKey: "visitTheServer.steps.getStarted",
+                stepTitleKey: "visitTheServer.steps.requirements",
                 content: [
                     [
                         {
                             id: "visit-1",
-                            textKey: "visitTheServer.content.openInvite",
-                        },
-                    ],
+                            textKey: "visitTheServer.content.requirements1",
+                        }
+                    ]
                 ],
             },
             {
-                stepTitleKey: "visitTheServer.steps.meetTheCommunity",
+                stepTitleKey: "visitTheServer.steps.addServer",
                 content: [
                     [
                         {
                             id: "visit-2",
-                            textKey: "visitTheServer.content.sayHello",
+                            textKey: "visitTheServer.content.ip",
                             variant: "highlight",
-                        },
+                        }
+                    ],
+                    [
                         {
                             id: "visit-3",
+                            textKey: "visitTheServer.content.addServer",
+                        },
+                        {
+                            id: "visit-4",
                             padding: false,
                             content: (
                                 <GuideImageCard
-                                    src="/reichstag.png"
-                                    alt="The Reichstag building"
-                                    caption="A sample visual card for guides"
+                                    src="/guide_images/visit/AddServer.png"
+                                    alt="Adding the server to the Minecraft server list"
                                 />
                             ),
                         },
                     ],
                 ],
             },
+            {
+                stepTitleKey: "visitTheServer.steps.navigation",
+                content: [
+                    [
+                        {
+                            id: "visit-5",
+                            textKey: "visitTheServer.content.navigation",
+                        },
+                        {
+                            id: "visit-4",
+                            padding: false,
+                            content: (
+                                <GuideImageCard
+                                    src="/reichstag.png"
+                                    alt="The Reichstag building"
+                                />
+                            ),
+                        },
+                    ],
+                    [
+                        {
+                            id: "visit-6",
+                            textKey: "visitTheServer.content.navTip",
+                            variant: "highlight",
+                        }
+                    ]
+                ]
+            }
         ],
     },
     {

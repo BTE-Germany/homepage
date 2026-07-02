@@ -112,13 +112,16 @@
             "title": "Besuche den Server",
             "description": "Erfahre, wie du unserem Server beitrittst und Teil unserer Community wirst.",
             "steps": {
-                "getStarted": "Los geht's",
-                "meetTheCommunity": "Lerne die Community kennen"
+                "requirements": "Vorraussetzungen",
+                "addServer": "Server hinzufügen",
+                "navigation": "Navigation"
             },
             "content": {
-                "openInvite": "Öffne den Einladungslink und trete dem Community-Hub bei, um Zugriff auf die neuesten Updates zu erhalten.",
-                "sayHello": "Sag Hallo im Willkommenskanal, damit das Team dir den richtigen Weg zeigen kann.",
-                "browseChannels": "Durchstöbere die verschiedenen Kanäle, um Projekte, Events und Community-Unterstützung zu finden."
+                "requirements1": "Wenn du sehen möchtest, was unsere Community bereits gebaut hat, bist du hier an der richtigen Stelle. Unser Server ist öffentlich zugänglich und kann jederzeit besucht werden. Um dem Server beizutreten benötigst du: <ul><li>Minecraft in der <b>Java Edition</b></li> <ul><li>Solltest du bereits im Besitz der Bedrock Edition auf dem PC sein, kannst du dir die Java Edition <a route=\"https://www.minecraft.net/en-us/article/java---bedrock-edition-pc-out-june-7\">hier</a> kostenlos herunterladen. </li></ul> <li>Ein Spielprofil in einer beliebigen <i>1.20.x</i> Version (Wir empfehlen die <u>1.21.10</u>)</li></ul>",
+                "ip": "Serveradresse: <b>bte-germany.de</b>",
+                "addServer": "<ul><li>Öffne den Minecraft Launcher und wähle die gewünschte Version aus. </li><li>Klicke auf \"Multiplayer\" und dann auf \"Server hinzufügen\". Gib die Serveradresse ein und klicke auf \"Fertig\".</li><li> Wähle den Server aus der Liste aus und klicke auf \"Beitreten\", um dem Server beizutreten.</li></ul>",
+                "navigation": "Sobald du dem Server beigetreten bist, befindest du dich zunächst in der Lobby. Um von dort aus zu den verschiedenen Städten zu gelangen, kannst du... <ul><li>Auf die Karte unter der Spawn-Insel herunter fallen und die Druckplatten an den Städten aktivieren, um dorthin zu gelangen.</li><li>Die /warp Funktion nutzen, um dich direkt zu einer Stadt zu teleportieren. Du kannst hierbei ebenfalls nach Tags filtern.</li><li>Dich mit /tpll zu genauen Koordinaten teleportieren, welche du aus Google Maps kopiert hast.</li></ul>",
+                "navTip": "Tipp: Als Visitor kannst du keine neuen Chunks generieren. Befindest du dich also im Void, wurde diese Stelle vorher noch nicht von einem Builder besucht. Unsere aktuellen Baugebiete findest du auf unserer <a route=\"https://map.bte-germany.de\">Karte</a>."
             }
         },
         "becomeABuilder": {
@@ -129,9 +132,9 @@
                 "startContributing": "Starte mit Beiträgen"
             },
             "content": {
-                "chooseProject": "Wähle ein Projekt, das zu deinen Interessen und deinem aktuellen Skill-Level passt.",
+                "chooseProject": "Wähle ein Projekt, das zu deinen <i>Interessen</i> und deinem aktuellen <b>Skill-Level</b> passt.",
                 "reachOut": "Nimm Kontakt in den Builder-Kanälen auf und teile deine Ideen mit dem Team.",
-                "buildSmallContribution": "Bau zuerst einen kleinen Beitrag, damit du den Workflow sicher kennenlernen kannst."
+                "buildSmallContribution": "Bau zuerst einen kleinen Beitrag, damit du den <a route=\"/guides/visit-the-server\">Workflow</a> sicher kennenlernen kannst."
             }
         },
         "joinOurTeam": {
