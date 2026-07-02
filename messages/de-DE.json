@@ -97,6 +97,96 @@
             "joinNow": "Jetzt mitmachen"
         }
     },
+    "Guides": {
+        "hero": {
+            "title": "Guides",
+            "subText": "Hier findest du alle wichtigen Informationen, die du benötigst, um Teil unserer Community zu werden und mit uns gemeinsam Deutschland in Minecraft nachzubauen."
+        },
+        "join": {
+            "title": "Mach mit!"
+        },
+        "building": {
+            "title": "Building Tips"
+        },
+        "visitTheServer": {
+            "title": "Besuche den Server",
+            "description": "Erfahre, wie du unserem Server beitrittst und Teil unserer Community wirst.",
+            "steps": {
+                "getStarted": "Los geht's",
+                "meetTheCommunity": "Lerne die Community kennen"
+            },
+            "content": {
+                "openInvite": "Öffne den Einladungslink und trete dem Community-Hub bei, um Zugriff auf die neuesten Updates zu erhalten.",
+                "sayHello": "Sag Hallo im Willkommenskanal, damit das Team dir den richtigen Weg zeigen kann.",
+                "browseChannels": "Durchstöbere die verschiedenen Kanäle, um Projekte, Events und Community-Unterstützung zu finden."
+            }
+        },
+        "becomeABuilder": {
+            "title": "Werde ein Builder",
+            "description": "Erfahre, wie du zu unseren Projekten als Builder beitragen kannst.",
+            "steps": {
+                "findYourFirstProject": "Finde dein erstes Projekt",
+                "startContributing": "Starte mit Beiträgen"
+            },
+            "content": {
+                "chooseProject": "Wähle ein Projekt, das zu deinen Interessen und deinem aktuellen Skill-Level passt.",
+                "reachOut": "Nimm Kontakt in den Builder-Kanälen auf und teile deine Ideen mit dem Team.",
+                "buildSmallContribution": "Bau zuerst einen kleinen Beitrag, damit du den Workflow sicher kennenlernen kannst."
+            }
+        },
+        "joinOurTeam": {
+            "title": "Tritt unserem Team bei",
+            "description": "Erfahre, wie du unserem Team beitreten und an spannenden Projekten mitarbeiten kannst.",
+            "steps": {
+                "learnAboutTheTeam": "Erfahre mehr über das Team",
+                "applyAndStayEngaged": "Bewirb dich und bleib aktiv"
+            },
+            "content": {
+                "readAboutRoles": "Lies mehr über aktuelle Rollen und erfahre, wie verschiedene Teams zusammenarbeiten.",
+                "shareBackground": "Teile deinen Hintergrund und erkläre, welche Art von Arbeit du beitragen möchtest.",
+                "keepShowingUp": "Bleib dran, stelle Fragen und baue über die Zeit Vertrauen in der Community auf."
+            }
+        },
+        "buildAPlot": {
+            "title": "Baue ein Grundstück",
+            "description": "Schritt-für-Schritt-Anleitung, wie du dein eigenes Grundstück baust.",
+            "steps": {
+                "planYourBuild": "Plane deinen Bau",
+                "buildStepByStep": "Bau es Schritt für Schritt"
+            },
+            "content": {
+                "sketchPlot": "Skizziere das Grundstück und entscheide, wo wichtige Funktionen vor dem Bau platziert werden sollten.",
+                "collectBlocks": "Sammle die Blöcke, Texturen und Referenzen, die du brauchst, um den Bau konsistent zu halten.",
+                "finishGroundwork": "Baue zuerst die Grundlage und füge erst später die Details hinzu, wenn die Hauptstruktur fertig ist."
+            }
+        },
+        "measuringCoordinates": {
+            "title": "Koordinaten messen",
+            "description": "Erfahre, wie du tpll für deine Bauprojekte nutzt.",
+            "steps": {
+                "understandTheGrid": "Verstehe das Raster",
+                "measureAccurately": "Mess präzise"
+            },
+            "content": {
+                "familiarizeWithCoordinateSystems": "Mach dich mit Koordinatensystemen vertraut, damit die Messungen nachvollziehbar bleiben.",
+                "useReferencePoints": "Nutze zuverlässige Referenzpunkte, damit dein Bau passend und genau ausgerichtet ist.",
+                "doubleCheckDimensions": "Prüfe die Abmessungen noch einmal, bevor du das endgültige Layout festlegst."
+            }
+        },
+        "measuringBuildingHeights": {
+            "title": "Gebäudehöhen messen",
+            "description": "Tipps und Techniken zum präzisen Messen von Gebäudehöhen.",
+            "steps": {
+                "pickYourReference": "Wähle deine Referenz",
+                "checkYourMeasurements": "Prüfe deine Messungen"
+            },
+            "content": {
+                "startFromStablePoint": "Starte von einem stabilen Punkt, der die Gebäudebasis klar repräsentiert.",
+                "takeMeasurementsInSmallIncrements": "Nimm deine Messungen in kleinen Schritten vor, um Fehler zu vermeiden.",
+                "checkAgainstOriginalPlan": "Vergleiche deine Messungen mit dem ursprünglichen Plan und passe sie gegebenenfalls an."
+            }
+        }
+    },
     "Footer": {
         "notAffiliated": "BTE Germany steht in keiner Verbindung zu Mojang AB oder Microsoft Corporation und wird von diesen Unternehmen nicht unterstützt.",
         "legalNotice": "Impressum",

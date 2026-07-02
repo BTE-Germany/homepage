@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useMemo, useState } from "react";
 import Heading from "@/components/animate-ui/primitives/texts/heading";
+import { GuideContentCard } from "@/components/guides/GuideContentCard";
 import { guides, getGuideById } from "@/lib/guides";
 import { useTranslations } from "next-intl";
 
@@ -30,7 +31,8 @@ export default function GuideDetailPage() {
     }
 
     const totalSteps = guide.content.length;
-    const progress = totalSteps === 0 ? 0 : Math.round(((currentStepIndex + 1) / totalSteps) * 100)
+    const progress = totalSteps === 0 ? 0 : Math.round(((currentStepIndex + 1) / totalSteps) * 100);
+    const currentStep = guide.content[currentStepIndex];
 
     return (
         <div className="container mx-auto mt-24 flex flex-col gap-8 px-6 py-8 lg:flex-row lg:gap-10">
@@ -39,7 +41,7 @@ export default function GuideDetailPage() {
                     {[... new Set(guides.map((guide) => guide.category))].map((category) => (
                         <section key={category} className="flex flex-col items-center gap-2 w-full">
                             <h2 className="text-lg font-semibold">
-                                {t(category)}
+                                {t(`${category}.title`)}
                             </h2>
 
                             {guides
@@ -52,7 +54,7 @@ export default function GuideDetailPage() {
                                         href={`/${locale}/guides/${item.id}`}
                                         className={`w-full text-center rounded-lg px-3 py-2 text-sm transition ${active ? "bg-primary text-primary-foreground" : "bg-background/70 hover:bg-muted"}`}
                                     >
-                                        {item.titleKey}
+                                        {t(item.titleKey)}
                                     </Link>
                                 );
                             })}
@@ -64,7 +66,7 @@ export default function GuideDetailPage() {
             <main className="flex-1">
                 <div className="rounded-3xl border border-border/70 bg-background/70 p-6 shadow-sm ">
                     <Heading size="half" inline>
-                        {guide.titleKey}
+                        {t(guide.titleKey)}
                     </Heading>
 
                     <div className="mt-8 flex flex-col gap-6">
@@ -74,15 +76,24 @@ export default function GuideDetailPage() {
                                     {currentStepIndex + 1}
                                 </span>
                                 <span className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                                    {guide.content[currentStepIndex]?.stepTitle ?? `Step ${currentStepIndex + 1}`}
+                                    {currentStep?.stepTitleKey ? t(currentStep.stepTitleKey) : `Step ${currentStepIndex + 1}`}
                                 </span>
                             </div>
 
-                            {guide.content[currentStepIndex]?.content.map((row, rowIndex) => (
+                            {currentStep?.content.map((row, rowIndex) => (
                                 <div key={`${guide.id}-${currentStepIndex}-${rowIndex}`} className="flex flex-col md:flex-row gap-4">
-                                    {row.map((element, elementIndex) => (
+                                    {row.map((card, elementIndex) => (
                                         <div key={`${guide.id}-${currentStepIndex}-${rowIndex}-${elementIndex}`} className="w-full">
-                                            {element}
+                                            <GuideContentCard
+                                                variant={card.variant}
+                                                padding={card.padding ?? true}
+                                            >
+                                                {card.content ? (
+                                                    card.content
+                                                ) : card.textKey ? (
+                                                    <span>{t(card.textKey)}</span>
+                                                ) : null}
+                                            </GuideContentCard>
                                         </div>
                                     ))}
                                 </div>

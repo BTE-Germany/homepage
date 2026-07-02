@@ -1,11 +1,19 @@
 import type { ReactNode } from "react";
-import { GuideContentCard } from "@/components/guides/GuideContentCard";
+import { GuideImageCard } from "@/components/guides/GuideImageCard";
 
 export type GuideCategory = "join" | "building";
 
+export type GuideCardContent = {
+    id: string;
+    variant?: "default" | "highlight";
+    textKey?: string;
+    content?: ReactNode;
+    padding?: boolean;
+};
+
 export type GuideContentStep = {
-    stepTitle: string;
-    content: Array<Array<ReactNode>>;
+    stepTitleKey: string;
+    content: Array<Array<GuideCardContent>>;
 };
 export type GuideContent = Array<GuideContentStep>;
 
@@ -20,30 +28,41 @@ export type Guide = {
 export const guides: Guide[] = [
     {
         id: "visit-the-server",
-        titleKey: "Visit the server",
-        descriptionKey: "Learn how to join our server and become part of our community.",
+        titleKey: "visitTheServer.title",
+        descriptionKey: "visitTheServer.description",
         category: "join",
         content: [
             {
-                stepTitle: "Get started",
+                stepTitleKey: "visitTheServer.steps.getStarted",
                 content: [
                     [
-                        <GuideContentCard key="visit-1">
-                            <span>Open the invite link and join the community hub to get access to the latest updates.</span>
-                        </GuideContentCard>,
+                        {
+                            id: "visit-1",
+                            textKey: "visitTheServer.content.openInvite",
+                        },
                     ],
                 ],
             },
             {
-                stepTitle: "Meet the community",
+                stepTitleKey: "visitTheServer.steps.meetTheCommunity",
                 content: [
                     [
-                        <GuideContentCard key="visit-2" variant="highlight">
-                            <span>Say hello in the welcome channel so the team can point you to the right place.</span>
-                        </GuideContentCard>,
-                        <GuideContentCard key="visit-3">
-                            <span>Browse the different channels to find projects, events, and community support.</span>
-                        </GuideContentCard>,
+                        {
+                            id: "visit-2",
+                            textKey: "visitTheServer.content.sayHello",
+                            variant: "highlight",
+                        },
+                        {
+                            id: "visit-3",
+                            padding: false,
+                            content: (
+                                <GuideImageCard
+                                    src="/reichstag.png"
+                                    alt="The Reichstag building"
+                                    caption="A sample visual card for guides"
+                                />
+                            ),
+                        },
                     ],
                 ],
             },
@@ -51,30 +70,34 @@ export const guides: Guide[] = [
     },
     {
         id: "become-a-builder",
-        titleKey: "Become a builder",
-        descriptionKey: "Discover how to contribute to our projects as a builder.",
+        titleKey: "becomeABuilder.title",
+        descriptionKey: "becomeABuilder.description",
         category: "join",
         content: [
             {
-                stepTitle: "Find your first project",
+                stepTitleKey: "becomeABuilder.steps.findYourFirstProject",
                 content: [
                     [
-                        <GuideContentCard key="builder-1">
-                            <span>Choose a project that matches your interests and current skill level.</span>
-                        </GuideContentCard>,
+                        {
+                            id: "builder-1",
+                            textKey: "becomeABuilder.content.chooseProject",
+                        },
                     ],
                 ],
             },
             {
-                stepTitle: "Start contributing",
+                stepTitleKey: "becomeABuilder.steps.startContributing",
                 content: [
                     [
-                        <GuideContentCard key="builder-2" variant="highlight">
-                            <span>Reach out in the builders channel and share your ideas with the team.</span>
-                        </GuideContentCard>,
-                        <GuideContentCard key="builder-3">
-                            <span>Build a small contribution first so you can learn the workflow safely.</span>
-                        </GuideContentCard>,
+                        {
+                            id: "builder-2",
+                            textKey: "becomeABuilder.content.reachOut",
+                            variant: "highlight",
+                        },
+                        {
+                            id: "builder-3",
+                            textKey: "becomeABuilder.content.buildSmallContribution",
+                        },
                     ],
                 ],
             },
@@ -82,30 +105,34 @@ export const guides: Guide[] = [
     },
     {
         id: "join-our-team",
-        titleKey: "Join our team",
-        descriptionKey: "Find out how to join our team and collaborate on exciting projects.",
+        titleKey: "joinOurTeam.title",
+        descriptionKey: "joinOurTeam.description",
         category: "join",
         content: [
             {
-                stepTitle: "Learn about the team",
+                stepTitleKey: "joinOurTeam.steps.learnAboutTheTeam",
                 content: [
                     [
-                        <GuideContentCard key="team-1">
-                            <span>Read about current roles and learn how different teams collaborate.</span>
-                        </GuideContentCard>,
+                        {
+                            id: "team-1",
+                            textKey: "joinOurTeam.content.readAboutRoles",
+                        },
                     ],
                 ],
             },
             {
-                stepTitle: "Apply and stay engaged",
+                stepTitleKey: "joinOurTeam.steps.applyAndStayEngaged",
                 content: [
                     [
-                        <GuideContentCard key="team-2" variant="highlight">
-                            <span>Share your background and explain the type of work you want to contribute.</span>
-                        </GuideContentCard>,
-                        <GuideContentCard key="team-3">
-                            <span>Keep showing up, ask questions, and build trust with the community over time.</span>
-                        </GuideContentCard>,
+                        {
+                            id: "team-2",
+                            textKey: "joinOurTeam.content.shareBackground",
+                            variant: "highlight",
+                        },
+                        {
+                            id: "team-3",
+                            textKey: "joinOurTeam.content.keepShowingUp",
+                        },
                     ],
                 ],
             },
@@ -113,30 +140,34 @@ export const guides: Guide[] = [
     },
     {
         id: "build-a-plot",
-        titleKey: "Build a plot",
-        descriptionKey: "Step-by-step guide on how to build your own plot.",
+        titleKey: "buildAPlot.title",
+        descriptionKey: "buildAPlot.description",
         category: "building",
         content: [
             {
-                stepTitle: "Plan your build",
+                stepTitleKey: "buildAPlot.steps.planYourBuild",
                 content: [
                     [
-                        <GuideContentCard key="plot-1">
-                            <span>Sketch the plot and decide where key features should sit before you start building.</span>
-                        </GuideContentCard>,
+                        {
+                            id: "plot-1",
+                            textKey: "buildAPlot.content.sketchPlot",
+                        },
                     ],
                 ],
             },
             {
-                stepTitle: "Build it step by step",
+                stepTitleKey: "buildAPlot.steps.buildStepByStep",
                 content: [
                     [
-                        <GuideContentCard key="plot-2" variant="highlight">
-                            <span>Collect the blocks, textures, and references you need to keep the build consistent.</span>
-                        </GuideContentCard>,
-                        <GuideContentCard key="plot-3">
-                            <span>Finish the groundwork first and then add the details once the main structure is complete.</span>
-                        </GuideContentCard>,
+                        {
+                            id: "plot-2",
+                            textKey: "buildAPlot.content.collectBlocks",
+                            variant: "highlight",
+                        },
+                        {
+                            id: "plot-3",
+                            textKey: "buildAPlot.content.finishGroundwork",
+                        },
                     ],
                 ],
             },
@@ -144,30 +175,34 @@ export const guides: Guide[] = [
     },
     {
         id: "measuring-coordinates",
-        titleKey: "Measuring coordinates",
-        descriptionKey: "Learn how to use tpll for your building projects.",
+        titleKey: "measuringCoordinates.title",
+        descriptionKey: "measuringCoordinates.description",
         category: "building",
         content: [
             {
-                stepTitle: "Understand the grid",
+                stepTitleKey: "measuringCoordinates.steps.understandTheGrid",
                 content: [
                     [
-                        <GuideContentCard key="coords-1">
-                            <span>Familiarize yourself with coordinate systems so the measurements stay predictable.</span>
-                        </GuideContentCard>,
+                        {
+                            id: "coords-1",
+                            textKey: "measuringCoordinates.content.familiarizeWithCoordinateSystems",
+                        },
                     ],
                 ],
             },
             {
-                stepTitle: "Measure accurately",
+                stepTitleKey: "measuringCoordinates.steps.measureAccurately",
                 content: [
                     [
-                        <GuideContentCard key="coords-2" variant="highlight">
-                            <span>Use reliable reference points to keep your build aligned and accurate.</span>
-                        </GuideContentCard>,
-                        <GuideContentCard key="coords-3">
-                            <span>Double-check the dimensions before locking in the final layout.</span>
-                        </GuideContentCard>,
+                        {
+                            id: "coords-2",
+                            textKey: "measuringCoordinates.content.useReferencePoints",
+                            variant: "highlight",
+                        },
+                        {
+                            id: "coords-3",
+                            textKey: "measuringCoordinates.content.doubleCheckDimensions",
+                        },
                     ],
                 ],
             },
@@ -175,30 +210,34 @@ export const guides: Guide[] = [
     },
     {
         id: "measuring-building-heights",
-        titleKey: "Measuring building heights",
-        descriptionKey: "Tips and techniques for accurately measuring building heights.",
+        titleKey: "measuringBuildingHeights.title",
+        descriptionKey: "measuringBuildingHeights.description",
         category: "building",
         content: [
             {
-                stepTitle: "Pick your reference",
+                stepTitleKey: "measuringBuildingHeights.steps.pickYourReference",
                 content: [
                     [
-                        <GuideContentCard key="height-1">
-                            <span>Start from a stable point that clearly represents the building base.</span>
-                        </GuideContentCard>,
+                        {
+                            id: "height-1",
+                            textKey: "measuringBuildingHeights.content.startFromStablePoint",
+                        },
                     ],
                 ],
             },
             {
-                stepTitle: "Check your measurements",
+                stepTitleKey: "measuringBuildingHeights.steps.checkYourMeasurements",
                 content: [
                     [
-                        <GuideContentCard key="height-2" variant="highlight">
-                            <span>Take your measurements in small increments to avoid compounding errors.</span>
-                        </GuideContentCard>,
-                        <GuideContentCard key="height-3">
-                            <span>Check your measurements against the original plan and adjust where needed.</span>
-                        </GuideContentCard>,
+                        {
+                            id: "height-2",
+                            textKey: "measuringBuildingHeights.content.takeMeasurementsInSmallIncrements",
+                            variant: "highlight",
+                        },
+                        {
+                            id: "height-3",
+                            textKey: "measuringBuildingHeights.content.checkAgainstOriginalPlan",
+                        },
                     ],
                 ],
             },

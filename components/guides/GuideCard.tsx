@@ -2,9 +2,14 @@
 import Image from "next/image";
 import { useRef, useCallback, useEffect } from "react";
 import { Guide } from "@/lib/guides";
+import { useTranslations } from "next-intl";
 import TransitionLink from "../common/TransitionLink";
 
 export function GuideCard({ content }: { content: Guide; }) {
+    const t = useTranslations("Guides");
+    const translatedTitle = t(content.titleKey);
+    const translatedDescription = t(content.descriptionKey);
+
     // How far the card appears from the viewer in 3D space.
     const CARD_PERSPECTIVE = 1200;
     // Maximum degrees of rotation on each axis.
@@ -86,13 +91,13 @@ export function GuideCard({ content }: { content: Guide; }) {
                     onMouseLeave={resetTransform}
                 >
                     <Image src={`/community.png`}
-                        alt={content.titleKey}
+                        alt={translatedTitle}
                         width={400}
                         height={225}
                         className="rounded-t-lg w-full object-cover" />
                     <div className="flex flex-col gap-2 p-4">
-                        <h3 className="text-lg font-bold">{content.titleKey}</h3>
-                        <p>{content.descriptionKey}</p>
+                        <h3 className="text-lg font-bold">{translatedTitle}</h3>
+                        <p>{translatedDescription}</p>
                     </div>
                 </div>
             </TransitionLink>

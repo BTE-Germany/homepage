@@ -97,6 +97,96 @@
             "joinNow": "Join Now"
         }
     },
+    "Guides": {
+        "hero": {
+            "title": "Guides",
+            "subText": "Here you'll find all the important information you need to become part of our community and help rebuild Germany in Minecraft."
+        },
+        "join": {
+            "title": "Join the community"
+        },
+        "building": {
+            "title": "Building tips"
+        },
+        "visitTheServer": {
+            "title": "Visit the server",
+            "description": "Learn how to join our server and become part of our community.",
+            "steps": {
+                "getStarted": "Get started",
+                "meetTheCommunity": "Meet the community"
+            },
+            "content": {
+                "openInvite": "Open the invite link and join the community hub to get access to the latest updates.",
+                "sayHello": "Say hello in the welcome channel so the team can point you to the right place.",
+                "browseChannels": "Browse the different channels to find projects, events, and community support."
+            }
+        },
+        "becomeABuilder": {
+            "title": "Become a builder",
+            "description": "Discover how to contribute to our projects as a builder.",
+            "steps": {
+                "findYourFirstProject": "Find your first project",
+                "startContributing": "Start contributing"
+            },
+            "content": {
+                "chooseProject": "Choose a project that matches your interests and current skill level.",
+                "reachOut": "Reach out in the builders channel and share your ideas with the team.",
+                "buildSmallContribution": "Build a small contribution first so you can learn the workflow safely."
+            }
+        },
+        "joinOurTeam": {
+            "title": "Join our team",
+            "description": "Find out how to join our team and collaborate on exciting projects.",
+            "steps": {
+                "learnAboutTheTeam": "Learn about the team",
+                "applyAndStayEngaged": "Apply and stay engaged"
+            },
+            "content": {
+                "readAboutRoles": "Read about current roles and learn how different teams collaborate.",
+                "shareBackground": "Share your background and explain the type of work you want to contribute.",
+                "keepShowingUp": "Keep showing up, ask questions, and build trust with the community over time."
+            }
+        },
+        "buildAPlot": {
+            "title": "Build a plot",
+            "description": "Step-by-step guide on how to build your own plot.",
+            "steps": {
+                "planYourBuild": "Plan your build",
+                "buildStepByStep": "Build it step by step"
+            },
+            "content": {
+                "sketchPlot": "Sketch the plot and decide where key features should sit before you start building.",
+                "collectBlocks": "Collect the blocks, textures, and references you need to keep the build consistent.",
+                "finishGroundwork": "Finish the groundwork first and then add the details once the main structure is complete."
+            }
+        },
+        "measuringCoordinates": {
+            "title": "Measuring coordinates",
+            "description": "Learn how to use tpll for your building projects.",
+            "steps": {
+                "understandTheGrid": "Understand the grid",
+                "measureAccurately": "Measure accurately"
+            },
+            "content": {
+                "familiarizeWithCoordinateSystems": "Familiarize yourself with coordinate systems so the measurements stay predictable.",
+                "useReferencePoints": "Use reliable reference points to keep your build aligned and accurate.",
+                "doubleCheckDimensions": "Double-check the dimensions before locking in the final layout."
+            }
+        },
+        "measuringBuildingHeights": {
+            "title": "Measuring building heights",
+            "description": "Tips and techniques for accurately measuring building heights.",
+            "steps": {
+                "pickYourReference": "Pick your reference",
+                "checkYourMeasurements": "Check your measurements"
+            },
+            "content": {
+                "startFromStablePoint": "Start from a stable point that clearly represents the building base.",
+                "takeMeasurementsInSmallIncrements": "Take your measurements in small increments to avoid compounding errors.",
+                "checkAgainstOriginalPlan": "Check your measurements against the original plan and adjust where needed."
+            }
+        }
+    },
     "Footer": {
         "notAffiliated": "BTE Germany is not affiliated with or endorsed by Mojang AB or Microsoft Corporation.",
         "legalNotice": "Legal Notice",
