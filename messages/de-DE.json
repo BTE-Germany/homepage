@@ -108,6 +108,11 @@
         "building": {
             "title": "Building Tips"
         },
+        "progress": {
+            "label": "Fortschritt",
+            "next": "Weiter",
+            "previous": "Zurück"
+        },
         "visitTheServer": {
             "title": "Besuche den Server",
             "description": "Erfahre, wie du unserem Server beitrittst und Teil unserer Community wirst.",
