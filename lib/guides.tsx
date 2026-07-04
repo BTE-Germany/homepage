@@ -102,38 +102,112 @@ export const guides: Guide[] = [
         ],
     },
     {
+        id: "plotsystem",
+        titleKey: "plotSystem.title",
+        descriptionKey: "plotSystem.description",
+        category: "join",
+        content: [
+            {
+                stepTitleKey: "plotSystem.steps.about",
+                content: [
+                    [
+                        {
+                            id: "plot-1",
+                            textKey: "plotSystem.content.about",
+                        },
+                    ],
+                ],
+            },
+            {
+                stepTitleKey: "plotSystem.steps.gettingStarted",
+                content: [
+                    [
+                        {
+                            id: "plot-2",
+                            textKey: "plotSystem.content.gettingStarted",
+                        },
+                        {
+                            id: "plot-3",
+                            padding: false,
+                            content: (
+                                <GuideImageCard
+                                    src="/reichstag.png"
+                                    alt="The Reichstag building"
+                                />
+                            ),
+                        },
+                    ],
+                    [
+                        {
+                            id: "plot-4",
+                            textKey: "plotSystem.content.lobby",
+                            variant: "highlight",
+                        },
+                    ],
+                ],
+            },
+            {
+                stepTitleKey: "plotSystem.steps.buildYourPlot",
+                content: [
+                    [
+                        {
+                            id: "plot-3",
+                            textKey: "plotSystem.content.buildYourPlot",
+                        },
+                    ],
+                ],
+            }
+        ]
+    },
+    {
         id: "become-a-builder",
         titleKey: "becomeABuilder.title",
         descriptionKey: "becomeABuilder.description",
         category: "join",
         content: [
             {
-                stepTitleKey: "becomeABuilder.steps.findYourFirstProject",
+                stepTitleKey: "becomeABuilder.steps.requirements",
                 content: [
                     [
                         {
                             id: "builder-1",
-                            textKey: "becomeABuilder.content.chooseProject",
+                            textKey: "becomeABuilder.content.requirements",
+                        },
+                    ],
+                ],
+            },
+             {
+                stepTitleKey: "becomeABuilder.steps.application",
+                content: [
+                    [
+                        {
+                            id: "builder-2",
+                            textKey: "becomeABuilder.content.application",
+                        },
+                        {
+                            id: "builder-3",
+                            padding: false,
+                            content: (
+                                <GuideImageCard
+                                    src="/guide_images/become-builder/application_form.png"
+                                    alt="Application form for becoming a builder"
+                                />
+                            ),
                         },
                     ],
                 ],
             },
             {
-                stepTitleKey: "becomeABuilder.steps.startContributing",
+                stepTitleKey: "becomeABuilder.steps.wait",
                 content: [
                     [
                         {
-                            id: "builder-2",
-                            textKey: "becomeABuilder.content.reachOut",
-                            variant: "highlight",
-                        },
-                        {
-                            id: "builder-3",
-                            textKey: "becomeABuilder.content.buildSmallContribution",
+                            id: "builder-4",
+                            textKey: "becomeABuilder.content.wait",
                         },
                     ],
                 ],
-            },
+            }
         ],
     },
     {

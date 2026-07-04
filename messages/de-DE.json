@@ -1,7 +1,7 @@
 {
     "Navbar": {
         "language": "Sprache",
-        "join": "Mitmachen",
+        "join": "Guides",
         "map": "Karte",
         "history": "Geschichte"
     },
@@ -115,7 +115,7 @@
         },
         "visitTheServer": {
             "title": "Besuche den Server",
-            "description": "Erfahre, wie du unserem Server beitrittst und Teil unserer Community wirst.",
+            "description": "Tritt unserem Server bei und schau dir an, was unserer Builder bisher geleistet haben",
             "steps": {
                 "requirements": "Vorraussetzungen",
                 "addServer": "Server hinzufügen",
@@ -129,22 +129,38 @@
                 "navTip": "Tipp: Als Visitor kannst du keine neuen Chunks generieren. Befindest du dich also im Void, wurde diese Stelle vorher noch nicht von einem Builder besucht. Unsere aktuellen Baugebiete findest du auf unserer <a route=\"https://map.bte-germany.de\">Karte</a>."
             }
         },
-        "becomeABuilder": {
-            "title": "Werde ein Builder",
-            "description": "Erfahre, wie du zu unseren Projekten als Builder beitragen kannst.",
+        "plotSystem": {
+            "title": "Das Plotsystem",
+            "description": "Erfahre, wie du als Visitor deine ersten Gebäude bauen kannst.",
             "steps": {
-                "findYourFirstProject": "Finde dein erstes Projekt",
-                "startContributing": "Starte mit Beiträgen"
+                "about": "Was ist das?",
+                "gettingStarted": "Erste Schritte",
+                "buildYourPlot": "Baue dein Grundstück"
             },
             "content": {
-                "chooseProject": "Wähle ein Projekt, das zu deinen <i>Interessen</i> und deinem aktuellen <b>Skill-Level</b> passt.",
-                "reachOut": "Nimm Kontakt in den Builder-Kanälen auf und teile deine Ideen mit dem Team.",
-                "buildSmallContribution": "Bau zuerst einen kleinen Beitrag, damit du den <a route=\"/guides/visit-the-server\">Workflow</a> sicher kennenlernen kannst."
+                "about": "Möchtest du nicht du von unseren Buildern gebauten Städten besuchen, sondern selbst aktiv werden und eigene Gebäude bauen? Dann ist das Plotsystem genau das Richtige für dich. <ul><li>Im Plotsystem bekommst du eine Auswahl an vorbereiteten Grundstücken (genannt Plots), auf denen du die Grundlagen der speziellen Bautechniken unseres Projekts erlernen kannst.</li><li> Du befindest in einer separaten Welt und erhälst direktes Feedback für deine Gebäude von unserem Plot-Team, um dich ideal auf das Bauen auf unserem Server vorzubereiten.</li></ul>",
+                "gettingStarted": "Um mit dem Bauen zu beginnen, musst du zunächst auf unseren Plotserver wechseln. Hierfür kannst du mit dem NPC in der Lobby interagieren oder den Befehl <i>/plotsystem</i> in den Chat eingeben. Bist du zum ersten Mal auf dem Plotserver, so musst du zenächst den <b>Plotrundgang</b> absolvieren. <ul><li>Um die Plot-Insel herum befindet sich eine Straße, welche einmal im Kreis führt. Entlang dieser befinden sich die einzelnen Stationen, welche dir die Schritte zeigen, die du für den Bau eines Plots benötigst.</li><li>Vor jeder Station befindet sich ein Textfeld, auf welchem eine kurze Erklärung zum jeweiligen Schritt steht. Lies dir dieses aufmerksam durch und bestätige durch einen Klick auf den Text, dass du diesen gelesen hast.</li><li>Mit jedem Schritt füllt sich die Leiste oben am Bildschirm. Sobald du alle Schrittte abgeschlossen hast, bekommst du den Companion (Netherstern) in dein Inventar. Mit diesem lässt sich das Plot-menü öffnen.</li></ul>",
+                "lobby": "Tipp: Möchtest du vom Plotserver wieder zurück auf den Hauptserver, so kommst du mit <i>/lobby</i> wieder auf die Spawn-Insel.",
+                "buildYourPlot": "Nachdem du dein Grundstück beansprucht hast, kannst du mit dem Bau beginnen. Nutze die Werkzeuge und Ressourcen, die dir zur Verfügung stehen, um dein Grundstück nach deinen Vorstellungen zu gestalten. Achte darauf, dass du die Bauvorschriften und Richtlinien einhältst."
+            }
+        },
+        "becomeABuilder": {
+            "title": "Werde Builder",
+            "description": "Erfahre, wie du als Builder an unserer gemeinsamen Mission mitwirken kannst.",
+            "steps": {
+                "requirements": "Vorraussetzungen",
+                "application": "Bewerbung",
+                "wait": "Warte auf Rückmeldung"
+            },
+            "content": {
+                "requirements": "Hast du unseren Server bereits als Visitor besucht und willst nun auch Teil unserer Mission werden? Um als Builder auch deinen Beitrag zum Projekt zu leisten, musst du zunächst folgende Vorraussetzungen erfüllt haben: <ul><li>Du bist im Besitz eines Discord Accounts<ul><li>Tritt mit deinem Account sowohl dem Server von <a href=\"https://discord.com/invite/btegermany\">BTE Germany</a> als auch dem <a href=\"https://discord.com/invite/buildtheearth-net-690908396404080650\">Main BTE Server</a> bei.</li></ul></li><li>Du hast im Plotsystem auf unserem Server bereits zwei gebaute und angenommene Plots.<ul><li>Um sicherzugehen, dass du die Grundlagen unseres Baustils wie die Verwendung von /tpll oder das Bauen außerhalb des Minecraft-Grids verstanden hast, baust du zunächst zwei vorgegebene Einfamilienhäuser nach.</li><li>Solltest du etwas Starthilfe beim Bauen deiner Plots benötigen, so kannst du dir gerne unseren <a href=\"/guides/build-a-plot\">Plot-Guide</a> mit hilfreichen Tipps und Tricks durchlesen.</li></ul></li></ul>",
+                "application": "Hast du alle Vorraussetzungen erfüllt, so kannst du nun deine Bewerbung starten. Gehe hierzu auf das <a href=\"https://buildtheearth.net/teams/de/apply\">Bewerbungsformular</a> unseres Build Teams und logge dich mit deinem Discord Account ein, mit welchem du unseren Servern beigetreten bist. <ul><li>Gehe alle Punkte der Reihe nach durch und trage die geforderten Informationen wahrheitsgemäß ein.</li> <li>Bei der Angabe deines Bauorts kannst du dich zunächst auf dein erstes angedachtes Projekt beschränken. Dies dient hauptsächlich für uns, um deinen Bauort vorzubereiten. Du kannst deinen Bauort allerdings später jederzeit noch ändern.</li><li>Die Bilder deiner erstellten und angenommenen Plots lädst du zunächst auf <a href=\"https://imgur.com/upload\">imgur</a> hoch (hierfür wird kein Account benötigt) und gibst den Link zu deiner Collection in der Bewerbung an.</li> </ul>",
+                "wait": "Hast du das Formular abgesendet, so wird sich unser Team innerhalb der nächsten Tage um deine Bewerbung kümmern. Dieser Prozess kann je nach Anzahl der Bewerbungen einige Zeit in Anspruch nehmen. Bitte habe daher etwas Geduld und warte auf unsere Rückmeldung. <ul><li>Du erhältst eine Benachrichtigung auf Discord, sobald deine Bewerbung bearbeitet wurde.</li><li>In der Regel erhältst du innerhalb von 1-2 Tagen eine Rückmeldung zu deiner Bewerbung.</li></ul> Wurdest du angenommen, erhälst du die Builder Rolle sowohl auf unserem Minecraft als auch Discord Server. Schau dir auf Discord gerne all die neuen Kanäle an, mache dich mit ihnen vertraut und lies dir unsere Building Guidelines durch, bevor du dich an dein erstes Bauprojekt machst. Wir freuen uns auf dich!"
             }
         },
         "joinOurTeam": {
-            "title": "Tritt unserem Team bei",
-            "description": "Erfahre, wie du unserem Team beitreten und an spannenden Projekten mitarbeiten kannst.",
+            "title": "Tritt dem Team bei",
+            "description": "Du willst das Projekt und organisatorischen Schritt im Hintergrund mitgestalten? Starte hier deine Bewerbung",
             "steps": {
                 "learnAboutTheTeam": "Erfahre mehr über das Team",
                 "applyAndStayEngaged": "Bewirb dich und bleib aktiv"
@@ -156,7 +172,7 @@
             }
         },
         "buildAPlot": {
-            "title": "Baue ein Grundstück",
+            "title": "Baue ein Plot",
             "description": "Schritt-für-Schritt-Anleitung, wie du dein eigenes Grundstück baust.",
             "steps": {
                 "planYourBuild": "Plane deinen Bau",
