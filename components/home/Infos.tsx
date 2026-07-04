@@ -8,6 +8,7 @@ import { Button } from "../ui/button";
 import { IconBrandDiscordFilled, IconSparkles2 } from "@tabler/icons-react";
 import Link from "next/link";
 import { motion } from "motion/react";
+import TransitionLink from "../common/TransitionLink";
 
 export default function Infos() {
     const t = useTranslations("Home");
@@ -37,12 +38,12 @@ export default function Infos() {
                         <p className="text-neutral-300 mt-4 text-base sm:text-lg">
                             {t("about.paragraph")}
                         </p>
-                        <Link href="/join">
+                        <TransitionLink route="/guides">
                             <Button className="mt-8 cursor-pointer">
                                 <IconSparkles2 />
                                 {t("about.joinUs")}
                             </Button>
-                        </Link>
+                        </TransitionLink>
                     </div>
                 </motion.div>
                 <motion.div
@@ -62,12 +63,12 @@ export default function Infos() {
                         <p className="text-neutral-300 mt-4 text-base sm:text-lg">
                             {t("community.paragraph")}
                         </p>
-                        <Link href="/join">
+                        <TransitionLink route="/join"> {/* TODO: Link to discord*/}
                             <Button className="mt-8 cursor-pointer">
                                 <IconBrandDiscordFilled />
                                 {t("community.joinDiscord")}
                             </Button>
-                        </Link>
+                        </TransitionLink>
                     </div>
                     <Image
                         src={community}

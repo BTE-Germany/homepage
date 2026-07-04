@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { Button } from "../ui/button";
 import { IconConfettiFilled } from "@tabler/icons-react";
 import { motion } from "motion/react";
+import TransitionLink from "../common/TransitionLink";
 
 export default function CTA() {
     const map = new DottedMap({ map: JSON.parse(dottedMapString) });
@@ -50,10 +51,12 @@ export default function CTA() {
                     <p className="my-4 text-muted-foreground text-base sm:text-lg">
                         {t("cta.paragraph")}
                     </p>
-                    <Button>
-                        <IconConfettiFilled />
-                        {t("cta.joinNow")}
-                    </Button>
+                    <TransitionLink route="/guides">
+                        <Button>
+                            <IconConfettiFilled />
+                            {t("cta.joinNow")}
+                        </Button>
+                    </TransitionLink>
                 </div>
             </div>
         </motion.div>

@@ -18,7 +18,7 @@ export default function GuidesPage() {
             </div>
             {/* Filter out all unique categories and turn them into sections */}
             {[... new Set(guides.map((guide) => guide.category))].map((category) => (
-                <section key={category} className="flex flex-col items-center gap-10 w-full">
+                <section id={category} key={category} className="flex flex-col items-center gap-10 w-full">
                     <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-4xl font-black uppercase">
                         {t(`${category}.title`)}
                     </h2>

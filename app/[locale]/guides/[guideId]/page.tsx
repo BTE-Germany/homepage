@@ -50,7 +50,7 @@ export default function GuideDetailPage() {
 
     return (
         <div className="container mx-auto mt-24 flex flex-col gap-8 px-6 py-8 lg:flex-row lg:gap-10">
-            <aside className="w-full rounded-2xl border border-border/70 bg-card/70 p-6 shadow-sm lg:sticky lg:top-36 lg:h-fit lg:w-72">
+            <aside className="rounded-2xl border border-border/70 bg-card/70 p-6 shadow-sm lg:sticky lg:top-36 lg:h-fit">
                 <div className="mt-4 flex flex-col gap-4">
                     {[... new Set(guides.map((guide) => guide.category))].map((category) => (
                         <section key={category} className="flex flex-col items-center gap-2 w-full">
