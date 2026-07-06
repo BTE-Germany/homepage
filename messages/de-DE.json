@@ -131,7 +131,7 @@
         },
         "plotSystem": {
             "title": "Das Plotsystem",
-            "description": "Erfahre, wie du als Visitor deine ersten Gebäude bauen kannst.",
+            "description": "Erfahre, wie du als Visitor deine ersten Gebäude bauen kannst",
             "steps": {
                 "about": "Was ist das?",
                 "gettingStarted": "Erste Schritte",
@@ -146,7 +146,7 @@
         },
         "becomeABuilder": {
             "title": "Werde Builder",
-            "description": "Erfahre, wie du als Builder an unserer gemeinsamen Mission mitwirken kannst.",
+            "description": "Erfahre, wie du als Builder an unserer gemeinsamen Mission mitwirken kannst",
             "steps": {
                 "requirements": "Vorraussetzungen",
                 "application": "Bewerbung",
@@ -160,7 +160,7 @@
         },
         "joinOurTeam": {
             "title": "Tritt dem Team bei",
-            "description": "Du willst das Projekt und organisatorischen Schritt im Hintergrund mitgestalten? Starte hier deine Bewerbung",
+            "description": "Du willst das Projekt und organisatorische Schritte im Hintergrund mitgestalten? Starte hier deine Bewerbung",
             "steps": {
                 "learnAboutTheTeam": "Erfahre mehr über das Team",
                 "applyAndStayEngaged": "Bewirb dich und bleib aktiv"
@@ -173,7 +173,7 @@
         },
         "buildAPlot": {
             "title": "Baue ein Plot",
-            "description": "Schritt-für-Schritt-Anleitung, wie du dein eigenes Grundstück baust.",
+            "description": "Schritt-für-Schritt-Anleitung für dein perfektes erstes Plot",
             "steps": {
                 "planYourBuild": "Plane deinen Bau",
                 "buildStepByStep": "Bau es Schritt für Schritt"
@@ -186,7 +186,7 @@
         },
         "measuringCoordinates": {
             "title": "Koordinaten messen",
-            "description": "Erfahre, wie du tpll für deine Bauprojekte nutzt.",
+            "description": "Erfahre, wie du mit dem tpll-Befehl reale Koordinaten ins Spiel übertragen kannst",
             "steps": {
                 "understandTheGrid": "Verstehe das Raster",
                 "measureAccurately": "Mess präzise"
@@ -199,7 +199,7 @@
         },
         "measuringBuildingHeights": {
             "title": "Gebäudehöhen messen",
-            "description": "Tipps und Techniken zum präzisen Messen von Gebäudehöhen.",
+            "description": "Tipps und Techniken zum präzisen Messen von Gebäudehöhen",
             "steps": {
                 "pickYourReference": "Wähle deine Referenz",
                 "checkYourMeasurements": "Prüfe deine Messungen"
@@ -216,7 +216,7 @@
         "legalNotice": "Impressum",
         "privacyPolicy": "Datenschutzerklärung",
         "termsAndConditions": "AGB",
-        "cancelSubscription": "Vertäge kündigen"
+        "cancelSubscription": "Verträge kündigen"
     },
     "CookieBanner": {
         "title": "Wir nutzen Cookies.",
