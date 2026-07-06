@@ -1,7 +1,7 @@
 export default function PrivacyPage() {
     return (
         <div className="container mx-auto">
-            <div className="prose w-full dark:prose-invert my-12 mt-32">
+            <div className="prose max-w-full! dark:prose-invert my-12 mt-32">
                 <h1>Datenschutzerklärung</h1>
                 <h2 id="m716">Präambel</h2>
                 <p>
