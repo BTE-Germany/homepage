@@ -9,6 +9,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslations } from "next-intl";
 import HamburgerIcon from "../animate-ui/primitives/icons/hamburger";
 import TransitionLink from "./TransitionLink";
+import { IconUser } from '@tabler/icons-react';
 import { useEffect, useState } from "react";
 import TextZoop from "../animate-ui/primitives/texts/text-zoop";
 
@@ -69,7 +70,8 @@ export default function Navbar() {
                         </motion.div>
                         <div className="flex gap-4 lg:gap-12 items-center justify-center">
                             <div className="lg:flex gap-8 hidden">
-                                {routes.map((route) => (
+                                <div className="flex gap-8 items-center justify-center">
+                                    {routes.map((route) => (
                                     <motion.div
                                         key={route.name}
                                         initial="initial"
@@ -84,6 +86,13 @@ export default function Navbar() {
                                         </TransitionLink>
                                     </motion.div>
                                 ))}
+                                </div>
+                                
+                                <TransitionLink route="https://account.bte-germany.de">
+                                    <div className="rounded-full h-10 w-10 bg-muted-foreground/5 hover:bg-muted-foreground/10 transition-colors flex items-center justify-center">
+                                        <IconUser stroke={2} />
+                                    </div>
+                                </TransitionLink>
                             </div>
 
                             <LanguageSwitcher />
@@ -132,6 +141,11 @@ export default function Navbar() {
                                     </TransitionLink>
                                 </motion.div>
                             ))}
+                            <TransitionLink route="https://account.bte-germany.de">
+                                <div className="rounded-full h-10 w-10 bg-muted-foreground/5 hover:bg-muted-foreground/10 transition-colors flex items-center justify-center">
+                                    <IconUser stroke={2} />
+                                </div>
+                            </TransitionLink>
                         </div>
                     </motion.div>
                 </motion.div>
