@@ -2,6 +2,7 @@ import { IconConfettiFilled } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import { Button } from "../ui/button";
 import { useTranslations } from "next-intl";
+import TransitionLink from "../common/TransitionLink";
 
 function CTA() {
     const t = useTranslations("History.cta");
@@ -29,10 +30,12 @@ function CTA() {
 
                     <div className=" flex flex-col items-center justify-start gap-2 text-center mx-0 md:mx-16">
                         <p className="my-4 text-muted-foreground text-base sm:text-lg">{t("paragraph")}</p>
-                        <Button>
-                            <IconConfettiFilled />
-                            {t("joinNow")}
-                        </Button>
+                        <TransitionLink route="/guides">
+                            <Button>
+                                <IconConfettiFilled />
+                                {t("joinNow")}
+                            </Button>
+                        </TransitionLink>
                     </div>
                 </div>
             </motion.div>
