@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { IconBrandInstagram, IconBrandYoutube, IconBrandTiktok } from '@tabler/icons-react';
 
 export default function Footer() {
     const t = useTranslations("Footer");
@@ -14,6 +15,17 @@ export default function Footer() {
                     <p className="text-xs text-muted-foreground opacity-50 mt-1">
                         {t("notAffiliated")}
                     </p>
+                </div>
+                <div className="flex flex-row items-center justify-end gap-2 mt-4 md:mt-0 ml-auto mr-8">
+                    <Link href="https://www.youtube.com/@BTEGermany" target="_blank" className="rounded-full h-12 w-12 bg-muted-foreground/5 hover:bg-muted-foreground/10 transition-colors flex items-center justify-center">
+                       <IconBrandYoutube stroke={2} />
+                    </Link>
+                    <Link href="https://www.instagram.com/btegermany/" target="_blank" className="rounded-full h-12 w-12 bg-muted-foreground/5 hover:bg-muted-foreground/10 transition-colors flex items-center justify-center">
+                       <IconBrandInstagram stroke={2} />
+                    </Link>
+                    <Link href="https://www.tiktok.com/@btegermany" target="_blank" className="rounded-full h-12 w-12 bg-muted-foreground/5 hover:bg-muted-foreground/10 transition-colors flex items-center justify-center">
+                       <IconBrandTiktok stroke={2} />
+                    </Link>
                 </div>
                 <div className="flex flex-row gap-4 mt-4 md:mt-0">
                     <Link className="text-sm text-muted-foreground" href={"/legal"}>
