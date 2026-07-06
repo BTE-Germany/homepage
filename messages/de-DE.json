@@ -211,6 +211,26 @@
             }
         }
     },
+    "Legal": {
+        "title": "Impressum",
+        "subText": "Informationen gemäß §5 Digitale-Dienste-Gesetz",
+        "area": {
+            "header": "Geltungsbereich dieses Dokuments",
+            "content": "Dieses Impressum gilt für unsere Websites (*.bte-germany.de und *.buildthe.earth) sowie für unsere Social-Media-Auftritte auf <a href=\"https://www.youtube.com/@BTEGermany\">YouTube</a>, <a href=\"https://www.instagram.com/btegermany/\">Instagram</a> und <a href=\"https://www.tiktok.com/@btegermany\">TikTok</a>."
+        },
+        "offer": {
+            "title": "BTE Germany ist ein Angebot von:",
+            "content": "<b>BuildTheEarth Germany e.V.</b> <br>Neckarstraße 24<br>64560 Riedstadt<br>Germany<br><br>Vertreten durch den 1. Vorstandsvorsitzenden Robin Ferch, den 2. Vorstandsvorsitzenden Marcel Hoerner und den Kassenwart Moritz Bausch<br><br>BuildTheEarth Germany e.V. ist ein in das Vereinsregister in Darmstadt unter der Registernummer VR 84803 eingetragener Verein im Sinne des §21 des Bürgerlichen Gesetzbuches (BGB)."
+        },
+        "contact": {
+            "title": "Kontaktmöglichkeiten",
+            "content": "E-Mail: <a href=\"mailto:info@bte-germany.de\">info@bte-germany.de</a><br>Telefon: <a href=\"tel:+4961589298914\">+49 6158 9298914</a>"
+        },
+        "disclaimer": {
+            "title": "Haftungsausschluss",
+            "content": "Die Inhalte dieses Onlineangebotes wurden sorgfältig und nach unserem derzeitigen Kenntnisstand erstellt, dienen jedoch nur der Information und entfalten keine rechtsverbindliche Wirkung, es sei denn, es handelt sich um rechtsverbindliche Angaben (z.B. Impressum, Datenschutzerklärung, AGB oder verbindliche Verbraucherhinweise). Wir behalten uns vor, den Inhalt ganz oder teilweise zu ändern oder zu löschen, soweit vertragliche Verpflichtungen hiervon unberührt bleiben. Alle Angebote sind freibleibend und unverbindlich. Die Inhalte fremder Internetseiten, auf die wir direkt oder indirekt verweisen, liegen außerhalb unseres Verantwortungsbereiches und wir machen uns diese nicht zu eigen. Wir übernehmen keine Verantwortung für etwaige Inhalte oder Nachteile, die sich aus der Nutzung der auf den verlinkten Websites verfügbaren Informationen ergeben. Alle auf dieser Website dargestellten Inhalte wie Texte, Fotos, Grafiken, Marken und Warenzeichen sind durch die jeweiligen Schutzrechte (Urheberrechte, Markenrechte) geschützt. Die Verwendung, Vervielfältigung etc. unterliegt unseren Rechten oder den Rechten der jeweiligen Urheber bzw. Rechteinhaber. Sollten Ihnen Rechtsverstöße innerhalb unseres Internetauftritts auffallen, bitten wir Sie, uns diese mitzuteilen. Bei Bekanntwerden von Rechtsverletzungen werden wir diese Inhalte und Links umgehend entfernen."
+        }
+    },
     "Footer": {
         "notAffiliated": "BTE Germany steht in keiner Verbindung zu Mojang AB oder Microsoft Corporation und wird von diesen Unternehmen nicht unterstützt.",
         "legalNotice": "Impressum",
