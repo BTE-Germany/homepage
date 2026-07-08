@@ -1,10 +1,12 @@
 import { motion } from "motion/react";
 
 export default function TextZoop({ children }: { children: string }) {
+    const letters = children.split("");
+
     return (
-        <>
-            <div className="font-bold">
-                {children.split("").map((l, i) => {
+        <span className="relative inline-block font-bold whitespace-nowrap leading-none">
+            <span className="inline-block">
+                {letters.map((l, i) => {
                     return (
                         <motion.span
                             key={`1-${i}`}
@@ -18,7 +20,7 @@ export default function TextZoop({ children }: { children: string }) {
                                     },
                                 },
                                 hovered: {
-                                    y: "-100%",
+                                    y: "-110%",
                                     transition: {
                                         duration: 0.2,
                                         ease: "easeInOut",
@@ -31,16 +33,16 @@ export default function TextZoop({ children }: { children: string }) {
                         </motion.span>
                     );
                 })}
-            </div>
-            <div className="font-bold absolute inset-0">
-                {children.split("").map((l, i) => {
+            </span>
+            <span className="absolute inset-0">
+                {letters.map((l, i) => {
                     return (
                         <motion.span
                             key={`2-${i}`}
-                            className="inline-block  whitespace-pre"
+                            className="inline-block whitespace-pre"
                             variants={{
                                 initial: {
-                                    y: "100%",
+                                    y: "110%",
                                     transition: {
                                         duration: 0.2,
                                         ease: "easeInOut",
@@ -60,7 +62,7 @@ export default function TextZoop({ children }: { children: string }) {
                         </motion.span>
                     );
                 })}
-            </div>
-        </>
+            </span>
+        </span>
     );
 }

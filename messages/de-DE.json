@@ -3,7 +3,10 @@
         "language": "Sprache",
         "join": "Guides",
         "map": "Karte",
-        "history": "Geschichte"
+        "history": "Geschichte",
+        "about": "Über uns",
+        "contact": "Kontakt",
+        "association": "Verein"
     },
     "Home": {
         "hero": {
