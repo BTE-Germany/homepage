@@ -236,7 +236,8 @@
         "legalNotice": "Impressum",
         "privacyPolicy": "Datenschutzerklärung",
         "termsAndConditions": "AGB",
-        "cancelSubscription": "Verträge kündigen"
+        "cancelSubscription": "Verträge kündigen",
+        "rules": "Regeln"
     },
     "CookieBanner": {
         "title": "Wir nutzen Cookies.",

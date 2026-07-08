@@ -215,7 +215,8 @@
         "legalNotice": "Legal Notice",
         "privacyPolicy": "Privacy Policy",
         "termsAndConditions": "T&C",
-        "cancelSubscription": "Cancel Subscription"
+        "cancelSubscription": "Cancel Subscription",
+        "rules": "Rules"
     },
     "CookieBanner": {
         "title": "We're using cookies.",
