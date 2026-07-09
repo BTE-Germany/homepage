@@ -20,7 +20,7 @@ export default function TextZoop({ children }: { children: string }) {
                                     },
                                 },
                                 hovered: {
-                                    y: "-110%",
+                                    y: "-120%",
                                     transition: {
                                         duration: 0.2,
                                         ease: "easeInOut",
@@ -42,7 +42,7 @@ export default function TextZoop({ children }: { children: string }) {
                             className="inline-block whitespace-pre"
                             variants={{
                                 initial: {
-                                    y: "110%",
+                                    y: "120%",
                                     transition: {
                                         duration: 0.2,
                                         ease: "easeInOut",

@@ -9,14 +9,13 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslations } from "next-intl";
 import HamburgerIcon from "../animate-ui/primitives/icons/hamburger";
 import TransitionLink from "./TransitionLink";
-import { IconChevronDown, IconCompass, IconHistory, IconMail, IconMap2, IconUser, IconUsers, IconCircles  } from '@tabler/icons-react';
+import { IconChevronDown, IconCompass, IconHistory, IconMail, IconMap2, IconUser, IconUsers, IconCircles, IconShoppingBag } from '@tabler/icons-react';
 import { useEffect, useRef, useState, type ElementType } from "react";
 import TextZoop from "../animate-ui/primitives/texts/text-zoop";
 
 type NavRoute = {
     path: string;
     name: string;
-    external?: boolean;
     icon?: ElementType;
 };
 
@@ -25,12 +24,13 @@ export default function Navbar() {
 
     const routes: NavRoute[] = [
         { path: "/guides", name: t("join"), icon: IconCompass },
-        { path: "https://map.bte-germany.de", name: t("map"), external: true, icon: IconMap2 },
+        { path: "https://map.bte-germany.de", name: t("map"), icon: IconMap2 },
         { path: "/history", name: t("history"), icon: IconHistory },
+        { path: "https://shop.bte-germany.de", name: t("shop"), icon: IconShoppingBag }
     ];
     const aboutRoutes: NavRoute[] = [
         { path: "/contact", name: t("contact"), icon: IconMail },
-        { path: "/association", name: t("association"), external: true, icon: IconCircles  },
+        { path: "https://bte-germany.org/", name: t("association"), icon: IconCircles  },
     ];
 
     const [isExpanded, setIsExpanded] = useState(false);
@@ -85,7 +85,7 @@ export default function Navbar() {
             <div className="h-16"></div>
             <nav className="fixed top-0 left-0 w-full z-50 bg-transparent py-4 ">
                 <motion.div
-                    className="max-w-[90%] lg:max-w-[80%] mx-auto my-8"
+                    className="max-w-[90%] xl:max-w-[80%] mx-auto my-8"
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.1, ease: [0.03, 0.72, 0.04, 0.98] }}

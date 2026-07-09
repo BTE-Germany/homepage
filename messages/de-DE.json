@@ -6,7 +6,8 @@
         "history": "Geschichte",
         "about": "Über uns",
         "contact": "Kontakt",
-        "association": "Verein"
+        "association": "Verein",
+        "shop": "Shop"
     },
     "Home": {
         "hero": {
@@ -141,8 +142,8 @@
                 "buildYourPlot": "Baue dein Grundstück"
             },
             "content": {
-                "about": "Möchtest du nicht du von unseren Buildern gebauten Städten besuchen, sondern selbst aktiv werden und eigene Gebäude bauen? Dann ist das Plotsystem genau das Richtige für dich. <ul><li>Im Plotsystem bekommst du eine Auswahl an vorbereiteten Grundstücken (genannt Plots), auf denen du die Grundlagen der speziellen Bautechniken unseres Projekts erlernen kannst.</li><li> Du befindest in einer separaten Welt und erhälst direktes Feedback für deine Gebäude von unserem Plot-Team, um dich ideal auf das Bauen auf unserem Server vorzubereiten.</li></ul>",
-                "gettingStarted": "Um mit dem Bauen zu beginnen, musst du zunächst auf unseren Plotserver wechseln. Hierfür kannst du mit dem NPC in der Lobby interagieren oder den Befehl <i>/plotsystem</i> in den Chat eingeben. Bist du zum ersten Mal auf dem Plotserver, so musst du zenächst den <b>Plotrundgang</b> absolvieren. <ul><li>Um die Plot-Insel herum befindet sich eine Straße, welche einmal im Kreis führt. Entlang dieser befinden sich die einzelnen Stationen, welche dir die Schritte zeigen, die du für den Bau eines Plots benötigst.</li><li>Vor jeder Station befindet sich ein Textfeld, auf welchem eine kurze Erklärung zum jeweiligen Schritt steht. Lies dir dieses aufmerksam durch und bestätige durch einen Klick auf den Text, dass du diesen gelesen hast.</li><li>Mit jedem Schritt füllt sich die Leiste oben am Bildschirm. Sobald du alle Schrittte abgeschlossen hast, bekommst du den Companion (Netherstern) in dein Inventar. Mit diesem lässt sich das Plot-menü öffnen.</li></ul>",
+                "about": "Möchtest du nicht nur von unseren Buildern gebaute Städte besuchen, sondern selbst aktiv werden und eigene Gebäude bauen? Dann ist das Plotsystem genau das Richtige für dich. <ul><li>Im Plotsystem bekommst du eine Auswahl an vorbereiteten Grundstücken (genannt Plots), auf denen du die Grundlagen der speziellen Bautechniken unseres Projekts erlernen kannst.</li><li> Du befindest in einer separaten Welt und erhälst direktes Feedback für deine Gebäude von unserem Plot-Team, um dich ideal auf das Bauen auf unserem Server vorzubereiten.</li></ul>",
+                "gettingStarted": "Um mit dem Bauen zu beginnen, musst du zunächst auf unseren Plotserver wechseln. Hierfür kannst du mit dem NPC in der Lobby interagieren oder den Befehl <i>/plotsystem</i> in den Chat eingeben. Bist du zum ersten Mal auf dem Plotserver, so musst du zunächst den <b>Plotrundgang</b> absolvieren. <ul><li>Um die Plot-Insel herum befindet sich eine Straße, welche einmal im Kreis führt. Entlang dieser befinden sich die einzelnen Stationen, welche dir die Schritte zeigen, die du für den Bau eines Plots benötigst.</li><li>Vor jeder Station befindet sich ein Textfeld, auf welchem eine kurze Erklärung zum jeweiligen Schritt steht. Lies dir dieses aufmerksam durch und bestätige durch einen Klick auf den Text, dass du diesen gelesen hast.</li><li>Mit jedem Schritt füllt sich die Leiste oben am Bildschirm. Sobald du alle Schrittte abgeschlossen hast, bekommst du den Companion (Netherstern) in dein Inventar. Mit diesem lässt sich das Plot-Menü öffnen.</li></ul>",
                 "lobby": "Tipp: Möchtest du vom Plotserver wieder zurück auf den Hauptserver, so kommst du mit <i>/lobby</i> wieder auf die Spawn-Insel.",
                 "buildYourPlot": "Nachdem du dein Grundstück beansprucht hast, kannst du mit dem Bau beginnen. Nutze die Werkzeuge und Ressourcen, die dir zur Verfügung stehen, um dein Grundstück nach deinen Vorstellungen zu gestalten. Achte darauf, dass du die Bauvorschriften und Richtlinien einhältst."
             }
