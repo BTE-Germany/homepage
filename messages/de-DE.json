@@ -241,7 +241,22 @@
         "privacyPolicy": "Datenschutzerklärung",
         "termsAndConditions": "AGB",
         "cancelSubscription": "Verträge kündigen",
-        "rules": "Regeln"
+        "rules": "Regeln",
+        "header": {
+            "socials": "Socials",
+            "join":  "Mach mit",
+            "external": "Mehr vom Projekt"
+        },
+        "guides": {
+            "visit": "Besuche den Server",
+            "builder": "Werde Builder",
+            "staff": "Komm ins Team"
+        },
+        "external": {
+            "association": "Unser Verein",
+            "international": "BuildTheEarth international",
+            "map": "Globale Karte"
+        }
     },
     "CookieBanner": {
         "title": "Wir nutzen Cookies.",

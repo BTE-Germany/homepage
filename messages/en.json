@@ -220,7 +220,22 @@
         "privacyPolicy": "Privacy Policy",
         "termsAndConditions": "T&C",
         "cancelSubscription": "Cancel Subscription",
-        "rules": "Rules"
+        "rules": "Rules",
+        "header": {
+            "socials": "Socials",
+            "join":  "Join us",
+            "external": "More from BTE"
+        },
+        "guides": {
+            "visit": "Visit the Server",
+            "builder": "Become a Builder",
+            "staff": "Join our Team"
+        },
+        "external": {
+            "association": "Our Association",
+            "international": "BuildTheEarth international",
+            "map": "Global Progress Map"
+        }
     },
     "CookieBanner": {
         "title": "We're using cookies.",
