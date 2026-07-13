@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 import { IconBrandInstagram, IconBrandYoutube, IconBrandTiktok, IconBrandTwitch, IconBrandDiscord } from '@tabler/icons-react';
 import TransitionLink from "./TransitionLink";
 import Image from "next/image";
@@ -31,6 +30,14 @@ export default function Footer() {
         { name: t("external.map"), link: "https://buildtheearth.net/map" },
     ]
 
+    const footerLinks: { name: string, link: string }[] = [
+        { name: t("legalNotice"), link: "/legal" },
+        { name: t("rules"), link: "https://docs.google.com/document/u/1/d/e/2PACX-1vS-K6CH3qNg-jGVmi6tbyIC_-Jw4uVDGMTeqIcv0108A4U5OQEH1dyea7VPep-nmKJPwD-2_Acg8sJW/pub" },
+        { name: t("privacyPolicy"), link: "/privacy" },
+        { name: t("termsAndConditions"), link: "https://drive.google.com/file/d/1o5Ef-c0Dh0YvQjsj__Pzi082rHtm-_aN/view" },
+        { name: t("cancelSubscription"), link: "mailto:info@bte-germany.de?subject=Vertragskündigung&body=Hiermit möchte ich folgenden Vertrag kündigen:%0D%0A%0D%0AVertrag: [Vertragsname]%0D%0A%0D%0ABitte bestätigen Sie mir die Kündigung schriftlich.%0D%0A%0D%0AMit freundlichen Grüßen,%0D%0A[Ihr Name]" },
+    ]
+
     return (
         <footer className="w-full border-t mt-16 pb-8 pt-4 lg:pt-16 flex flex-col ">
             <div className="lg:max-w-4/5 mx-auto flex flex-col text-muted-foreground">
@@ -38,7 +45,7 @@ export default function Footer() {
                 <div className="flex flex-col gap-6 lg:grid lg:grid-cols-5">
                     <div className="lg:flex flex-col gap-2 hidden">
                         <Image src={ImgAssociation} alt="Association Logo" width={200}  height={50}/>
-                        <p className="text-sm">BuildTheEarth Germany e.V. - Die Erde im Maßstab 1:1 in Minecraft nachbauen.</p>
+                        <p className="text-sm">{t("associationDesc")}</p>
                     </div>
                     <div></div>
                     <div className="flex flex-row justify-center flex-wrap lg:flex-col lg:justify-start gap-4 lg:gap-2">
@@ -76,59 +83,13 @@ export default function Footer() {
                         </p>
                     </span>
                     <span className="flex flex-wrap gap-4 justify-center lg:justify-end items-center w-full">
-                        <TransitionLink className="text-sm text-muted-foreground" route={"/legal"}>
-                            {t("legalNotice")}
-                        </TransitionLink>
-                        <TransitionLink className="text-sm text-muted-foreground" route={"https://docs.google.com/document/u/1/d/e/2PACX-1vS-K6CH3qNg-jGVmi6tbyIC_-Jw4uVDGMTeqIcv0108A4U5OQEH1dyea7VPep-nmKJPwD-2_Acg8sJW/pub"}>
-                            {t("rules")}
-                        </TransitionLink>
-                        <TransitionLink className="text-sm text-muted-foreground" route={"/privacy"}>
-                            {t("privacyPolicy")}
-                        </TransitionLink>
-                        <TransitionLink className="text-sm text-muted-foreground" route={"https://drive.google.com/file/d/1o5Ef-c0Dh0YvQjsj__Pzi082rHtm-_aN/view"}>
-                            {t("termsAndConditions")}
-                        </TransitionLink>
-                        <TransitionLink className="text-sm text-muted-foreground" route={"mailto:info@bte-germany.de?subject=Vertragskündigung&body=Hiermit möchte ich folgenden Vertrag kündigen:%0D%0A%0D%0AVertrag: [Vertragsname]%0D%0A%0D%0ABitte bestätigen Sie mir die Kündigung schriftlich.%0D%0A%0D%0AMit freundlichen Grüßen,%0D%0A[Ihr Name]"}>
-                            {t("cancelSubscription")}
-                        </TransitionLink>
+                        {footerLinks.map((f) => (
+                            <TransitionLink key={f.link} className="text-sm text-muted-foreground hover:opacity-50 transition-all duration-300" route={f.link}>
+                                {f.name}
+                            </TransitionLink>
+                        ))}
                     </span>
                 </div>
-                {/* <div>
-                    <p className="text-sm text-muted-foreground">
-                        &copy; {new Date().getFullYear()} BuildTheEarth Germany e.V.
-                    </p>
-                    <p className="text-xs text-muted-foreground opacity-50 mt-1">
-                        {t("notAffiliated")}
-                    </p>
-                </div>
-                <div className="flex flex-row items-center justify-end gap-2 mt-4 md:mt-0 mx-auto lg:mr-8">
-                    <Link href="https://www.youtube.com/@BTEGermany" target="_blank" className="rounded-full h-12 w-12 bg-muted-foreground/5 hover:bg-muted-foreground/10 transition-colors flex items-center justify-center">
-                       <IconBrandYoutube stroke={2} />
-                    </Link>
-                    <Link href="https://www.instagram.com/btegermany/" target="_blank" className="rounded-full h-12 w-12 bg-muted-foreground/5 hover:bg-muted-foreground/10 transition-colors flex items-center justify-center">
-                       <IconBrandInstagram stroke={2} />
-                    </Link>
-                    <Link href="https://www.tiktok.com/@btegermany" target="_blank" className="rounded-full h-12 w-12 bg-muted-foreground/5 hover:bg-muted-foreground/10 transition-colors flex items-center justify-center">
-                       <IconBrandTiktok stroke={2} />
-                    </Link>
-                </div>
-                <div className="flex flex-row gap-4 mt-4 md:mt-0">
-                    <TransitionLink className="text-sm text-muted-foreground" route={"/legal"}>
-                        {t("legalNotice")}
-                    </TransitionLink>
-                    <TransitionLink className="text-sm text-muted-foreground" route={"https://docs.google.com/document/u/1/d/e/2PACX-1vS-K6CH3qNg-jGVmi6tbyIC_-Jw4uVDGMTeqIcv0108A4U5OQEH1dyea7VPep-nmKJPwD-2_Acg8sJW/pub"}>
-                        {t("rules")}
-                    </TransitionLink>
-                    <TransitionLink className="text-sm text-muted-foreground" route={"/privacy"}>
-                        {t("privacyPolicy")}
-                    </TransitionLink>
-                    <TransitionLink className="text-sm text-muted-foreground" route={"https://drive.google.com/file/d/1o5Ef-c0Dh0YvQjsj__Pzi082rHtm-_aN/view"}>
-                        {t("termsAndConditions")}
-                    </TransitionLink>
-                    <TransitionLink className="text-sm text-muted-foreground" route={"mailto:info@bte-germany.de?subject=Vertragskündigung&body=Hiermit möchte ich folgenden Vertrag kündigen:%0D%0A%0D%0AVertrag: [Vertragsname]%0D%0A%0D%0ABitte bestätigen Sie mir die Kündigung schriftlich.%0D%0A%0D%0AMit freundlichen Grüßen,%0D%0A[Ihr Name]"}>
-                        {t("cancelSubscription")}
-                    </TransitionLink>
-                </div> */}
             </div>
         </footer>
     );

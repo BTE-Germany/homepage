@@ -222,7 +222,7 @@
             "header": "Geltungsbereich dieses Dokuments",
             "content": "Dieses Impressum gilt für unsere Websites (*.bte-germany.de und *.buildthe.earth) sowie für unsere Social-Media-Auftritte auf <a href=\"https://www.youtube.com/@BTEGermany\">YouTube</a>, <a href=\"https://www.instagram.com/btegermany/\">Instagram</a> und <a href=\"https://www.tiktok.com/@btegermany\">TikTok</a>."
         },
-        "offer": {
+        "service": {
             "title": "BTE Germany ist ein Angebot von:",
             "content": "<b>BuildTheEarth Germany e.V.</b> <br>Neckarstraße 24<br>64560 Riedstadt<br>Germany<br><br>Vertreten durch den 1. Vorstandsvorsitzenden Robin Ferch, den 2. Vorstandsvorsitzenden Marcel Hoerner und den Kassenwart Moritz Bausch<br><br>BuildTheEarth Germany e.V. ist ein in das Vereinsregister in Darmstadt unter der Registernummer VR 84803 eingetragener Verein im Sinne des §21 des Bürgerlichen Gesetzbuches (BGB)."
         },
@@ -242,6 +242,7 @@
         "termsAndConditions": "AGB",
         "cancelSubscription": "Verträge kündigen",
         "rules": "Regeln",
+        "associationDesc": "BuildTheEarth Germany e.V. - Die Erde im Maßstab 1:1 in Minecraft nachbauen.",
         "header": {
             "socials": "Socials",
             "join":  "Mach mit",

@@ -201,7 +201,7 @@
             "header": "Scope of this document",
             "content": "This legal notice applies to our websites (*.bte-germany.de and *.buildthe.earth) and our social media presences on <a href=\"https://www.youtube.com/@BTEGermany\">YouTube</a>, <a href=\"https://www.instagram.com/btegermany/\">Instagram</a> and <a href=\"https://www.tiktok.com/@btegermany\">TikTok</a>."
         },
-        "offer": {
+        "service": {
             "title": "BTE Germany is a service run by:",
             "content": "<b>BuildTheEarth Germany e.V.</b> <br>Neckarstraße 24<br>64560 Riedstadt<br>Germany<br><br>Represented by the 1st Chairman of the Board Robin Ferch, the 2nd Chairman of the Board Marcel Hoerner and the treasurer Moritz Bausch<br><br>BuildTheEarth Germany e.V. is an association registered in the register of associations in Darmstadt under the registration number VR 84803 in accordance with §21 of the German Civil Code (Bürgerliches Gesetzbuch)."
         },
@@ -221,6 +221,7 @@
         "termsAndConditions": "T&C",
         "cancelSubscription": "Cancel Subscription",
         "rules": "Rules",
+        "associationDesc": "BuildTheEarth Germany e.V. - Recreating the Earth on a 1:1 scale in Minecraft.",
         "header": {
             "socials": "Socials",
             "join":  "Join us",

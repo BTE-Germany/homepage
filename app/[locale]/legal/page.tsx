@@ -19,8 +19,8 @@ export default function LegalPage() {
                 <GuideRichText content={t.raw("area.content")} />
             </section>
             <section className="mb-8">
-                <h2 className="font-bold text-xl mb-4">{t("offer.title")}</h2>
-                <GuideRichText content={t.raw("offer.content")} />
+                <h2 className="font-bold text-xl mb-4">{t("service.title")}</h2>
+                <GuideRichText content={t.raw("service.content")} />
             </section>
             <section className="mb-8">
                 <h2 className="font-bold text-xl mb-4">{t("contact.title")}</h2>
