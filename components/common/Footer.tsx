@@ -31,9 +31,9 @@ export default function Footer() {
     ]
 
     const footerLinks: { name: string, link: string }[] = [
-        { name: t("legalNotice"), link: "/legal" },
+        { name: t("legalNotice"), link: "https://bte-germany.org/impressum" },
         { name: t("rules"), link: "https://docs.google.com/document/u/1/d/e/2PACX-1vS-K6CH3qNg-jGVmi6tbyIC_-Jw4uVDGMTeqIcv0108A4U5OQEH1dyea7VPep-nmKJPwD-2_Acg8sJW/pub" },
-        { name: t("privacyPolicy"), link: "/privacy" },
+        { name: t("privacyPolicy"), link: "https://bte-germany.org/datenschutz" },
         { name: t("termsAndConditions"), link: "https://drive.google.com/file/d/1o5Ef-c0Dh0YvQjsj__Pzi082rHtm-_aN/view" },
         { name: t("cancelSubscription"), link: "mailto:info@bte-germany.de?subject=Vertragskündigung&body=Hiermit möchte ich folgenden Vertrag kündigen:%0D%0A%0D%0AVertrag: [Vertragsname]%0D%0A%0D%0ABitte bestätigen Sie mir die Kündigung schriftlich.%0D%0A%0D%0AMit freundlichen Grüßen,%0D%0A[Ihr Name]" },
     ]
@@ -43,11 +43,11 @@ export default function Footer() {
             <div className="lg:max-w-4/5 mx-auto flex flex-col text-muted-foreground">
 
                 <div className="flex flex-col gap-6 lg:grid lg:grid-cols-5">
-                    <div className="lg:flex flex-col gap-2 hidden">
+                    <div className="lg:flex flex-col col-span-2 gap-2 hidden mr-6">
                         <Image src={ImgAssociation} alt="Association Logo" width={200}  height={50}/>
                         <p className="text-sm">{t("associationDesc")}</p>
                     </div>
-                    <div></div>
+
                     <div className="flex flex-row justify-center flex-wrap lg:flex-col lg:justify-start gap-4 lg:gap-2">
                         <h6 className="uppercase text-white mb-2 hidden lg:block"><b>{t("header.socials")}</b></h6>
                         {socials.map((social) =>  (
@@ -59,7 +59,7 @@ export default function Footer() {
                     <div className="flex flex-row justify-center lg:flex-col lg:justify-start gap-4 lg:gap-2">
                         <h6 className="uppercase text-white mb-2 hidden lg:block"><b>{t("header.join")}</b></h6>
                         {guides.map((guide) =>  (
-                            <TransitionLink key={guide.link} route={guide.link} className="flex items-center gap-2 hover:opacity-50 transition-all duration-300">
+                            <TransitionLink key={guide.link} route={guide.link} className="flex items-center text-center gap-2 hover:opacity-50 transition-all duration-300">
                                 {guide.name}
                             </TransitionLink>
                         ))}
@@ -67,7 +67,7 @@ export default function Footer() {
                     <div className="flex flex-row justify-center lg:flex-col lg:justify-start gap-4 lg:gap-2">
                         <h6 className="uppercase text-white mb-2 hidden lg:block"><b>{t("header.external")}</b></h6>
                         {externals.map((external) =>  (
-                            <TransitionLink key={external.name} route={external.link} className="flex items-center gap-2 hover:opacity-50 transition-all duration-300">
+                            <TransitionLink key={external.name} route={external.link} className="flex items-center text-center gap-2 hover:opacity-50 transition-all duration-300">
                                 {external.name}
                             </TransitionLink>
                         ))}
