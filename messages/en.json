@@ -194,25 +194,13 @@
             }
         }
     },
-        "Legal": {
-        "title": "Imprint",
-        "subText": "Information according to §5 Digitale-Dienste-Gesetz (Digital Services Act) of the Federal Republic of Germany",
-        "area": {
-            "header": "Scope of this document",
-            "content": "This legal notice applies to our websites (*.bte-germany.de and *.buildthe.earth) and our social media presences on <a href=\"https://www.youtube.com/@BTEGermany\">YouTube</a>, <a href=\"https://www.instagram.com/btegermany/\">Instagram</a> and <a href=\"https://www.tiktok.com/@btegermany\">TikTok</a>."
-        },
-        "service": {
-            "title": "BTE Germany is a service run by:",
-            "content": "<b>BuildTheEarth Germany e.V.</b> <br>Neckarstraße 24<br>64560 Riedstadt<br>Germany<br><br>Represented by the 1st Chairman of the Board Robin Ferch, the 2nd Chairman of the Board Marcel Hoerner and the treasurer Moritz Bausch<br><br>BuildTheEarth Germany e.V. is an association registered in the register of associations in Darmstadt under the registration number VR 84803 in accordance with §21 of the German Civil Code (Bürgerliches Gesetzbuch)."
-        },
-        "contact": {
-            "title": "Contact Options",
-            "content": "E-Mail: <a href=\"mailto:info@bte-germany.de\">info@bte-germany.de</a><br>Telefon: <a href=\"tel:+4961589298914\">+49 6158 9298914</a>"
-        },
-        "disclaimer": {
-            "title": "Disclaimer",
-            "content": "The contents of this online offer have been prepared carefully and according to our current knowledge, but are for information purposes only and do not have any legally binding effect, unless it is legally binding information (eg the imprint, privacy policy, terms and conditions or mandatory consumer instructions). We reserve the right to change or delete the contents in whole or in part, provided that contractual obligations remain unaffected. All offers are subject to change and non-binding. The contents of external websites to which we refer directly or indirectly are outside our area of responsibility and we do not adopt them as our own. We accept no responsibility for any content or disadvantages arising from the use of the information available on the linked websites. All contents presented on this website, such as texts, photographs, graphics, brands and trademarks are protected by the respective protective rights (copyrights, trademark rights). The use, reproduction, etc. are subject to our rights or the rights of the respective authors or rights holders. If you notice any legal violations within our Internet presence, please inform us of them. We will remove illegal content and links immediately after becoming aware of them."
-        }
+    "Contact": {
+        "title": "Contact",
+        "subText": "Here you'll find all the points of contact for the various issues you may have with our team",
+        "info": "General Inquiries and Support",
+        "moderation": "Moderation and Unban Requests",
+        "general": "General and Technical Contact",
+        "social": "Social Media and PR Contact"
     },
     "Footer": {
         "notAffiliated": "BTE Germany is not affiliated with or endorsed by Mojang AB or Microsoft Corporation.",
