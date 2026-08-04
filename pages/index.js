@@ -11,7 +11,7 @@ import HomeGallery from "../components/HomeGallery";
 import axios from "axios";
 import Link from "next/link";
 
-export default function Home({cities, mapStats, cmsAssets}) {
+export default function Home({cities, cmsAssets}) {
 
 
     const [navVisible, setNavVisible] = useState(false);
@@ -193,7 +193,7 @@ export default function Home({cities, mapStats, cmsAssets}) {
                                 {t('home:numbers.mapSize')}
                             </Title>
                         </Box>
-                        <Box style={{
+                        {/*<Box style={{
                             display: "flex",
                             flexDirection: "column",
                             alignItems: "center"
@@ -216,7 +216,7 @@ export default function Home({cities, mapStats, cmsAssets}) {
                             <Title size={"h4"} weight={"normal"}>
                                 {t('home:numbers.finishedBuildings')}
                             </Title>
-                        </Box>
+                        </Box>*/}
                     </SimpleGrid>
 
                 </Container>
@@ -249,11 +249,11 @@ export default function Home({cities, mapStats, cmsAssets}) {
 export async function getServerSideProps({locale}) {
 
     let {data: citiesData} = await axios.get(process.env.CMS_URL + "/items/cities?fields=*,images.directus_files_id")
-    let {data: mapStatsData} = await axios.get(process.env.MAP_URL + "/api/v1/stats/general")
+    // let {data: mapStatsData} = await axios.get(process.env.MAP_URL + "/api/v1/stats/general")
     return {
         props: {
             cities: citiesData.data,
-            mapStats: mapStatsData,
+            // mapStats: mapStatsData,
             cmsAssets: process.env.CMS_URL + "/assets/",
             ...(await serverSideTranslations(locale, [
                 'common',
