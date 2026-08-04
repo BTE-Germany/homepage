@@ -30,7 +30,7 @@ export default function Store({products}) {
 
                 <Grid mb={"xs"}>
                     <Grid.Col span={6}>
-                        <Link className={"w-full rounded-md bg-gradient-to-br from-blue-600 to-blue-800 py-8 text-white flex items-center flex-col hover:scale-[1.02] transition-transform"} href={"/store/plus"}>
+                        <Link className={"w-full rounded-md bg-gradient-to-br from-blue-600 to-blue-800 py-8 text-white flex items-center flex-col hover:scale-[1.02] transition-transform"} href={"https://account.bte-germany.de/plus"}>
                             <IconCrown size={50}/>
                             <Title ta="center">
                                 Plus Rank

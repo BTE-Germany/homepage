@@ -31,7 +31,7 @@ const UserButton = () => {
                         <Avatar radius="xl" ml={"md"} height={35}>{data.user.username.slice(0, 2).toUpperCase()}</Avatar>
                     </Menu.Target>
                     <Menu.Dropdown>
-                        <Menu.Item leftSection={<IconUser size={14} />} component={Link} href={"/profile"}>{t("common:myProfile")}</Menu.Item>
+                        <Menu.Item leftSection={<IconUser size={14} />} component={Link} href={"https://account.bte-germany.de"}>{t("common:myProfile")}</Menu.Item>
                         <Menu.Item leftSection={<IconLock size={14} />} onClick={() => signOut()} color={"red"}>{t("common:signOut")}</Menu.Item>
 
                     </Menu.Dropdown>
